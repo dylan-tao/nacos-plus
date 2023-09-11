@@ -35,7 +35,7 @@ public class GroupCapacityMapperByMysql extends AbstractMapper implements GroupC
     
     @Override
     public String getDataSource() {
-        return DataSourceConstant.MYSQL;
+        return DataSourceConstant.POSTGRESQL;
     }
     
     @Override

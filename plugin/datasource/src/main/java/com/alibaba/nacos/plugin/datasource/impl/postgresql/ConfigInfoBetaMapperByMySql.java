@@ -49,6 +49,6 @@ public class ConfigInfoBetaMapperByMySql extends AbstractMapper implements Confi
     
     @Override
     public String getDataSource() {
-        return DataSourceConstant.MYSQL;
+        return DataSourceConstant.POSTGRESQL;
     }
 }

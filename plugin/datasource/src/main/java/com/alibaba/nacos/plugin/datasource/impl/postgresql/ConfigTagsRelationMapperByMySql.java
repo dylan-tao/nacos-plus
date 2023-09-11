@@ -170,6 +170,6 @@ public class ConfigTagsRelationMapperByMySql extends AbstractMapper implements C
     
     @Override
     public String getDataSource() {
-        return DataSourceConstant.MYSQL;
+        return DataSourceConstant.POSTGRESQL;
     }
 }

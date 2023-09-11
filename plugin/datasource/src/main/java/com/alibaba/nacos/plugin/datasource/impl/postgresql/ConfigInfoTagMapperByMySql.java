@@ -49,6 +49,6 @@ public class ConfigInfoTagMapperByMySql extends AbstractMapper implements Config
     
     @Override
     public String getDataSource() {
-        return DataSourceConstant.MYSQL;
+        return DataSourceConstant.POSTGRESQL;
     }
 }

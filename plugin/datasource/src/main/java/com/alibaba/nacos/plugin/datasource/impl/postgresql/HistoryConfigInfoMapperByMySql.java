@@ -63,6 +63,6 @@ public class HistoryConfigInfoMapperByMySql extends AbstractMapper implements Hi
     
     @Override
     public String getDataSource() {
-        return DataSourceConstant.MYSQL;
+        return DataSourceConstant.POSTGRESQL;
     }
 }

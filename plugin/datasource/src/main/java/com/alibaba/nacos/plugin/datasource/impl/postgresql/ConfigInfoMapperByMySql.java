@@ -388,7 +388,7 @@ public class ConfigInfoMapperByMySql extends AbstractMapper implements ConfigInf
     
     @Override
     public String getDataSource() {
-        return DataSourceConstant.MYSQL;
+        return DataSourceConstant.POSTGRESQL;
     }
     
     @Override

@@ -36,6 +36,6 @@ public class TenantInfoMapperByMySql extends AbstractMapper implements TenantInf
     
     @Override
     public String getDataSource() {
-        return DataSourceConstant.MYSQL;
+        return DataSourceConstant.POSTGRESQL;
     }
 }

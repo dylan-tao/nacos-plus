@@ -36,7 +36,7 @@ public class TenantCapacityMapperByMySql extends AbstractMapper implements Tenan
     
     @Override
     public String getDataSource() {
-        return DataSourceConstant.MYSQL;
+        return DataSourceConstant.POSTGRESQL;
     }
     
     @Override
