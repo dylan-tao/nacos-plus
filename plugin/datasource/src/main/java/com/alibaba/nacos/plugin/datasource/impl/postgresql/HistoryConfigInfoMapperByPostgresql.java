@@ -27,7 +27,7 @@ import com.alibaba.nacos.plugin.datasource.mapper.HistoryConfigInfoMapper;
  * @author hyx
  **/
 
-public class HistoryConfigInfoMapperByMySql extends AbstractMapper implements HistoryConfigInfoMapper {
+public class HistoryConfigInfoMapperByPostgresql extends AbstractMapper implements HistoryConfigInfoMapper {
     
     @Override
     public String removeConfigHistory() {

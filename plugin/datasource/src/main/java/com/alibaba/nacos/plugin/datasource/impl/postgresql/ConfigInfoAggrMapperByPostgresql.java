@@ -29,7 +29,7 @@ import java.util.List;
  * @author hyx
  **/
 
-public class ConfigInfoAggrMapperByMySql extends AbstractMapper implements ConfigInfoAggrMapper {
+public class ConfigInfoAggrMapperByPostgresql extends AbstractMapper implements ConfigInfoAggrMapper {
     
     @Override
     public String batchRemoveAggr(List<String> datumList) {

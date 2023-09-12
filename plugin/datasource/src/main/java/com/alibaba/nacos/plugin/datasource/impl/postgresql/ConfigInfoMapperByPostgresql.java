@@ -34,7 +34,7 @@ import java.util.Map;
  * @author hyx
  **/
 
-public class ConfigInfoMapperByMySql extends AbstractMapper implements ConfigInfoMapper {
+public class ConfigInfoMapperByPostgresql extends AbstractMapper implements ConfigInfoMapper {
     
     private static final String DATA_ID = "dataId";
     

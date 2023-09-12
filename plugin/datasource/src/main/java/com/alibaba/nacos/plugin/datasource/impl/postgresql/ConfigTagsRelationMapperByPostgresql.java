@@ -30,7 +30,7 @@ import java.util.Map;
  * @author hyx
  **/
 
-public class ConfigTagsRelationMapperByMySql extends AbstractMapper implements ConfigTagsRelationMapper {
+public class ConfigTagsRelationMapperByPostgresql extends AbstractMapper implements ConfigTagsRelationMapper {
     
     @Override
     public String findConfigInfo4PageCountRows(final Map<String, String> params, final int tagSize) {

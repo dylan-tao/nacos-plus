@@ -26,7 +26,7 @@ import com.alibaba.nacos.plugin.datasource.mapper.GroupCapacityMapper;
  *
  * @author lixiaoshuang
  */
-public class GroupCapacityMapperByMysql extends AbstractMapper implements GroupCapacityMapper {
+public class GroupCapacityMapperByPostgresql extends AbstractMapper implements GroupCapacityMapper {
     
     @Override
     public String getTableName() {

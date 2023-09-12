@@ -27,7 +27,7 @@ import com.alibaba.nacos.plugin.datasource.mapper.TenantCapacityMapper;
  * @author hyx
  **/
 
-public class TenantCapacityMapperByMySql extends AbstractMapper implements TenantCapacityMapper {
+public class TenantCapacityMapperByPostgresql extends AbstractMapper implements TenantCapacityMapper {
     
     @Override
     public String getTableName() {
