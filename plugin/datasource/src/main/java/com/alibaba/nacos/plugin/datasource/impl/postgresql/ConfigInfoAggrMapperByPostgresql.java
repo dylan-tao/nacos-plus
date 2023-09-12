@@ -61,7 +61,7 @@ public class ConfigInfoAggrMapperByPostgresql extends AbstractMapper implements 
         
         return sql.toString();
     }
-    
+
     @Override
     public String findConfigInfoAggrIsOrdered() {
         return "SELECT data_id,group_id,tenant_id,datum_id,app_name,content FROM "
