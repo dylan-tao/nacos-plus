@@ -18,7 +18,6 @@ package com.alibaba.nacos.plugin.datasource.impl.postgresql;
 
 import com.alibaba.nacos.plugin.datasource.constants.DataSourceConstant;
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
-import com.alibaba.nacos.plugin.datasource.impl.mysql.ConfigInfoAggrMapperByMySql;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,23 +29,23 @@ import java.util.Arrays;
 @RunWith(JUnit4.class)
 public class ConfigInfoAggrMapperByPostgresqlTest {
     
-    private ConfigInfoAggrMapperByMySql configInfoAggrMapperByMySql;
+    private ConfigInfoAggrMapperByPostgresql configInfoAggrMapperByPostgresql;
     
     @Before
     public void setUp() throws Exception {
-        configInfoAggrMapperByMySql = new ConfigInfoAggrMapperByMySql();
+        configInfoAggrMapperByPostgresql = new ConfigInfoAggrMapperByPostgresql();
     }
     
     @Test
     public void testBatchRemoveAggr() {
-        String sql = configInfoAggrMapperByMySql.batchRemoveAggr(Arrays.asList("1", "2"));
+        String sql = configInfoAggrMapperByPostgresql.batchRemoveAggr(Arrays.asList("1", "2"));
         Assert.assertEquals(sql, "DELETE FROM config_info_aggr WHERE data_id = ? AND group_id = ? AND tenant_id = ? "
                 + "AND datum_id IN ('1','2')");
     }
     
     @Test
     public void testAggrConfigInfoCount() {
-        String sql = configInfoAggrMapperByMySql.aggrConfigInfoCount(5, true);
+        String sql = configInfoAggrMapperByPostgresql.aggrConfigInfoCount(5, true);
         Assert.assertEquals(sql,
                 "SELECT count(*) FROM config_info_aggr WHERE data_id = ? AND group_id = ? AND tenant_id = ? "
                         + "AND datum_id IN (?, ?, ?, ?, ?)");
@@ -54,14 +53,14 @@ public class ConfigInfoAggrMapperByPostgresqlTest {
     
     @Test
     public void testFindConfigInfoAggrIsOrdered() {
-        String sql = configInfoAggrMapperByMySql.findConfigInfoAggrIsOrdered();
+        String sql = configInfoAggrMapperByPostgresql.findConfigInfoAggrIsOrdered();
         Assert.assertEquals(sql, "SELECT data_id,group_id,tenant_id,datum_id,app_name,content FROM "
                 + "config_info_aggr WHERE data_id = ? AND group_id = ? AND tenant_id = ? ORDER BY datum_id");
     }
     
     @Test
     public void testFindConfigInfoAggrByPageFetchRows() {
-        String sql = configInfoAggrMapperByMySql.findConfigInfoAggrByPageFetchRows(0, 5);
+        String sql = configInfoAggrMapperByPostgresql.findConfigInfoAggrByPageFetchRows(0, 5);
         Assert.assertEquals(sql,
                 "SELECT data_id,group_id,tenant_id,datum_id,app_name,content FROM config_info_aggr WHERE "
                         + "data_id= ? AND group_id= ? AND tenant_id= ? ORDER BY datum_id LIMIT 0,5");
@@ -69,19 +68,19 @@ public class ConfigInfoAggrMapperByPostgresqlTest {
     
     @Test
     public void testFindAllAggrGroupByDistinct() {
-        String sql = configInfoAggrMapperByMySql.findAllAggrGroupByDistinct();
+        String sql = configInfoAggrMapperByPostgresql.findAllAggrGroupByDistinct();
         Assert.assertEquals(sql, "SELECT DISTINCT data_id, group_id, tenant_id FROM config_info_aggr");
     }
     
     @Test
     public void testGetTableName() {
-        String tableName = configInfoAggrMapperByMySql.getTableName();
+        String tableName = configInfoAggrMapperByPostgresql.getTableName();
         Assert.assertEquals(tableName, TableConstant.CONFIG_INFO_AGGR);
     }
     
     @Test
     public void testGetDataSource() {
-        String dataSource = configInfoAggrMapperByMySql.getDataSource();
+        String dataSource = configInfoAggrMapperByPostgresql.getDataSource();
         Assert.assertEquals(dataSource, DataSourceConstant.MYSQL);
     }
 }
