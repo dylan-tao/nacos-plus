@@ -18,23 +18,22 @@ package com.alibaba.nacos.plugin.datasource.impl.postgresql;
 
 import com.alibaba.nacos.plugin.datasource.constants.DataSourceConstant;
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
-import com.alibaba.nacos.plugin.datasource.impl.mysql.ConfigInfoBetaMapperByMySql;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class ConfigInfoBetaMapperByPostgresqlTest {
     
-    private ConfigInfoBetaMapperByMySql configInfoBetaMapperByMySql;
+    private ConfigInfoBetaMapperByPostgresql configInfoBetaMapperByPostgresql;
     
     @Before
     public void setUp() throws Exception {
-        configInfoBetaMapperByMySql = new ConfigInfoBetaMapperByMySql();
+        configInfoBetaMapperByPostgresql = new ConfigInfoBetaMapperByPostgresql();
     }
     
     @Test
     public void testUpdateConfigInfo4BetaCas() {
-        String sql = configInfoBetaMapperByMySql.updateConfigInfo4BetaCas();
+        String sql = configInfoBetaMapperByPostgresql.updateConfigInfo4BetaCas();
         Assert.assertEquals(sql,
                 "UPDATE config_info_beta SET content = ?,md5 = ?,beta_ips = ?,src_ip = ?,src_user = ?,gmt_modified = ?,app_name = ? "
                         + "WHERE data_id = ? AND group_id = ? AND tenant_id = ? AND (md5 = ? or md5 is null or md5 = '')");
@@ -42,22 +41,22 @@ public class ConfigInfoBetaMapperByPostgresqlTest {
     
     @Test
     public void testFindAllConfigInfoBetaForDumpAllFetchRows() {
-        String sql = configInfoBetaMapperByMySql.findAllConfigInfoBetaForDumpAllFetchRows(0, 5);
+        String sql = configInfoBetaMapperByPostgresql.findAllConfigInfoBetaForDumpAllFetchRows(0, 5);
         Assert.assertEquals(sql,
                 " SELECT t.id,data_id,group_id,tenant_id,app_name,content,md5,gmt_modified,beta_ips,encrypted_data_key "
-                        + " FROM ( SELECT id FROM config_info_beta  ORDER BY id LIMIT " + 0 + "," + 5 + " )"
+                        + " FROM ( SELECT id FROM config_info_beta  ORDER BY id OFFSET " + 0 + " LIMIT " + 5 + " )"
                         + "  g, config_info_beta t WHERE g.id = t.id ");
     }
     
     @Test
     public void testGetTableName() {
-        String tableName = configInfoBetaMapperByMySql.getTableName();
+        String tableName = configInfoBetaMapperByPostgresql.getTableName();
         Assert.assertEquals(tableName, TableConstant.CONFIG_INFO_BETA);
     }
     
     @Test
     public void testGetDataSource() {
-        String dataSource = configInfoBetaMapperByMySql.getDataSource();
+        String dataSource = configInfoBetaMapperByPostgresql.getDataSource();
         Assert.assertEquals(dataSource, DataSourceConstant.MYSQL);
     }
 }

@@ -46,7 +46,7 @@ public class ConfigInfoTagMapperByPostgresqlTest {
         String sql = configInfoTagMapperByMySql.findAllConfigInfoTagForDumpAllFetchRows(0, 100);
         Assert.assertEquals(sql,
                 " SELECT t.id,data_id,group_id,tenant_id,tag_id,app_name,content,md5,gmt_modified  FROM (  "
-                        + "SELECT id FROM config_info_tag  ORDER BY id LIMIT 0,100 ) g, config_info_tag t  WHERE g.id = t.id  ");
+                        + "SELECT id FROM config_info_tag  ORDER BY id OFFSET 0 LIMIT 100 ) g, config_info_tag t  WHERE g.id = t.id  ");
     }
     
     @Test
