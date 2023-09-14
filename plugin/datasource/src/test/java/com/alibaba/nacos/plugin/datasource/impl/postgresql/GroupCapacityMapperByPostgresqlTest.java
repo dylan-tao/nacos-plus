@@ -23,7 +23,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class GroupCapacityMapperByMysqlTest {
+public class GroupCapacityMapperByPostgresqlTest {
     
     private GroupCapacityMapperByMysql groupCapacityMapperByMysql;
     

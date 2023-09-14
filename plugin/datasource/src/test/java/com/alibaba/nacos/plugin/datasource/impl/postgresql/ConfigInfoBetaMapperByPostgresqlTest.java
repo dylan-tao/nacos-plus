@@ -23,7 +23,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ConfigInfoBetaMapperByMySqlTest {
+public class ConfigInfoBetaMapperByPostgresqlTest {
     
     private ConfigInfoBetaMapperByMySql configInfoBetaMapperByMySql;
     

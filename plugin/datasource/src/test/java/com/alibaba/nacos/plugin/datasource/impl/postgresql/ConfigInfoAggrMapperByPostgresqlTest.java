@@ -28,7 +28,7 @@ import org.junit.runners.JUnit4;
 import java.util.Arrays;
 
 @RunWith(JUnit4.class)
-public class ConfigInfoAggrMapperByMySqlTest {
+public class ConfigInfoAggrMapperByPostgresqlTest {
     
     private ConfigInfoAggrMapperByMySql configInfoAggrMapperByMySql;
     

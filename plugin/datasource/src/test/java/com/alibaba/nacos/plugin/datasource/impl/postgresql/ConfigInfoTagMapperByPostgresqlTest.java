@@ -23,7 +23,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ConfigInfoTagMapperByMySqlTest {
+public class ConfigInfoTagMapperByPostgresqlTest {
     
     private ConfigInfoTagMapperByMySql configInfoTagMapperByMySql;
     

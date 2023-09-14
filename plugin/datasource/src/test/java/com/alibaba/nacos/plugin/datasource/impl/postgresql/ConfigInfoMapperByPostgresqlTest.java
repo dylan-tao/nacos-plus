@@ -27,7 +27,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ConfigInfoMapperByMySqlTest {
+public class ConfigInfoMapperByPostgresqlTest {
     
     private ConfigInfoMapperByMySql configInfoMapperByMySql;
     

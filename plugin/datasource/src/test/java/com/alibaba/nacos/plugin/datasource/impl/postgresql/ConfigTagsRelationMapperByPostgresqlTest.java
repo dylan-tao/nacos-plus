@@ -25,7 +25,7 @@ import org.junit.Test;
 
 import java.util.HashMap;
 
-public class ConfigTagsRelationMapperByMySqlTest {
+public class ConfigTagsRelationMapperByPostgresqlTest {
     
     private ConfigTagsRelationMapperByMySql configTagsRelationMapperByMySql;
     
