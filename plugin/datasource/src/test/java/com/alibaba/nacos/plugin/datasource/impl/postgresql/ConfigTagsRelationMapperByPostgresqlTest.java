@@ -18,7 +18,6 @@ package com.alibaba.nacos.plugin.datasource.impl.postgresql;
 
 import com.alibaba.nacos.plugin.datasource.constants.DataSourceConstant;
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
-import com.alibaba.nacos.plugin.datasource.impl.mysql.ConfigTagsRelationMapperByMySql;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,16 +26,16 @@ import java.util.HashMap;
 
 public class ConfigTagsRelationMapperByPostgresqlTest {
     
-    private ConfigTagsRelationMapperByMySql configTagsRelationMapperByMySql;
+    private ConfigTagsRelationMapperByPostgresql configTagsRelationMapperByPostgresql;
     
     @Before
     public void setUp() throws Exception {
-        configTagsRelationMapperByMySql = new ConfigTagsRelationMapperByMySql();
+        configTagsRelationMapperByPostgresql = new ConfigTagsRelationMapperByPostgresql();
     }
     
     @Test
     public void testFindConfigInfo4PageCountRows() {
-        String sql = configTagsRelationMapperByMySql.findConfigInfoLike4PageCountRows(new HashMap<>(), 5);
+        String sql = configTagsRelationMapperByPostgresql.findConfigInfoLike4PageCountRows(new HashMap<>(), 5);
         Assert.assertEquals(sql,
                 "SELECT count(*) FROM config_info  a LEFT JOIN config_tags_relation b ON a.id=b.id  WHERE  "
                         + "a.tenant_id LIKE ?  AND b.tag_name IN (?, ?, ?, ?, ?) ");
@@ -44,7 +43,7 @@ public class ConfigTagsRelationMapperByPostgresqlTest {
     
     @Test
     public void testFindConfigInfo4PageFetchRows() {
-        String sql = configTagsRelationMapperByMySql.findConfigInfo4PageFetchRows(new HashMap<>(), 5, 0, 5);
+        String sql = configTagsRelationMapperByPostgresql.findConfigInfo4PageFetchRows(new HashMap<>(), 5, 0, 5);
         Assert.assertEquals(sql,
                 "SELECT a.id,a.data_id,a.group_id,a.tenant_id,a.app_name,a.content FROM config_info  a LEFT JOIN "
                         + "config_tags_relation b ON a.id=b.id WHERE  a.tenant_id=?  AND b.tag_name IN (?, ?, ?, ?, ?)  LIMIT 0,5");
@@ -52,14 +51,14 @@ public class ConfigTagsRelationMapperByPostgresqlTest {
     
     @Test
     public void testFindConfigInfoLike4PageCountRows() {
-        String sql = configTagsRelationMapperByMySql.findConfigInfoLike4PageCountRows(new HashMap<>(), 5);
+        String sql = configTagsRelationMapperByPostgresql.findConfigInfoLike4PageCountRows(new HashMap<>(), 5);
         Assert.assertEquals(sql, "SELECT count(*) FROM config_info  a LEFT JOIN config_tags_relation b ON a.id=b.id  "
                 + "WHERE  a.tenant_id LIKE ?  AND b.tag_name IN (?, ?, ?, ?, ?) ");
     }
     
     @Test
     public void tsetFindConfigInfoLike4PageFetchRows() {
-        String sql = configTagsRelationMapperByMySql.findConfigInfoLike4PageFetchRows(new HashMap<>(), 5, 0, 5);
+        String sql = configTagsRelationMapperByPostgresql.findConfigInfoLike4PageFetchRows(new HashMap<>(), 5, 0, 5);
         Assert.assertEquals(sql,
                 "SELECT a.id,a.data_id,a.group_id,a.tenant_id,a.app_name,a.content FROM config_info a LEFT JOIN"
                         + " config_tags_relation b ON a.id=b.id  WHERE  a.tenant_id LIKE ?  AND b.tag_name IN (?, ?, ?, ?, ?)  LIMIT 0,5");
@@ -67,13 +66,13 @@ public class ConfigTagsRelationMapperByPostgresqlTest {
     
     @Test
     public void testGetTableName() {
-        String tableName = configTagsRelationMapperByMySql.getTableName();
+        String tableName = configTagsRelationMapperByPostgresql.getTableName();
         Assert.assertEquals(tableName, TableConstant.CONFIG_TAGS_RELATION);
     }
     
     @Test
     public void testGetDataSource() {
-        String dataSource = configTagsRelationMapperByMySql.getDataSource();
+        String dataSource = configTagsRelationMapperByPostgresql.getDataSource();
         Assert.assertEquals(dataSource, DataSourceConstant.MYSQL);
     }
 }

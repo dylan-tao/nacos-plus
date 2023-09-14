@@ -18,23 +18,22 @@ package com.alibaba.nacos.plugin.datasource.impl.postgresql;
 
 import com.alibaba.nacos.plugin.datasource.constants.DataSourceConstant;
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
-import com.alibaba.nacos.plugin.datasource.impl.mysql.ConfigInfoTagMapperByMySql;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class ConfigInfoTagMapperByPostgresqlTest {
     
-    private ConfigInfoTagMapperByMySql configInfoTagMapperByMySql;
+    private ConfigInfoTagMapperByPostgresql configInfoTagMapperByPostgresql;
     
     @Before
     public void setUp() throws Exception {
-        configInfoTagMapperByMySql = new ConfigInfoTagMapperByMySql();
+        configInfoTagMapperByPostgresql = new ConfigInfoTagMapperByPostgresql();
     }
     
     @Test
     public void testUpdateConfigInfo4TagCas() {
-        String sql = configInfoTagMapperByMySql.updateConfigInfo4TagCas();
+        String sql = configInfoTagMapperByPostgresql.updateConfigInfo4TagCas();
         Assert.assertEquals(sql,
                 "UPDATE config_info_tag SET content = ?, md5 = ?, src_ip = ?,src_user = ?,gmt_modified = ?,"
                         + "app_name = ? WHERE data_id = ? AND group_id = ? AND tenant_id = ? AND tag_id = ? AND "
@@ -43,7 +42,7 @@ public class ConfigInfoTagMapperByPostgresqlTest {
     
     @Test
     public void testFindAllConfigInfoTagForDumpAllFetchRows() {
-        String sql = configInfoTagMapperByMySql.findAllConfigInfoTagForDumpAllFetchRows(0, 100);
+        String sql = configInfoTagMapperByPostgresql.findAllConfigInfoTagForDumpAllFetchRows(0, 100);
         Assert.assertEquals(sql,
                 " SELECT t.id,data_id,group_id,tenant_id,tag_id,app_name,content,md5,gmt_modified  FROM (  "
                         + "SELECT id FROM config_info_tag  ORDER BY id OFFSET 0 LIMIT 100 ) g, config_info_tag t  WHERE g.id = t.id  ");
@@ -51,13 +50,13 @@ public class ConfigInfoTagMapperByPostgresqlTest {
     
     @Test
     public void testGetTableName() {
-        String tableName = configInfoTagMapperByMySql.getTableName();
+        String tableName = configInfoTagMapperByPostgresql.getTableName();
         Assert.assertEquals(tableName, TableConstant.CONFIG_INFO_TAG);
     }
     
     @Test
     public void testGetDataSource() {
-        String dataSource = configInfoTagMapperByMySql.getDataSource();
+        String dataSource = configInfoTagMapperByPostgresql.getDataSource();
         Assert.assertEquals(dataSource, DataSourceConstant.MYSQL);
     }
 }

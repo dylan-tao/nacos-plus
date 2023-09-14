@@ -18,35 +18,34 @@ package com.alibaba.nacos.plugin.datasource.impl.postgresql;
 
 import com.alibaba.nacos.plugin.datasource.constants.DataSourceConstant;
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
-import com.alibaba.nacos.plugin.datasource.impl.mysql.GroupCapacityMapperByMysql;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class GroupCapacityMapperByPostgresqlTest {
     
-    private GroupCapacityMapperByMysql groupCapacityMapperByMysql;
+    private GroupCapacityMapperByPostgresql groupCapacityMapperByPostgresql;
     
     @Before
     public void setUp() throws Exception {
-        groupCapacityMapperByMysql = new GroupCapacityMapperByMysql();
+        groupCapacityMapperByPostgresql = new GroupCapacityMapperByPostgresql();
     }
     
     @Test
     public void testGetTableName() {
-        String tableName = groupCapacityMapperByMysql.getTableName();
+        String tableName = groupCapacityMapperByPostgresql.getTableName();
         Assert.assertEquals(tableName, TableConstant.GROUP_CAPACITY);
     }
     
     @Test
     public void testGetDataSource() {
-        String dataSource = groupCapacityMapperByMysql.getDataSource();
+        String dataSource = groupCapacityMapperByPostgresql.getDataSource();
         Assert.assertEquals(dataSource, DataSourceConstant.MYSQL);
     }
     
     @Test
     public void testInsertIntoSelect() {
-        String sql = groupCapacityMapperByMysql.insertIntoSelect();
+        String sql = groupCapacityMapperByPostgresql.insertIntoSelect();
         Assert.assertEquals(sql,
                 "INSERT INTO group_capacity (group_id, quota, `usage`, `max_size`, max_aggr_count, max_aggr_size,gmt_create,"
                         + " gmt_modified) SELECT ?, ?, count(*), ?, ?, ?, ?, ? FROM config_info");
@@ -54,7 +53,7 @@ public class GroupCapacityMapperByPostgresqlTest {
     
     @Test
     public void testInsertIntoSelectByWhere() {
-        String sql = groupCapacityMapperByMysql.insertIntoSelectByWhere();
+        String sql = groupCapacityMapperByPostgresql.insertIntoSelectByWhere();
         Assert.assertEquals(sql,
                 "INSERT INTO group_capacity (group_id, quota,`usage`, `max_size`, max_aggr_count, max_aggr_size, gmt_create,"
                         + " gmt_modified) SELECT ?, ?, count(*), ?, ?, ?, ?, ? FROM config_info WHERE group_id=? AND tenant_id = ''");
@@ -62,42 +61,42 @@ public class GroupCapacityMapperByPostgresqlTest {
     
     @Test
     public void testIncrementUsageByWhereQuotaEqualZero() {
-        String sql = groupCapacityMapperByMysql.incrementUsageByWhereQuotaEqualZero();
+        String sql = groupCapacityMapperByPostgresql.incrementUsageByWhereQuotaEqualZero();
         Assert.assertEquals(sql,
                 "UPDATE group_capacity SET `usage` = `usage` + 1, gmt_modified = ? WHERE group_id = ? AND `usage` < ? AND quota = 0");
     }
     
     @Test
     public void testIncrementUsageByWhereQuotaNotEqualZero() {
-        String sql = groupCapacityMapperByMysql.incrementUsageByWhereQuotaNotEqualZero();
+        String sql = groupCapacityMapperByPostgresql.incrementUsageByWhereQuotaNotEqualZero();
         Assert.assertEquals(sql,
                 "UPDATE group_capacity SET `usage` = `usage` + 1, gmt_modified = ? WHERE group_id = ? AND `usage` < quota AND quota != 0");
     }
     
     @Test
     public void testIncrementUsageByWhere() {
-        String sql = groupCapacityMapperByMysql.incrementUsageByWhere();
+        String sql = groupCapacityMapperByPostgresql.incrementUsageByWhere();
         Assert.assertEquals(sql,
                 "UPDATE group_capacity SET `usage` = `usage` + 1, gmt_modified = ? WHERE group_id = ?");
     }
     
     @Test
     public void testDecrementUsageByWhere() {
-        String sql = groupCapacityMapperByMysql.decrementUsageByWhere();
+        String sql = groupCapacityMapperByPostgresql.decrementUsageByWhere();
         Assert.assertEquals(sql,
                 "UPDATE group_capacity SET `usage` = `usage` - 1, gmt_modified = ? WHERE group_id = ? AND `usage` > 0");
     }
     
     @Test
     public void testUpdateUsage() {
-        String sql = groupCapacityMapperByMysql.updateUsage();
+        String sql = groupCapacityMapperByPostgresql.updateUsage();
         Assert.assertEquals(sql,
                 "UPDATE group_capacity SET `usage` = (SELECT count(*) FROM config_info), gmt_modified = ? WHERE group_id = ?");
     }
     
     @Test
     public void testUpdateUsageByWhere() {
-        String sql = groupCapacityMapperByMysql.updateUsageByWhere();
+        String sql = groupCapacityMapperByPostgresql.updateUsageByWhere();
         Assert.assertEquals(sql,
                 "UPDATE group_capacity SET `usage` = (SELECT count(*) FROM config_info WHERE group_id=? AND tenant_id = ''),"
                         + " gmt_modified = ? WHERE group_id= ?");
@@ -105,7 +104,7 @@ public class GroupCapacityMapperByPostgresqlTest {
     
     @Test
     public void testSelectGroupInfoBySize() {
-        String sql = groupCapacityMapperByMysql.selectGroupInfoBySize();
+        String sql = groupCapacityMapperByPostgresql.selectGroupInfoBySize();
         Assert.assertEquals(sql, "SELECT id, group_id FROM group_capacity WHERE id > ? LIMIT ?");
     }
 }
