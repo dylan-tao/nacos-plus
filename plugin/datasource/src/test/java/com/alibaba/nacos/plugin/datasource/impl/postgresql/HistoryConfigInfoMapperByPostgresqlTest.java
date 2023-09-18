@@ -18,35 +18,34 @@ package com.alibaba.nacos.plugin.datasource.impl.postgresql;
 
 import com.alibaba.nacos.plugin.datasource.constants.DataSourceConstant;
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
-import com.alibaba.nacos.plugin.datasource.impl.mysql.HistoryConfigInfoMapperByMySql;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class HistoryConfigInfoMapperByPostgresqlTest {
     
-    private HistoryConfigInfoMapperByMySql historyConfigInfoMapperByMySql;
+    private HistoryConfigInfoMapperByPostgresql historyConfigInfoMapperByPostgresql;
     
     @Before
     public void setUp() throws Exception {
-        historyConfigInfoMapperByMySql = new HistoryConfigInfoMapperByMySql();
+        historyConfigInfoMapperByPostgresql = new HistoryConfigInfoMapperByPostgresql();
     }
     
     @Test
     public void testRemoveConfigHistory() {
-        String sql = historyConfigInfoMapperByMySql.removeConfigHistory();
+        String sql = historyConfigInfoMapperByPostgresql.removeConfigHistory();
         Assert.assertEquals(sql, "DELETE FROM his_config_info WHERE gmt_modified < ? LIMIT ?");
     }
     
     @Test
     public void testFindConfigHistoryCountByTime() {
-        String sql = historyConfigInfoMapperByMySql.findConfigHistoryCountByTime();
+        String sql = historyConfigInfoMapperByPostgresql.findConfigHistoryCountByTime();
         Assert.assertEquals(sql, "SELECT count(*) FROM his_config_info WHERE gmt_modified < ?");
     }
     
     @Test
     public void testFindDeletedConfig() {
-        String sql = historyConfigInfoMapperByMySql.findDeletedConfig();
+        String sql = historyConfigInfoMapperByPostgresql.findDeletedConfig();
         Assert.assertEquals(sql,
                 "SELECT DISTINCT data_id, group_id, tenant_id FROM his_config_info WHERE op_type = 'D' AND "
                         + "gmt_modified >= ? AND gmt_modified <= ?");
@@ -54,7 +53,7 @@ public class HistoryConfigInfoMapperByPostgresqlTest {
     
     @Test
     public void testFindConfigHistoryFetchRows() {
-        String sql = historyConfigInfoMapperByMySql.findConfigHistoryFetchRows();
+        String sql = historyConfigInfoMapperByPostgresql.findConfigHistoryFetchRows();
         Assert.assertEquals(sql,
                 "SELECT nid,data_id,group_id,tenant_id,app_name,src_ip,src_user,op_type,gmt_create,gmt_modified FROM his_config_info "
                         + "WHERE data_id = ? AND group_id = ? AND tenant_id = ? ORDER BY nid DESC");
@@ -62,7 +61,7 @@ public class HistoryConfigInfoMapperByPostgresqlTest {
     
     @Test
     public void testDetailPreviousConfigHistory() {
-        String sql = historyConfigInfoMapperByMySql.detailPreviousConfigHistory();
+        String sql = historyConfigInfoMapperByPostgresql.detailPreviousConfigHistory();
         Assert.assertEquals(sql,
                 "SELECT nid,data_id,group_id,tenant_id,app_name,content,md5,src_user,src_ip,op_type,gmt_create,"
                         + "gmt_modified FROM his_config_info WHERE nid = (SELECT max(nid) FROM his_config_info WHERE id = ?) ");
@@ -70,13 +69,13 @@ public class HistoryConfigInfoMapperByPostgresqlTest {
     
     @Test
     public void testGetTableName() {
-        String tableName = historyConfigInfoMapperByMySql.getTableName();
+        String tableName = historyConfigInfoMapperByPostgresql.getTableName();
         Assert.assertEquals(tableName, TableConstant.HIS_CONFIG_INFO);
     }
     
     @Test
     public void testGetDataSource() {
-        String dataSource = historyConfigInfoMapperByMySql.getDataSource();
+        String dataSource = historyConfigInfoMapperByPostgresql.getDataSource();
         Assert.assertEquals(dataSource, DataSourceConstant.MYSQL);
     }
 }

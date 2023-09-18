@@ -18,29 +18,28 @@ package com.alibaba.nacos.plugin.datasource.impl.postgresql;
 
 import com.alibaba.nacos.plugin.datasource.constants.DataSourceConstant;
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
-import com.alibaba.nacos.plugin.datasource.impl.mysql.TenantInfoMapperByMySql;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class TenantInfoMapperByPostgresqlTest {
     
-    private TenantInfoMapperByMySql tenantInfoMapperByMySql;
+    private TenantInfoMapperByPostgresql tenantInfoMapperByPostgresql;
     
     @Before
     public void setUp() throws Exception {
-        tenantInfoMapperByMySql = new TenantInfoMapperByMySql();
+        tenantInfoMapperByPostgresql = new TenantInfoMapperByPostgresql();
     }
     
     @Test
     public void testGetTableName() {
-        String tableName = tenantInfoMapperByMySql.getTableName();
+        String tableName = tenantInfoMapperByPostgresql.getTableName();
         Assert.assertEquals(tableName, TableConstant.TENANT_INFO);
     }
     
     @Test
     public void testGetDataSource() {
-        String dataSource = tenantInfoMapperByMySql.getDataSource();
+        String dataSource = tenantInfoMapperByPostgresql.getDataSource();
         Assert.assertEquals(dataSource, DataSourceConstant.MYSQL);
     }
 }
