@@ -63,7 +63,7 @@ public class ConfigInfoAggrMapperByPostgresqlTest {
         String sql = configInfoAggrMapperByPostgresql.findConfigInfoAggrByPageFetchRows(0, 5);
         Assert.assertEquals(sql,
                 "SELECT data_id,group_id,tenant_id,datum_id,app_name,content FROM config_info_aggr WHERE "
-                        + "data_id= ? AND group_id= ? AND tenant_id= ? ORDER BY datum_id LIMIT 0,5");
+                        + "data_id= ? AND group_id= ? AND tenant_id= ? ORDER BY datum_id OFFSET 0 LIMIT 5");
     }
     
     @Test

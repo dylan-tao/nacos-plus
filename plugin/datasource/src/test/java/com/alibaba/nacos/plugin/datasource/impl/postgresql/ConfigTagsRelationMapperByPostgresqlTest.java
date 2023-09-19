@@ -46,7 +46,7 @@ public class ConfigTagsRelationMapperByPostgresqlTest {
         String sql = configTagsRelationMapperByPostgresql.findConfigInfo4PageFetchRows(new HashMap<>(), 5, 0, 5);
         Assert.assertEquals(sql,
                 "SELECT a.id,a.data_id,a.group_id,a.tenant_id,a.app_name,a.content FROM config_info  a LEFT JOIN "
-                        + "config_tags_relation b ON a.id=b.id WHERE  a.tenant_id=?  AND b.tag_name IN (?, ?, ?, ?, ?)  LIMIT 0,5");
+                        + "config_tags_relation b ON a.id=b.id WHERE  a.tenant_id=?  AND b.tag_name IN (?, ?, ?, ?, ?) OFFSET 0 LIMIT 5");
     }
     
     @Test
@@ -61,7 +61,7 @@ public class ConfigTagsRelationMapperByPostgresqlTest {
         String sql = configTagsRelationMapperByPostgresql.findConfigInfoLike4PageFetchRows(new HashMap<>(), 5, 0, 5);
         Assert.assertEquals(sql,
                 "SELECT a.id,a.data_id,a.group_id,a.tenant_id,a.app_name,a.content FROM config_info a LEFT JOIN"
-                        + " config_tags_relation b ON a.id=b.id  WHERE  a.tenant_id LIKE ?  AND b.tag_name IN (?, ?, ?, ?, ?)  LIMIT 0,5");
+                        + " config_tags_relation b ON a.id=b.id  WHERE  a.tenant_id LIKE ?  AND b.tag_name IN (?, ?, ?, ?, ?) OFFSET 0 LIMIT 5");
     }
     
     @Test
