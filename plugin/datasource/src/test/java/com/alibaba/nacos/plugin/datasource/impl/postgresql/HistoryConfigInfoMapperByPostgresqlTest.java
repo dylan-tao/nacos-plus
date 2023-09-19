@@ -76,6 +76,6 @@ public class HistoryConfigInfoMapperByPostgresqlTest {
     @Test
     public void testGetDataSource() {
         String dataSource = historyConfigInfoMapperByPostgresql.getDataSource();
-        Assert.assertEquals(dataSource, DataSourceConstant.MYSQL);
+        Assert.assertEquals(dataSource, DataSourceConstant.POSTGRESQL);
     }
 }

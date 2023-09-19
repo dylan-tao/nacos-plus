@@ -57,6 +57,6 @@ public class ConfigInfoBetaMapperByPostgresqlTest {
     @Test
     public void testGetDataSource() {
         String dataSource = configInfoBetaMapperByPostgresql.getDataSource();
-        Assert.assertEquals(dataSource, DataSourceConstant.MYSQL);
+        Assert.assertEquals(dataSource, DataSourceConstant.POSTGRESQL);
     }
 }
