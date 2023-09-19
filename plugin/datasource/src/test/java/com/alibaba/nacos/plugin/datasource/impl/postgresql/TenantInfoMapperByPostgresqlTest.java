@@ -40,6 +40,6 @@ public class TenantInfoMapperByPostgresqlTest {
     @Test
     public void testGetDataSource() {
         String dataSource = tenantInfoMapperByPostgresql.getDataSource();
-        Assert.assertEquals(dataSource, DataSourceConstant.MYSQL);
+        Assert.assertEquals(dataSource, DataSourceConstant.POSTGRESQL);
     }
 }

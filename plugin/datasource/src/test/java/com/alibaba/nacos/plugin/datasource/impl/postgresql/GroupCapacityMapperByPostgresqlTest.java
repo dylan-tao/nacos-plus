@@ -40,7 +40,7 @@ public class GroupCapacityMapperByPostgresqlTest {
     @Test
     public void testGetDataSource() {
         String dataSource = groupCapacityMapperByPostgresql.getDataSource();
-        Assert.assertEquals(dataSource, DataSourceConstant.MYSQL);
+        Assert.assertEquals(dataSource, DataSourceConstant.POSTGRESQL);
     }
     
     @Test

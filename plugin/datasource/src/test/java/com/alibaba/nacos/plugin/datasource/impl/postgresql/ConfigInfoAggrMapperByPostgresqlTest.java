@@ -81,6 +81,6 @@ public class ConfigInfoAggrMapperByPostgresqlTest {
     @Test
     public void testGetDataSource() {
         String dataSource = configInfoAggrMapperByPostgresql.getDataSource();
-        Assert.assertEquals(dataSource, DataSourceConstant.MYSQL);
+        Assert.assertEquals(dataSource, DataSourceConstant.POSTGRESQL);
     }
 }

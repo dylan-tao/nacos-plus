@@ -223,7 +223,7 @@ public class ConfigInfoMapperByPostgresqlTest {
     @Test
     public void testGetDataSource() {
         String sql = configInfoMapperByPostgresql.getDataSource();
-        Assert.assertEquals(sql, DataSourceConstant.MYSQL);
+        Assert.assertEquals(sql, DataSourceConstant.POSTGRESQL);
     }
     
     @Test
