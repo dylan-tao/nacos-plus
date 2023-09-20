@@ -1,19 +1,50 @@
 
 <img src="doc/Nacos_Logo.png" width="50%" syt height="50%" />
 
-# Nacos: Dynamic  *Na*ming and *Co*nfiguration *S*ervice
+## Nacos: Support the database type: GaussDB and PostgreSQL
 
 -------
+### Database Server Version
+```
+(openGauss 2.1.0 build 590b0f8e) compiled at 2021-09-30 14:29:04 commit 0 last mr on x86_64-unknown-linux-gnu, compiled by g++ (GCC) 7.3.0, 64-bit
+```
 
-## Quick Start
-It is super easy to get started with your first project.
+### Package Build
+```
+mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
+```
 
-### Deploying Nacos on cloud
-
-You can deploy Nacos on cloud, which is the easiest and most convenient way to start Nacos. 
-
-Use the following [Nacos deployment guide](https://cn.aliyun.com/product/aliware/mse?spm=nacos-website.topbar.0.0.0) to see more information and deploy a stable and out-of-the-box Nacos server.
-
+### Manufactured Product
+```
+nacos-2.2.0\distribution\target\nacos-server-2.2.0.tar
+nacos-2.2.0\distribution\target\nacos-server-2.2.0.zip
+```
+### SQL Schema
+#### postgresql-schema.sql is in the config directory of the manufactured product
+```
+nacos-2.2.0\distribution\target\nacos-server-2.2.0.tar\conf\postgresql-schema.sql
+nacos-2.2.0\distribution\target\nacos-server-2.2.0.zip\conf\postgresql-schema.sql
+```
+### DB Connection Configuration
+```
+#*************** Config Module Related Configurations ***************#
+### Config of DB:
+db.num=1
+nacos.plugin.datasource.log.enabled=true
+ 
+### Connect URL of MYSQL:
+# spring.sql.init.platform=mysql
+# db.url.0=jdbc:mysql://127.0.0.1:3306/nacos?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+# db.user.0=nacos
+# db.password.0=nacos
+ 
+### Connect URL of POSTGRESQL:
+spring.sql.init.platform=postgresql
+db.pool.config.driver-class-name=org.postgresql.Driver
+db.url.0=jdbc:postgresql://127.0.0.1:5432/nacos?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+db.user.0=nacos
+db.password.0=nacos
+```
 
 ### Start by the provided startup package
 
@@ -21,9 +52,9 @@ Use the following [Nacos deployment guide](https://cn.aliyun.com/product/aliware
 
 You can download the package from the [latest stable release](https://github.com/alibaba/nacos/releases).  
 
-Take release `nacos-server-1.0.0.zip` for example:
+Take release `nacos-server-2.2.0.zip` for example:
 ```sh
-unzip nacos-server-1.0.0.zip
+unzip nacos-server-2.2.0.zip
 cd nacos/bin 
 ``` 
 
@@ -38,12 +69,3 @@ On the **Windows** platform, run the following command to start server with stan
 ```
 startup.cmd -m standalone
 ```
-
-
-## Documentation
-
-You can view the full documentation from the [Nacos website](https://nacos.io/en-us/docs/what-is-nacos.html).
-
-You can also read this online eBook from the [NACOS ARCHITECTURE & PRINCIPLES](https://www.yuque.com/nacos/ebook/kbyo6n).
-
-All the latest and long-term notice can also be found here from [Github notice issue](https://github.com/alibaba/nacos/labels/notice).
