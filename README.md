@@ -1,6 +1,6 @@
 
 <img src="doc/Nacos_Logo.png" width="36%" syt height="36%" />
-
+## Star一下，是持续版本维护的动力
 ## Nacos: Support the database type: GaussDB and PostgreSQL
 
 -------
