@@ -35,7 +35,7 @@ nacos.plugin.datasource.log.enabled=true
 # db.user.0=nacos
 # db.password.0=nacos
  
-### Connect URL of POSTGRESQL:
+### Connect URL of POSTGRESQL / GaussDB / OpenGauss:
 spring.sql.init.platform=postgresql
 db.pool.config.driver-class-name=org.postgresql.Driver
 db.url.0=jdbc:postgresql://127.0.0.1:5432/nacos?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
