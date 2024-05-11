@@ -25,9 +25,9 @@
     <version>${revision}</version>
     <packaging>pom</packaging>
     
-    <name>NACOS PLUS ${project.version}</name>
+    <name>Alibaba NACOS ${project.version}</name>
     <description>Top Nacos project pom.xml file</description>
-    <url>http://nacos.io</url>
+    <url>https://nacos.io</url>
     <prerequisites>
         <maven>3.2.5</maven>
     </prerequisites>
@@ -64,7 +64,7 @@
         <developer>
             <id>Alibaba Nacos</id>
             <name>Nacos</name>
-            <url>http://nacos.io</url>
+            <url>https://nacos.io</url>
             <email>nacos_dev@linux.alibaba.com</email>
         </developer>
     </developers>
@@ -88,12 +88,13 @@
     </issueManagement>
     
     <properties>
-        <revision>2.2.0</revision>
+        <revision>2.3.2</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- Compiler settings properties -->
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <!-- Maven properties -->
         <maven.test.skip>false</maven.test.skip>
         <maven.javadoc.skip>true</maven.javadoc.skip>
@@ -107,6 +108,7 @@
         <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
+        <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven-pmd-plugin.version>3.8</maven-pmd-plugin.version>
         <apache-rat-plugin.version>0.12</apache-rat-plugin.version>
@@ -119,42 +121,39 @@
         <maven-failsafe-plugin.version>2.19.1</maven-failsafe-plugin.version>
         <maven-assembly-plugin.version>3.0.0</maven-assembly-plugin.version>
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
-        <maven-flatten-version>1.1.0</maven-flatten-version>
+        <maven-easyj-version>1.1.5</maven-easyj-version>
         <!-- dependency version related to plugin -->
         <extra-enforcer-rules.version>1.0-beta-4</extra-enforcer-rules.version>
         <p3c-pmd.version>1.3.0</p3c-pmd.version>
         
         <!-- dependency version -->
-        <spring-boot-dependencies.version>2.6.8</spring-boot-dependencies.version>
+        <spring-boot-dependencies.version>2.7.18</spring-boot-dependencies.version>
         <servlet-api.version>3.0</servlet-api.version>
         <commons-io.version>2.7</commons-io.version>
         <commons-collections.version>3.2.2</commons-collections.version>
-        <slf4j-api.version>1.7.7</slf4j-api.version>
-        <logback.version>1.2.9</logback.version>
+        <slf4j-api.version>1.7.26</slf4j-api.version>
+        <logback.version>1.2.13</logback.version>
         <log4j.version>2.17.1</log4j.version>
-        
-        <httpasyncclient.version>4.1.3</httpasyncclient.version>
-        <opengauss-jdbc.version>2.0.0</opengauss-jdbc.version>
-        <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
+
+        <mysql-connector-java.version>8.0.33</mysql-connector-java.version>
         <derby.version>10.14.2.0</derby.version>
-        <jackson-core.version>2.12.6</jackson-core.version>
-        <jackson-databind.version>2.12.7.1</jackson-databind.version>
-        <jackson.annotations.version>2.12.6</jackson.annotations.version>
-        <jackson-core-asl.version>1.9.13</jackson-core-asl.version>
+        <opengauss-jdbc.version>2.0.0</opengauss-jdbc.version>
+        <oracle-jdbc.version>11.2.0.4</oracle-jdbc.version>
+
         <jjwt.version>0.11.2</jjwt.version>
-        <guava.version>30.1-jre</guava.version>
         <javatuples.version>1.2</javatuples.version>
-        <grpc-java.version>1.30.2</grpc-java.version>
-        <proto-google-common-protos.version>1.17.0</proto-google-common-protos.version>
-        <protobuf-java.version>3.16.3</protobuf-java.version>
+        <grpc-java.version>1.57.2</grpc-java.version>
+        <proto-google-common-protos.version>2.17.0</proto-google-common-protos.version>
+        <protobuf-java.version>3.22.3</protobuf-java.version>
         <protoc-gen-grpc-java.version>${grpc-java.version}</protoc-gen-grpc-java.version>
         <hessian.version>4.0.63</hessian.version>
         <mockito-all.version>1.10.19</mockito-all.version>
         <mockito-core.version>3.8.0</mockito-core.version>
         <HikariCP.version>3.4.2</HikariCP.version>
-        <jraft-core.version>1.3.8</jraft-core.version>
-        <rpc-grpc-impl.version>1.3.8</rpc-grpc-impl.version>
-        <SnakeYaml.version>1.32</SnakeYaml.version>
+        <jraft-core.version>1.3.14</jraft-core.version>
+        <rpc-grpc-impl.version>${jraft-core.version}</rpc-grpc-impl.version>
+        <SnakeYaml.version>2.0</SnakeYaml.version>
+        <spring-web.version>5.3.33</spring-web.version>
     </properties>
     <!-- == -->
     <!-- =========================================================Build plugins================================================ -->
@@ -163,9 +162,16 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar-plugin.version}</version>
+                </plugin>
+                <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${spring-boot-dependencies.version}</version>
+                    <configuration>
+                        <attach>false</attach>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -225,6 +231,7 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${maven-javadoc-plugin.version}</version>
                 <configuration>
+                    <skip>true</skip>
                     <charset>UTF-8</charset>
                 </configuration>
                 <executions>
@@ -253,6 +260,7 @@
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>${maven-pmd-plugin.version}</version>
                 <configuration>
+                    <skip>true</skip>
                     <rulesets>
                         <ruleset>rulesets/java/ali-comment.xml</ruleset>
                         <ruleset>rulesets/java/ali-concurrent.xml</ruleset>
@@ -300,6 +308,7 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${maven-checkstyle-plugin.version}</version>
                 <configuration>
+                    <skip>true</skip>
                     <configLocation>style/NacosCheckStyle.xml</configLocation>
                     <includeTestSourceDirectory>true</includeTestSourceDirectory>
                     <encoding>UTF-8</encoding>
@@ -345,6 +354,18 @@
                         <exclude>**/gogo.proto</exclude>
                         <exclude>**/any.proto</exclude>
                         <exclude>src/main/java/com/alibaba/nacos/common/packagescan/classreading/**</exclude>
+                        <exclude>.flattened-pom.xml</exclude>
+                        <exclude>**/announcement*.conf</exclude>
+                        <exclude>**/console-guide.conf</exclude>
+                        <exclude>**/reflect-config.json</exclude>
+                        <exclude>**/resource-config.json</exclude>
+                        <exclude>**/proxy-config.json</exclude>
+                        <exclude>**/jni-config.json</exclude>
+                        <exclude>**/predefined-classes-config.json</exclude>
+                        <exclude>**/serialization-config.json</exclude>
+                        <exclude>**/filter-config.json</exclude>
+                        <exclude>**/disk_cache_test/**</exclude>
+                        <exclude>**/failover_test/**</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -374,6 +395,12 @@
                     <dataFile>${project.build.directory}/coverage-reports/jacoco-unit.exec</dataFile>
                     <output>file</output>
                     <append>true</append>
+                    <excludes>
+                        <exclude>**/grpc/auto/**</exclude>
+                        <exclude>**/packagescan/classreading/**</exclude>
+                        <exclude>**/packagescan/resource/**</exclude>
+                        <exclude>**/packagescan/util/**</exclude>
+                    </excludes>
                 </configuration>
                 <executions>
                     <execution>
@@ -411,29 +438,24 @@
                 <version>${maven-assembly-plugin.version}</version>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>flatten-maven-plugin</artifactId>
-                <version>${maven-flatten-version}</version>
+                <groupId>icu.easyj.maven.plugins</groupId>
+                <artifactId>easyj-maven-plugin</artifactId>
+                <version>${maven-easyj-version}</version>
                 <configuration>
-                    <updatePomFile>true</updatePomFile>
-                    <flattenMode>resolveCiFriendliesOnly</flattenMode>
-                    <pomElements>
-                        <dependencies>expand</dependencies>
-                    </pomElements>
+                    <simplifiedPomFileName>.flattened-pom.xml</simplifiedPomFileName>
+                    <useTabIndent>true</useTabIndent>
                 </configuration>
                 <executions>
                     <execution>
-                        <id>flatten</id>
-                        <phase>process-resources</phase>
+                        <id>flatten-pom</id>
                         <goals>
-                            <goal>flatten</goal>
+                            <goal>simplify-pom</goal>
                         </goals>
                     </execution>
                     <execution>
-                        <id>flatten.clean</id>
-                        <phase>clean</phase>
+                        <id>clean-flattened-pom</id>
                         <goals>
-                            <goal>clean</goal>
+                            <goal>clean-simplify-pom</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -598,6 +620,7 @@
         <module>plugin</module>
         <module>plugin-default-impl</module>
         <module>prometheus</module>
+        <module>persistence</module>
     </modules>
     
     <!-- Default dependencies in all subprojects -->
@@ -643,6 +666,11 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>nacos-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-persistence</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -719,6 +747,11 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>nacos-encryption-plugin</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-config-plugin</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -824,32 +857,28 @@
                 <version>${log4j.version}</version>
             </dependency>
             
-            <!-- HTTP client libs -->
-            <dependency>
-                <groupId>org.apache.httpcomponents</groupId>
-                <artifactId>httpasyncclient</artifactId>
-                <version>${httpasyncclient.version}</version>
-            </dependency>
-            
             <!-- JDBC libs -->
             <dependency>
-                <groupId>org.opengauss</groupId>
-                <artifactId>opengauss-jdbc</artifactId>
-                <version>${opengauss-jdbc.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
                 <version>${mysql-connector-java.version}</version>
             </dependency>
-            
             <dependency>
                 <groupId>org.apache.derby</groupId>
                 <artifactId>derby</artifactId>
                 <version>${derby.version}</version>
             </dependency>
-            
+            <dependency>
+                <groupId>org.opengauss</groupId>
+                <artifactId>opengauss-jdbc</artifactId>
+                <version>${opengauss-jdbc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.oracle.database.jdbc</groupId>
+                <artifactId>ojdbc6</artifactId>
+                <version>${oracle-jdbc.version}</version>
+            </dependency>
+
             <!-- JRaft -->
             <dependency>
                 <groupId>com.alipay.sofa</groupId>
@@ -887,28 +916,6 @@
             
             <!-- Third-party libs -->
             <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-core</artifactId>
-                <version>${jackson-core.version}</version>
-            </dependency>
-            
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-                <version>${jackson-databind.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-annotations</artifactId>
-                <version>${jackson.annotations.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.codehaus.jackson</groupId>
-                <artifactId>jackson-core-asl</artifactId>
-                <version>${jackson-core-asl.version}</version>
-            </dependency>
-            
-            <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt-api</artifactId>
                 <version>${jjwt.version}</version>
@@ -933,12 +940,6 @@
             </dependency>
             
             <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${guava.version}</version>
-            </dependency>
-            
-            <dependency>
                 <groupId>org.javatuples</groupId>
                 <artifactId>javatuples</artifactId>
                 <version>${javatuples.version}</version>
@@ -959,12 +960,6 @@
                 <groupId>io.grpc</groupId>
                 <artifactId>grpc-stub</artifactId>
                 <version>${grpc-java.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.grpc</groupId>
-                <artifactId>protoc-gen-grpc-java</artifactId>
-                <version>${grpc-java.version}</version>
-                <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>io.grpc</groupId>
@@ -1015,6 +1010,12 @@
                 <artifactId>snakeyaml</artifactId>
                 <version>${SnakeYaml.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring-web.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     
@@ -1030,7 +1031,6 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
-
 
 </project>
 

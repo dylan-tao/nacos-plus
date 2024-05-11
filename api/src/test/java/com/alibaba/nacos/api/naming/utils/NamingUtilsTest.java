@@ -16,6 +16,7 @@
 
 package com.alibaba.nacos.api.naming.utils;
 
+import com.alibaba.nacos.api.common.Constants;
 import com.alibaba.nacos.api.exception.NacosException;
 import com.alibaba.nacos.api.naming.PreservedMetadataKeys;
 import com.alibaba.nacos.api.naming.pojo.Instance;
@@ -29,9 +30,95 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class NamingUtilsTest {
+    
+    @Test
+    public void testGetGroupedName() {
+        assertEquals("group@@serviceName", NamingUtils.getGroupedName("serviceName", "group"));
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testGetGroupedNameWithoutGroup() {
+        NamingUtils.getGroupedName("serviceName", "");
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testGetGroupedNameWithoutServiceName() {
+        NamingUtils.getGroupedName("", "group");
+    }
+    
+    @Test
+    public void testGetServiceName() {
+        String validServiceName = "group@@serviceName";
+        assertEquals("serviceName", NamingUtils.getServiceName(validServiceName));
+    }
+    
+    @Test
+    public void testGetServiceNameWithoutGroup() {
+        String serviceName = "serviceName";
+        assertEquals(serviceName, NamingUtils.getServiceName(serviceName));
+    }
+    
+    @Test
+    public void testGetServiceNameWithEmpty() {
+        assertEquals(StringUtils.EMPTY, NamingUtils.getServiceName(null));
+    }
+    
+    @Test
+    public void testGetGroupName() {
+        String validServiceName = "group@@serviceName";
+        assertEquals("group", NamingUtils.getGroupName(validServiceName));
+    }
+    
+    @Test
+    public void testGetGroupNameWithoutGroup() {
+        String serviceName = "serviceName";
+        assertEquals(Constants.DEFAULT_GROUP, NamingUtils.getGroupName(serviceName));
+    }
+    
+    @Test
+    public void testGetGroupNameWithEmpty() {
+        assertEquals(StringUtils.EMPTY, NamingUtils.getGroupName(null));
+    }
+    
+    @Test
+    public void testIsServiceNameCompatibilityMode() {
+        String serviceName1 = "group@@serviceName";
+        assertTrue(NamingUtils.isServiceNameCompatibilityMode(serviceName1));
+    
+        String serviceName2 = "serviceName";
+        assertFalse(NamingUtils.isServiceNameCompatibilityMode(serviceName2));
+    
+        String serviceName3 = null;
+        assertFalse(NamingUtils.isServiceNameCompatibilityMode(serviceName3));
+    }
+    
+    @Test
+    public void testCheckServiceNameFormat() {
+        String validServiceName = "group@@serviceName";
+        NamingUtils.checkServiceNameFormat(validServiceName);
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testCheckServiceNameFormatWithoutGroupAndService() {
+        String validServiceName = "@@";
+        NamingUtils.checkServiceNameFormat(validServiceName);
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testCheckServiceNameFormatWithoutGroup() {
+        String validServiceName = "@@service";
+        NamingUtils.checkServiceNameFormat(validServiceName);
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testCheckServiceNameFormatWithoutService() {
+        String validServiceName = "group@@";
+        NamingUtils.checkServiceNameFormat(validServiceName);
+    }
     
     @Test
     public void testGetGroupedNameOptional() {
@@ -153,6 +240,19 @@ public class NamingUtilsTest {
             instance.setPort(9089);
             instance.setEphemeral(false);
             NamingUtils.checkInstanceIsEphemeral(instance);
+        } catch (NacosException e) {
+            Assert.assertEquals(e.getErrCode(), NacosException.INVALID_PARAM);
+        }
+    }
+
+    @Test
+    public void testCheckInstanceIsNull() throws NacosException {
+        Instance instance = new Instance();
+        instance.setIp("127.0.0.1");
+        instance.setPort(9089);
+        NamingUtils.checkInstanceIsLegal(instance);
+        try {
+            NamingUtils.checkInstanceIsLegal(null);
         } catch (NacosException e) {
             Assert.assertEquals(e.getErrCode(), NacosException.INVALID_PARAM);
         }

@@ -22,7 +22,9 @@ import com.alibaba.nacos.common.utils.StringUtils;
 import com.alibaba.nacos.config.server.constant.Constants;
 import com.alibaba.nacos.config.server.model.ConfigHistoryInfo;
 import com.alibaba.nacos.config.server.model.ConfigInfoWrapper;
-import com.alibaba.nacos.config.server.model.Page;
+import com.alibaba.nacos.config.server.paramcheck.ConfigDefaultHttpParamExtractor;
+import com.alibaba.nacos.core.paramcheck.ExtractorManager;
+import com.alibaba.nacos.persistence.model.Page;
 import com.alibaba.nacos.config.server.service.HistoryService;
 import com.alibaba.nacos.config.server.utils.ParamUtils;
 import com.alibaba.nacos.plugin.auth.constant.ActionTypes;
@@ -43,6 +45,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(Constants.HISTORY_CONTROLLER_PATH)
+@ExtractorManager.Extractor(httpExtractor = ConfigDefaultHttpParamExtractor.class)
 public class HistoryController {
     
     private final HistoryService historyService;
@@ -68,7 +71,7 @@ public class HistoryController {
     @Secured(action = ActionTypes.READ, signType = SignType.CONFIG)
     public Page<ConfigHistoryInfo> listConfigHistory(@RequestParam("dataId") String dataId,
             @RequestParam("group") String group,
-            @RequestParam(value = "tenant", required = false, defaultValue = StringUtils.EMPTY) String tenant,
+            @RequestParam(value = "tenant", required = false, defaultValue = StringUtils.NULL) String tenant,
             @RequestParam(value = "appName", required = false) String appName,
             @RequestParam(value = "pageNo", required = false) Integer pageNo,
             @RequestParam(value = "pageSize", required = false) Integer pageSize, ModelMap modelMap) {
@@ -93,7 +96,7 @@ public class HistoryController {
     @Secured(action = ActionTypes.READ, signType = SignType.CONFIG)
     public ConfigHistoryInfo getConfigHistoryInfo(@RequestParam("dataId") String dataId,
             @RequestParam("group") String group,
-            @RequestParam(value = "tenant", required = false, defaultValue = StringUtils.EMPTY) String tenant,
+            @RequestParam(value = "tenant", required = false, defaultValue = StringUtils.NULL) String tenant,
             @RequestParam("nid") Long nid) throws AccessException {
         return historyService.getConfigHistoryInfo(dataId, group, tenant, nid);
     }
@@ -113,7 +116,7 @@ public class HistoryController {
     @Secured(action = ActionTypes.READ, signType = SignType.CONFIG)
     public ConfigHistoryInfo getPreviousConfigHistoryInfo(@RequestParam("dataId") String dataId,
             @RequestParam("group") String group,
-            @RequestParam(value = "tenant", required = false, defaultValue = StringUtils.EMPTY) String tenant,
+            @RequestParam(value = "tenant", required = false, defaultValue = StringUtils.NULL) String tenant,
             @RequestParam("id") Long id) throws AccessException {
         return historyService.getPreviousConfigHistoryInfo(dataId, group, tenant, id);
     }

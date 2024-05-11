@@ -205,7 +205,7 @@ class ConfigDetail extends React.Component {
       roundedSelection: false,
       readOnly: true,
       lineNumbersMinChars: true,
-      theme: 'vs-dark',
+      theme: 'vs-dark-enhanced',
       wordWrapColumn: 120,
       folding: false,
       showFoldingControls: 'always',
@@ -318,6 +318,9 @@ class ConfigDetail extends React.Component {
             ''
           )}
           <Form inline={false} field={this.field} {...formItemLayout}>
+            <FormItem label={locale.namespace} required>
+              <p>{this.tenant}</p>
+            </FormItem>
             <FormItem label={'Data ID'} required>
               <Input htmlType={'text'} readOnly {...init('dataId')} />
             </FormItem>

@@ -26,10 +26,7 @@
     <artifactId>nacos-console</artifactId>
     <packaging>jar</packaging>
     <name>nacos-console ${project.version}</name>
-    <url>http://nacos.io</url>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <url>https://nacos.io</url>
     
     <dependencies>
         <dependency>
@@ -44,7 +41,7 @@
     
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-plugin-default-impl</artifactId>
+            <artifactId>nacos-default-plugin-all</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
@@ -75,6 +72,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test-autoconfigure</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     
