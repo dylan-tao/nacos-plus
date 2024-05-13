@@ -25,9 +25,9 @@
     <version>${revision}</version>
     <packaging>pom</packaging>
     
-    <name>Alibaba NACOS ${project.version}</name>
+    <name>NACOS PLUS ${project.version}</name>
     <description>Top Nacos project pom.xml file</description>
-    <url>https://nacos.io</url>
+    <url>http://nacos.io</url>
     <prerequisites>
         <maven>3.2.5</maven>
     </prerequisites>
@@ -64,7 +64,7 @@
         <developer>
             <id>Alibaba Nacos</id>
             <name>Nacos</name>
-            <url>https://nacos.io</url>
+            <url>http://nacos.io</url>
             <email>nacos_dev@linux.alibaba.com</email>
         </developer>
     </developers>
