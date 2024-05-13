@@ -84,13 +84,14 @@ public class UdpConnectorTest {
     }
     
     @After
-    public void tearDown() {
+    public void tearDown() throws InterruptedException {
         udpConnector.shutdown();
+        TimeUnit.SECONDS.sleep(1);
     }
     
     @Test
     public void testContainAck() {
-        when(ackMap.containsKey(Mockito.anyString())).thenReturn(true);
+        when(ackMap.containsKey("1111")).thenReturn(true);
         Assert.assertTrue(udpConnector.containAck("1111"));
     }
     

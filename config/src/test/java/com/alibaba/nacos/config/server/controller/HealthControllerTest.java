@@ -17,7 +17,7 @@
 package com.alibaba.nacos.config.server.controller;
 
 import com.alibaba.nacos.config.server.constant.Constants;
-import com.alibaba.nacos.config.server.service.datasource.DataSourceService;
+import com.alibaba.nacos.persistence.datasource.DataSourceService;
 import com.alibaba.nacos.core.cluster.MemberLookup;
 import com.alibaba.nacos.core.cluster.ServerMemberManager;
 import com.alibaba.nacos.sys.env.EnvUtil;
@@ -87,5 +87,91 @@ public class HealthControllerTest {
         String actualValue = mockmvc.perform(builder).andReturn().getResponse().getContentAsString();
         Assert.assertEquals("UP", actualValue);
         
+    }
+    
+    @Test
+    public void testGetHealthWhenTheLookUpIsNull() throws Exception {
+        when(dataSourceService.getHealth()).thenReturn("UP");
+        when(memberManager.getLookup()).thenReturn(null);
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.get(Constants.HEALTH_CONTROLLER_PATH);
+        String actualValue = mockmvc.perform(builder).andReturn().getResponse().getContentAsString();
+        Assert.assertEquals("DOWN:address server down. ", actualValue);
+    }
+    
+    @Test
+    public void testGetHealthWhenTheLoopUpNotUseAddressServer() throws Exception {
+        when(dataSourceService.getHealth()).thenReturn("UP");
+        when(memberManager.getLookup()).thenReturn(memberLookup);
+        when(memberLookup.useAddressServer()).thenReturn(false);
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.get(Constants.HEALTH_CONTROLLER_PATH);
+        String actualValue = mockmvc.perform(builder).andReturn().getResponse().getContentAsString();
+        Assert.assertEquals("UP", actualValue);
+    }
+    
+    @Test
+    public void testGetHealthWhenTheLoopUpInfoIsNull() throws Exception {
+        when(dataSourceService.getHealth()).thenReturn("UP");
+        when(memberManager.getLookup()).thenReturn(memberLookup);
+        when(memberLookup.useAddressServer()).thenReturn(true);
+        when(memberLookup.info()).thenReturn(null);
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.get(Constants.HEALTH_CONTROLLER_PATH);
+        String actualValue = mockmvc.perform(builder).andReturn().getResponse().getContentAsString();
+        Assert.assertEquals("DOWN:address server down. ", actualValue);
+    }
+    
+    @Test
+    public void testGetHealthWhenTheLoopUpInfoIsEmpty() throws Exception {
+        when(dataSourceService.getHealth()).thenReturn("UP");
+        when(memberManager.getLookup()).thenReturn(memberLookup);
+        when(memberLookup.useAddressServer()).thenReturn(true);
+        when(memberLookup.info()).thenReturn(new HashMap<>());
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.get(Constants.HEALTH_CONTROLLER_PATH);
+        String actualValue = mockmvc.perform(builder).andReturn().getResponse().getContentAsString();
+        Assert.assertEquals("DOWN:address server down. ", actualValue);
+    }
+    
+    @Test
+    public void testGetHealthWhenTheLoopUpInfoIsDown() throws Exception {
+        when(dataSourceService.getHealth()).thenReturn("UP");
+        when(memberManager.getLookup()).thenReturn(memberLookup);
+        when(memberLookup.useAddressServer()).thenReturn(true);
+        
+        final HashMap<String, Object> info = new HashMap<>();
+        info.put("addressServerHealth", "false");
+        when(memberLookup.info()).thenReturn(info);
+        
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.get(Constants.HEALTH_CONTROLLER_PATH);
+        String actualValue = mockmvc.perform(builder).andReturn().getResponse().getContentAsString();
+        Assert.assertEquals("DOWN:address server down. ", actualValue);
+    }
+    
+    @Test
+    public void testGetHealthWhenTheLoopUpInfoIsUP() throws Exception {
+        when(dataSourceService.getHealth()).thenReturn("UP");
+        when(memberManager.getLookup()).thenReturn(memberLookup);
+        when(memberLookup.useAddressServer()).thenReturn(true);
+        
+        final HashMap<String, Object> info = new HashMap<>();
+        info.put("addressServerHealth", "true");
+        when(memberLookup.info()).thenReturn(info);
+        
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.get(Constants.HEALTH_CONTROLLER_PATH);
+        String actualValue = mockmvc.perform(builder).andReturn().getResponse().getContentAsString();
+        Assert.assertEquals("UP", actualValue);
+    }
+    
+    @Test
+    public void testGetHealthWhenTheLoopUpInfoParseError() throws Exception {
+        when(dataSourceService.getHealth()).thenReturn("UP");
+        when(memberManager.getLookup()).thenReturn(memberLookup);
+        when(memberLookup.useAddressServer()).thenReturn(true);
+        
+        final HashMap<String, Object> info = new HashMap<>();
+        info.put("addressServerHealth", "not boolean value");
+        when(memberLookup.info()).thenReturn(info);
+        
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.get(Constants.HEALTH_CONTROLLER_PATH);
+        String actualValue = mockmvc.perform(builder).andReturn().getResponse().getContentAsString();
+        Assert.assertEquals("DOWN:address server down. ", actualValue);
     }
 }

@@ -17,23 +17,17 @@
 package com.alibaba.nacos.plugin.datasource.impl.postgresql;
 
 import com.alibaba.nacos.plugin.datasource.constants.DataSourceConstant;
-import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.TenantInfoMapper;
 
 /**
- * The mysql implementation of TenantInfoMapper.
+ * The postgresql implementation of TenantInfoMapper.
  *
  * @author hyx
  **/
 
 public class TenantInfoMapperByPostgresql extends AbstractMapper implements TenantInfoMapper {
-    
-    @Override
-    public String getTableName() {
-        return TableConstant.TENANT_INFO;
-    }
-    
+
     @Override
     public String getDataSource() {
         return DataSourceConstant.POSTGRESQL;

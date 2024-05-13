@@ -24,6 +24,16 @@ com.alibaba.nacos.plugin.datasource.impl.mysql.TenantInfoMapperByMySql
 com.alibaba.nacos.plugin.datasource.impl.mysql.TenantCapacityMapperByMySql
 com.alibaba.nacos.plugin.datasource.impl.mysql.GroupCapacityMapperByMysql
 
+com.alibaba.nacos.plugin.datasource.impl.derby.ConfigInfoAggrMapperByDerby
+com.alibaba.nacos.plugin.datasource.impl.derby.ConfigInfoBetaMapperByDerby
+com.alibaba.nacos.plugin.datasource.impl.derby.ConfigInfoMapperByDerby
+com.alibaba.nacos.plugin.datasource.impl.derby.ConfigInfoTagMapperByDerby
+com.alibaba.nacos.plugin.datasource.impl.derby.ConfigInfoTagsRelationMapperByDerby
+com.alibaba.nacos.plugin.datasource.impl.derby.HistoryConfigInfoMapperByDerby
+com.alibaba.nacos.plugin.datasource.impl.derby.TenantInfoMapperByDerby
+com.alibaba.nacos.plugin.datasource.impl.derby.TenantCapacityMapperByDerby
+com.alibaba.nacos.plugin.datasource.impl.derby.GroupCapacityMapperByDerby
+
 com.alibaba.nacos.plugin.datasource.impl.postgresql.ConfigInfoAggrMapperByPostgresql
 com.alibaba.nacos.plugin.datasource.impl.postgresql.ConfigInfoBetaMapperByPostgresql
 com.alibaba.nacos.plugin.datasource.impl.postgresql.ConfigInfoMapperByPostgresql
@@ -34,12 +44,12 @@ com.alibaba.nacos.plugin.datasource.impl.postgresql.TenantInfoMapperByPostgresql
 com.alibaba.nacos.plugin.datasource.impl.postgresql.TenantCapacityMapperByPostgresql
 com.alibaba.nacos.plugin.datasource.impl.postgresql.GroupCapacityMapperByPostgresql
 
-com.alibaba.nacos.plugin.datasource.impl.derby.ConfigInfoAggrMapperByDerby
-com.alibaba.nacos.plugin.datasource.impl.derby.ConfigInfoBetaMapperByDerby
-com.alibaba.nacos.plugin.datasource.impl.derby.ConfigInfoMapperByDerby
-com.alibaba.nacos.plugin.datasource.impl.derby.ConfigInfoTagMapperByDerby
-com.alibaba.nacos.plugin.datasource.impl.derby.ConfigInfoTagsRelationMapperByDerby
-com.alibaba.nacos.plugin.datasource.impl.derby.HistoryConfigInfoMapperByDerby
-com.alibaba.nacos.plugin.datasource.impl.derby.TenantInfoMapperByDerby
-com.alibaba.nacos.plugin.datasource.impl.derby.TenantCapacityMapperByDerby
-com.alibaba.nacos.plugin.datasource.impl.derby.GroupCapacityMapperByDerby
+com.alibaba.nacos.plugin.datasource.impl.oracle.ConfigInfoAggrMapperByOracle
+com.alibaba.nacos.plugin.datasource.impl.oracle.ConfigInfoBetaMapperByOracle
+com.alibaba.nacos.plugin.datasource.impl.oracle.ConfigInfoMapperByOracle
+com.alibaba.nacos.plugin.datasource.impl.oracle.ConfigInfoTagMapperByOracle
+com.alibaba.nacos.plugin.datasource.impl.oracle.ConfigTagsRelationMapperByOracle
+com.alibaba.nacos.plugin.datasource.impl.oracle.HistoryConfigInfoMapperByOracle
+com.alibaba.nacos.plugin.datasource.impl.oracle.TenantInfoMapperByOracle
+com.alibaba.nacos.plugin.datasource.impl.oracle.TenantCapacityMapperByOracle
+com.alibaba.nacos.plugin.datasource.impl.oracle.GroupCapacityMapperByOracle
