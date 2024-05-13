@@ -16,13 +16,13 @@ NacosPlus，为信创数据库爱心发电，Star⭐一下，是持续版本维�
 
 | Database Type     | Database Version | Database Client Version | Supported | NacosPlus Version |
 |:------------------|:----------------:|:-----------------------:|:---------:|:-----------------:|
-| Mysql             |     `5.7.36`     |        `8.0.33`         |     ✅     |     `2.2.0.1`     |
-| PostgreSQL        |     `90204`      |        `42.5.1`         |     ✅     |     `2.2.0.1`     |
-| OpenGauss         |     `3.0.0`      |         `2.0.0`         |     ✅     |     `2.2.0.2`     |
-| GaussDB           |     `2.1.0`      |         `2.0.0`         |     ✅     |     `2.2.0.2`     |
-| Oracle            |    `11.2.0.1`    |       `11.2.0.4`        |     ✅     |     `2.3.2.1`     |
-| Sql Server        |      `2019`      |          ``             |     ⌛     |     `2.3.2.3`     |
-| DM DBMS           |   `8.1.3.100`    |       `8.1.1.193`       |     ⌛     |     `2.3.2.2`     |
+| Mysql             |     `5.7.36`     |        `8.0.33`         |     ✅     |    `2.2.0.1+`     |
+| PostgreSQL        |     `90204`      |        `42.5.1`         |     ✅     |    `2.2.0.1+`     |
+| OpenGauss         |     `3.0.0`      |         `2.0.0`         |     ✅     |    `2.2.0.2+`     |
+| GaussDB           |     `2.1.0`      |         `2.0.0`         |     ✅     |    `2.2.0.2+`     |
+| Oracle            |    `11.2.0.1`    |       `11.2.0.4`        |     ✅     |    `2.3.2.1+`     |
+| Sql Server        |      `2019`      |          ``             |     ⌛     |    `2.3.2.3+`     |
+| DM DBMS           |   `8.1.3.100`    |       `8.1.1.193`       |     ⌛     |    `2.3.2.2+`     |
 
 ### Manufactured Product
 ```
@@ -97,14 +97,22 @@ mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 
 ### FAQ
 #### 1. org.postgresql.util.PsQLException: Invalid or unsupported by client SCRAM mechanisms
-> password_encryption_type未兼容postgreSQL的访问, 当password_encryption_type=1时，需要使用opengauss-jdbc的jar，否则会报错。
-2.2.0.2版本已经支持GaussDB的此问题，如果服务端是原生postgreSQL的话，用2.2.0.1版本即可
-#### 2. opengauss-jdbc-2.0.0在Maven公共仓库不能找到
-> 此版本为银行内部提供的商业稳定版本，如果本地需要重新编译打包请将根目录lib下的jar包deploy到自己公司的maven仓库即可（2.2.0.2版本开始使用此jar包）
   ```
+  password_encryption_type未兼容postgreSQL的访问, 当password_encryption_type=1时，需要使用opengauss-jdbc的jar，否则会报错。
+  2.2.0.2版本已修复GaussDB的此问题，如果服务端是原生postgreSQL的话，用2.2.0.1版本即可
+  ```
+#### 2. opengauss-jdbc-2.0.0在Maven公共仓库不能找到
+  ```
+  <!-- 此版本为银行内部提供的商业稳定版本，如果本地需要重新编译打包请将根目录lib下的jar包deploy到自己公司的maven仓库即可（2.2.0.2版本开始使用此jar包）-->
   <dependency>
       <groupId>org.opengauss</groupId>
       <artifactId>opengauss-jdbc</artifactId>
       <version>2.0.0</version>
   </dependency>
+  ```
+#### 3. Caused by: java.lang.IllegalStateException: No DataSource set
+  ```
+一般是数据库服务端不兼容问题，可以看下\nacos\logs\config-server.log或naming-server.log内的详细错误，解决不了可以提Issues给我。
+
+已知Case1：默认nacos内的sql语句，不会包含列双引号标记（"列名"）或表名拼接模式名（库名.表名），个别数据库引擎默认要求，所以解决思路就是修改数据库引擎支持不用双引号标记列和不用表名拼接模式名；
   ```
