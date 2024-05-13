@@ -23,8 +23,9 @@ NacosPlus，为信创数据库爱心发电。
 | OpenGauss         |     `3.0.0`      |         `2.0.0`         |     ✅     |    `2.2.0.2+`     |
 | GaussDB           |     `2.1.0`      |         `2.0.0`         |     ✅     |    `2.2.0.2+`     |
 | Oracle            |    `11.2.0.1`    |       `11.2.0.4`        |     ✅     |    `2.3.2.1+`     |
-| Sql Server        |      `2019`      |          ``             |     ⌛     |    `2.3.2.3+`     |
-| DM DBMS           |   `8.1.3.100`    |       `8.1.1.193`       |     ⌛     |    `2.3.2.2+`     |
+| MariaDB            |    ``           |          ``             |     ⌛     |    `2.3.2.2+`     |
+| Sql Server        |      `2019`      |          ``             |     ⌛     |    `2.3.2.4+`     |
+| DM DBMS           |   `8.1.3.100`    |       `8.1.1.193`       |     ⌛     |    `2.3.2.3+`     |
 
 ### Manufactured Product
 ```
@@ -116,7 +117,8 @@ mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
   ```
 一般是数据库服务端不兼容问题，可以看下\nacos\logs\config-server.log或naming-server.log内的详细错误，解决不了提Issues即可。
 
-已知Case1：默认nacos内的sql语句，不会包含列双引号标记（"列名"）或表名拼接模式名（库名.表名），个别数据库引擎默认要求，解决思路：修改数据库引擎支持不用双引号标记列和不用表名拼接模式名；
+已知Case1：db.url.0配置错误，解决思路：检查url拼接问题，Oracle SID和ServiceName模式概念不理解会出现此问题；
+已知Case2：默认nacos内的sql语句，不会包含列双引号标记（"列名"）或表名拼接模式名（库名.表名），个别数据库引擎默认要求，解决思路：修改数据库引擎支持不用双引号标记列和不用表名拼接模式名；
   ```
 #### 4. Too many files with unapproved license: 3 See RAT report in: D:\WorkSpace\nacos-plus\xxx\target\rat.txt
   ```
