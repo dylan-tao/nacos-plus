@@ -2,7 +2,7 @@
 <img src="doc/Nacos_Logo.png" width="28%" syt height="28%" />
 <br><br>
 NacosPlus，为信创数据库爱心发电。
-<br><br>Star⭐一下，持续版本维护的动力。
+<br><br>Star⭐一下，持续版本维护的动力
 <br><br>Watch一下，遇到问题提Issues可实时接收问题进展
 <br>
 <br>
