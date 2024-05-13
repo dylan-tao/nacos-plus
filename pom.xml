@@ -345,6 +345,7 @@
                         <exclude>**/gogo.proto</exclude>
                         <exclude>**/any.proto</exclude>
                         <exclude>src/main/java/com/alibaba/nacos/common/packagescan/classreading/**</exclude>
+                        <exclude>lib/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
