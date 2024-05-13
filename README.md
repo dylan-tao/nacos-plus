@@ -116,7 +116,7 @@ mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 
 已知Case1：默认nacos内的sql语句，不会包含列双引号标记（"列名"）或表名拼接模式名（库名.表名），个别数据库引擎默认要求，解决思路：修改数据库引擎支持不用双引号标记列和不用表名拼接模式名；
   ```
-#### 4. nacos-plugin: Too many files with unapproved license: 3 See RAT report in: D:\WorkSpace\nacos-plus\plugin\target\rat.txt
+#### 4. Too many files with unapproved license: 3 See RAT report in: D:\WorkSpace\nacos-plus\xxx\target\rat.txt
   ```
 本地编译打包时，从nacos-2.3.2.x切换到分支2.2.0.x，由于代码模块变动导致的rat maven插件扫描不通过，解决思路：找到生成的rat.txt报告里被拦截的模块文件直接删除即可
   ```
