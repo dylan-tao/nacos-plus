@@ -346,7 +346,12 @@
                         <exclude>**/any.proto</exclude>
                         <exclude>src/main/java/com/alibaba/nacos/common/packagescan/classreading/**</exclude>
                         <exclude>lib/*</exclude>
-                        <exclude>persistence/*</exclude>
+                        <exclude>BUILDING</exclude>
+                        <exclude>LICENSE</exclude>
+                        <exclude>NOTICE</exclude>
+                        <exclude>pom.xml</exclude>
+                        <exclude>resources/*</exclude>
+                        <exclude>style/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
