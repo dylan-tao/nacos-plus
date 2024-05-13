@@ -25,7 +25,7 @@
     <version>${revision}</version>
     <packaging>pom</packaging>
     
-    <name>Alibaba NACOS ${project.version}</name>
+    <name>NACOS PLUS ${project.version}</name>
     <description>Top Nacos project pom.xml file</description>
     <url>http://nacos.io</url>
     <prerequisites>
