@@ -1,7 +1,7 @@
 <p align = "center">
 <img src="doc/Nacos_Logo.png" width="28%" syt height="28%" />
 <br><br>
-NacosPlus，为信创数据库爱心发电，Star⭐一下，是持续版本维护的动力
+NacosPlus，为信创数据库爱心发电，Star⭐一下，是持续版本维护的动力（遇到问题Watch提Issues可实时关注问题答疑）。
 <br>
 <br>
 <a title="GitHub Watchers" target="_blank" href="https://github.com/dylan-tao/nacos-plus/watchers"><img src="https://img.shields.io/github/watchers/dylan-tao/nacos-plus.svg?label=Watchers&style=social"></a>  
@@ -112,7 +112,7 @@ mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
   ```
 #### 3. Caused by: java.lang.IllegalStateException: No DataSource set
   ```
-一般是数据库服务端不兼容问题，可以看下\nacos\logs\config-server.log或naming-server.log内的详细错误，解决不了可以提Issues给我。
+一般是数据库服务端不兼容问题，可以看下\nacos\logs\config-server.log或naming-server.log内的详细错误，解决不了提Issues即可。
 
 已知Case1：默认nacos内的sql语句，不会包含列双引号标记（"列名"）或表名拼接模式名（库名.表名），个别数据库引擎默认要求，解决思路：修改数据库引擎支持不用双引号标记列和不用表名拼接模式名；
   ```
