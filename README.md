@@ -2,8 +2,8 @@
 <img src="doc/Nacos_Logo.png" width="28%" syt height="28%" />
 <br><br>
 NacosPlus，为信创数据库爱心发电。
-<br>Star⭐一下，持续版本维护的动力。
-<br>Watch一下，遇到问题提Issues可接收问题进展）
+<br><br>Star⭐一下，持续版本维护的动力。
+<br><br>Watch一下，遇到问题提Issues可接收问题进展
 <br>
 <br>
 <a title="GitHub Watchers" target="_blank" href="https://github.com/dylan-tao/nacos-plus/watchers"><img src="https://img.shields.io/github/watchers/dylan-tao/nacos-plus.svg?label=Watchers&style=social"></a>  
