@@ -44,7 +44,7 @@ public class HistoryConfigInfoMapperByOracle extends AbstractMapper implements H
 	public MapperResult findDeletedConfig(MapperContext context) {
 		return new MapperResult(
 				"SELECT * FROM (SELECT data_id, group_id, tenant_id,gmt_modified,nid,ROWNUM as rnum FROM his_config_info WHERE op_type = 'D' AND "
-						+ "gmt_modified >= ? and nid > ? order by nid) WHERE rnum <= ? ",
+						+ "gmt_modified >= ? and nid > ? ORDER BY nid) WHERE rnum <= ? ",
 				CollectionUtils.list(context.getWhereParameter(FieldConstant.START_TIME),
 						context.getWhereParameter(FieldConstant.LAST_MAX_ID),
 						context.getWhereParameter(FieldConstant.PAGE_SIZE)));

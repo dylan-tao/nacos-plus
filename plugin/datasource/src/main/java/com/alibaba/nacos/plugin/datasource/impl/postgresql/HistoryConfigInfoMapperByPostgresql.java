@@ -34,11 +34,21 @@ public class HistoryConfigInfoMapperByPostgresql extends AbstractMapper implemen
     
     @Override
     public MapperResult removeConfigHistory(MapperContext context) {
-        String sql = "DELETE FROM his_config_info WHERE gmt_modified < ? LIMIT ?";
+        String sql = "DELETE FROM his_config_info WHERE gmt_modified < ? OFFSET 0 LIMIT ?";
         return new MapperResult(sql, CollectionUtils.list(context.getWhereParameter(FieldConstant.START_TIME),
                 context.getWhereParameter(FieldConstant.LIMIT_SIZE)));
     }
-    
+
+    @Override
+    public MapperResult findDeletedConfig(MapperContext context) {
+        return new MapperResult(
+                "SELECT data_id, group_id, tenant_id,gmt_modified,nid FROM his_config_info WHERE op_type = 'D' AND "
+                        + "gmt_modified >= ? and nid > ? ORDER BY nid OFFSET 0 LIMIT ? ",
+                CollectionUtils.list(context.getWhereParameter(FieldConstant.START_TIME),
+                        context.getWhereParameter(FieldConstant.LAST_MAX_ID),
+                        context.getWhereParameter(FieldConstant.PAGE_SIZE)));
+    }
+
     @Override
     public MapperResult pageFindConfigHistoryFetchRows(MapperContext context) {
         String sql =

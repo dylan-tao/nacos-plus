@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 com.alibaba.nacos.plugin.datasource.impl.mysql.ConfigInfoAggrMapperByMySql
 com.alibaba.nacos.plugin.datasource.impl.mysql.ConfigInfoBetaMapperByMySql
 com.alibaba.nacos.plugin.datasource.impl.mysql.ConfigInfoMapperByMySql
@@ -53,3 +52,13 @@ com.alibaba.nacos.plugin.datasource.impl.oracle.HistoryConfigInfoMapperByOracle
 com.alibaba.nacos.plugin.datasource.impl.oracle.TenantInfoMapperByOracle
 com.alibaba.nacos.plugin.datasource.impl.oracle.TenantCapacityMapperByOracle
 com.alibaba.nacos.plugin.datasource.impl.oracle.GroupCapacityMapperByOracle
+
+com.alibaba.nacos.plugin.datasource.impl.dm.ConfigInfoAggrMapperByDM
+com.alibaba.nacos.plugin.datasource.impl.dm.ConfigInfoBetaMapperByDM
+com.alibaba.nacos.plugin.datasource.impl.dm.ConfigInfoMapperByDM
+com.alibaba.nacos.plugin.datasource.impl.dm.ConfigInfoTagMapperByDM
+com.alibaba.nacos.plugin.datasource.impl.dm.ConfigTagsRelationMapperByDM
+com.alibaba.nacos.plugin.datasource.impl.dm.HistoryConfigInfoMapperByDM
+com.alibaba.nacos.plugin.datasource.impl.dm.TenantInfoMapperByDM
+com.alibaba.nacos.plugin.datasource.impl.dm.TenantCapacityMapperByDM
+com.alibaba.nacos.plugin.datasource.impl.dm.GroupCapacityMapperByDM

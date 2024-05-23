@@ -12,11 +12,8 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ * keyword: id\content\type\usage\password\role\action
  */
-/******************************************/
-/* 数据库全名 = nacos_config */
-/* 表名称 = config_info */
-/******************************************/
 CREATE TABLE config_info (
 id bigserial NOT NULL,
 data_id varchar(255) NOT NULL ,
@@ -50,10 +47,6 @@ COMMENT ON COLUMN config_info.src_ip IS 'source ip';
 COMMENT ON COLUMN config_info.tenant_id IS '租户字段';
 COMMENT ON COLUMN config_info.encrypted_data_key IS '秘钥';
  
-/**************增加租户字段****************************/
-/* 数据库全名 = nacos_config */
-/* 表名称 = config_info_aggr */
-/******************************************/
 CREATE TABLE config_info_aggr (
 id bigserial NOT NULL,
 data_id varchar(255) NOT NULL,
@@ -75,10 +68,6 @@ COMMENT ON COLUMN config_info_aggr.content IS '内容';
 COMMENT ON COLUMN config_info_aggr.gmt_modified IS '修改时间';
 COMMENT ON COLUMN config_info_aggr.tenant_id IS '租户字段';
  
-/******************************************/
-/* 数据库全名 = nacos_config */
-/* 表名称 = config_info_beta */
-/******************************************/
 CREATE TABLE config_info_beta (
 id bigserial NOT NULL,
 data_id varchar(255) NOT NULL,
@@ -111,10 +100,6 @@ COMMENT ON COLUMN config_info_beta.src_ip IS 'source ip';
 COMMENT ON COLUMN config_info_beta.tenant_id IS '租户字段';
 COMMENT ON COLUMN config_info_beta.encrypted_data_key IS '秘钥';
  
-/******************************************/
-/* 数据库全名 = nacos_config */
-/* 表名称 = config_info_tag */
-/******************************************/
 CREATE TABLE config_info_tag (
 id bigserial NOT NULL,
 data_id varchar(255) NOT NULL,
@@ -145,10 +130,6 @@ COMMENT ON COLUMN config_info_tag.gmt_modified IS '修改时间';
 COMMENT ON COLUMN config_info_tag.src_user IS 'source user';
 COMMENT ON COLUMN config_info_tag.src_ip IS 'source ip';
  
-/******************************************/
-/* 数据库全名 = nacos_config */
-/* 表名称 = config_tags_relation */
-/******************************************/
 CREATE TABLE config_tags_relation (
 id bigint NOT NULL,
 tag_name varchar(128) NOT NULL ,
@@ -169,10 +150,6 @@ COMMENT ON COLUMN config_tags_relation.data_id IS 'data_id';
 COMMENT ON COLUMN config_tags_relation.group_id IS 'group_id';
 COMMENT ON COLUMN config_tags_relation.tenant_id IS 'tenant_id';
  
-/******************************************/
-/* 数据库全名 = nacos_config */
-/* 表名称 = group_capacity */
-/******************************************/
 CREATE TABLE group_capacity (
 id bigserial NOT NULL ,
 group_id varchar(128) NOT NULL DEFAULT '' ,
@@ -199,11 +176,6 @@ COMMENT ON COLUMN group_capacity.max_history_count IS '最大变更历史数量'
 COMMENT ON COLUMN group_capacity.gmt_create IS '创建时间';
 COMMENT ON COLUMN group_capacity.gmt_modified IS '修改时间';
  
- 
-/******************************************/
-/* 数据库全名 = nacos_config */
-/* 表名称 = his_config_info */
-/******************************************/
 CREATE TABLE his_config_info (
 id bigint NOT NULL,
 nid bigserial NOT NULL,
@@ -230,10 +202,6 @@ COMMENT ON COLUMN his_config_info.tenant_id IS '租户字段';
 COMMENT ON COLUMN his_config_info.encrypted_data_key IS '秘钥';
  
  
-/******************************************/
-/* 数据库全名 = nacos_config */
-/* 表名称 = tenant_capacity */
-/******************************************/
 CREATE TABLE tenant_capacity (
 id bigserial NOT NULL,
 tenant_id varchar(128) NOT NULL DEFAULT '',

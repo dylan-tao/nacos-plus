@@ -99,7 +99,17 @@ public class ConfigInfoMapperByPostgresql extends AbstractMapper implements Conf
                 + context.getStartRow() + " LIMIT " + context.getPageSize();
         return new MapperResult(sql, CollectionUtils.list(context.getWhereParameter(FieldConstant.ID)));
     }
-    
+
+    @Override
+    public MapperResult findChangeConfig(MapperContext context) {
+        String sql =
+                "SELECT id, data_id, group_id, tenant_id, app_name,md5, gmt_modified, encrypted_data_key FROM config_info WHERE "
+                        + "gmt_modified >= ? and id > ? ORDER BY id OFFSET 0 LIMIT ? ";
+        return new MapperResult(sql, CollectionUtils.list(context.getWhereParameter(FieldConstant.START_TIME),
+                context.getWhereParameter(FieldConstant.LAST_MAX_ID),
+                context.getWhereParameter(FieldConstant.PAGE_SIZE)));
+    }
+
     @Override
     public MapperResult findChangeConfigFetchRows(MapperContext context) {
         final String tenant = (String) context.getWhereParameter(FieldConstant.TENANT_ID);
@@ -142,7 +152,7 @@ public class ConfigInfoMapperByPostgresql extends AbstractMapper implements Conf
         }
         return new MapperResult(
                 sqlFetchRows + where + " AND id > " + context.getWhereParameter(FieldConstant.LAST_MAX_ID)
-                        + " ORDER BY id ASC" + " LIMIT " + context.getPageSize(), paramList);
+                        + " ORDER BY id ASC" + " OFFSET 0 LIMIT " + context.getPageSize(), paramList);
     }
     
     @Override
