@@ -38,7 +38,7 @@ public class GroupCapacityMapperByPostgresql extends AbstractMapper implements G
     
     @Override
     public MapperResult selectGroupInfoBySize(MapperContext context) {
-        String sql = "SELECT id, group_id FROM group_capacity WHERE id > ? LIMIT ?";
+        String sql = "SELECT id, group_id FROM group_capacity WHERE id > ? OFFSET 0 LIMIT ?";
         return new MapperResult(sql, CollectionUtils.list(context.getWhereParameter(FieldConstant.ID), context.getPageSize()));
     }
 }

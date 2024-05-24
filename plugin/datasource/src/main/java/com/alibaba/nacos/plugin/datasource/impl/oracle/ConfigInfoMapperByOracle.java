@@ -22,7 +22,6 @@ import com.alibaba.nacos.common.utils.StringUtils;
 import com.alibaba.nacos.plugin.datasource.constants.ContextConstant;
 import com.alibaba.nacos.plugin.datasource.constants.DataSourceConstant;
 import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
-import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
@@ -32,7 +31,6 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 /**
  * The oracle implementation of ConfigInfoMapper.
@@ -106,10 +104,10 @@ public class ConfigInfoMapperByOracle extends AbstractMapper implements ConfigIn
 
 	@Override
 	public MapperResult findChangeConfig(MapperContext context) {
-		String sql ="SELECT data_id, group_id, tenant_id, app_name, content, gmt_modified,encrypted_data_key "
-				+ "FROM config_info WHERE gmt_modified >= ? AND gmt_modified <= ?";
+		String sql ="SELECT * FROM (SELECT id, data_id, group_id, tenant_id, app_name, content, gmt_modified,encrypted_data_key, ROWNUM as rnum "
+				+ "FROM config_info WHERE gmt_modified >= ? AND id > ? ORDER BY id) WHERE rnum <= ?";
 		return new MapperResult(sql, CollectionUtils.list(context.getWhereParameter(FieldConstant.START_TIME),
-				context.getWhereParameter(FieldConstant.LAST_MAX_ID)));
+				context.getWhereParameter(FieldConstant.LAST_MAX_ID), context.getWhereParameter(FieldConstant.PAGE_SIZE)));
 	}
 
 	@Override
@@ -155,7 +153,7 @@ public class ConfigInfoMapperByOracle extends AbstractMapper implements ConfigIn
 		}
 		return new MapperResult(
 				sqlFetchRows + where + " AND id > " + context.getWhereParameter(FieldConstant.LAST_MAX_ID) +
-				" ORDER BY id ASC)" + " WHERE  rnum >= " + 0 + " and " + context.getPageSize() + " >= rnum ", paramList);
+				" ORDER BY id ASC)" + " WHERE  rnum >= " + 1 + " and " + context.getPageSize() + " >= rnum ", paramList);
 	}
 
 	@Override
@@ -279,10 +277,10 @@ public class ConfigInfoMapperByOracle extends AbstractMapper implements ConfigIn
 	public MapperResult findAllConfigInfoFetchRows(MapperContext context) {
 		String sql = "SELECT t.id,data_id,group_id,tenant_id,app_name,content,md5 "
 				+ " FROM (SELECT * FROM (  SELECT id, ROWNUM as rnum FROM config_info WHERE tenant_id LIKE ? ORDER BY id)"
-				+ " WHERE  rnum >= " + (context.getStartRow() + 1) + " and " + (context.getPageSize() + context.getStartRow()) + " >= rnum)"
+				+ " WHERE  rnum >= ? and ? >= rnum)"
 				+ " g, config_info t  WHERE g.id = t.id ";
 		return new MapperResult(sql,
-				CollectionUtils.list(context.getWhereParameter(FieldConstant.TENANT_ID)));
+				CollectionUtils.list(context.getWhereParameter(FieldConstant.TENANT_ID), context.getStartRow() + 1, context.getPageSize() + context.getStartRow()));
 	}
 
 	@Override

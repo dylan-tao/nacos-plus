@@ -13,10 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-/******************************************/
-/*   表名称 = config_info                  */
-/******************************************/
 CREATE TABLE `config_info` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `data_id` varchar(255) NOT NULL COMMENT 'data_id',
@@ -39,9 +35,6 @@ CREATE TABLE `config_info` (
   UNIQUE KEY `uk_configinfo_datagrouptenant` (`data_id`,`group_id`,`tenant_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='config_info';
 
-/******************************************/
-/*   表名称 = config_info_aggr             */
-/******************************************/
 CREATE TABLE `config_info_aggr` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `data_id` varchar(255) NOT NULL COMMENT 'data_id',
@@ -55,10 +48,6 @@ CREATE TABLE `config_info_aggr` (
   UNIQUE KEY `uk_configinfoaggr_datagrouptenantdatum` (`data_id`,`group_id`,`tenant_id`,`datum_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='增加租户字段';
 
-
-/******************************************/
-/*   表名称 = config_info_beta             */
-/******************************************/
 CREATE TABLE `config_info_beta` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `data_id` varchar(255) NOT NULL COMMENT 'data_id',
@@ -77,9 +66,6 @@ CREATE TABLE `config_info_beta` (
   UNIQUE KEY `uk_configinfobeta_datagrouptenant` (`data_id`,`group_id`,`tenant_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='config_info_beta';
 
-/******************************************/
-/*   表名称 = config_info_tag              */
-/******************************************/
 CREATE TABLE `config_info_tag` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `data_id` varchar(255) NOT NULL COMMENT 'data_id',
@@ -97,9 +83,6 @@ CREATE TABLE `config_info_tag` (
   UNIQUE KEY `uk_configinfotag_datagrouptenanttag` (`data_id`,`group_id`,`tenant_id`,`tag_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='config_info_tag';
 
-/******************************************/
-/*   表名称 = config_tags_relation         */
-/******************************************/
 CREATE TABLE `config_tags_relation` (
   `id` bigint(20) NOT NULL COMMENT 'id',
   `tag_name` varchar(128) NOT NULL COMMENT 'tag_name',
@@ -113,9 +96,6 @@ CREATE TABLE `config_tags_relation` (
   KEY `idx_tenant_id` (`tenant_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='config_tag_relation';
 
-/******************************************/
-/*   表名称 = group_capacity               */
-/******************************************/
 CREATE TABLE `group_capacity` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键ID',
   `group_id` varchar(128) NOT NULL DEFAULT '' COMMENT 'Group ID，空字符表示整个集群',
@@ -131,9 +111,6 @@ CREATE TABLE `group_capacity` (
   UNIQUE KEY `uk_group_id` (`group_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='集群、各Group容量信息表';
 
-/******************************************/
-/*   表名称 = his_config_info              */
-/******************************************/
 CREATE TABLE `his_config_info` (
   `id` bigint(20) unsigned NOT NULL COMMENT 'id',
   `nid` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'nid, 自增标识',
@@ -155,10 +132,6 @@ CREATE TABLE `his_config_info` (
   KEY `idx_did` (`data_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='多租户改造';
 
-
-/******************************************/
-/*   表名称 = tenant_capacity              */
-/******************************************/
 CREATE TABLE `tenant_capacity` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键ID',
   `tenant_id` varchar(128) NOT NULL DEFAULT '' COMMENT 'Tenant ID',
@@ -173,7 +146,6 @@ CREATE TABLE `tenant_capacity` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uk_tenant_id` (`tenant_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='租户容量信息表';
-
 
 CREATE TABLE `tenant_info` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
@@ -203,9 +175,9 @@ CREATE TABLE `roles` (
 
 CREATE TABLE `permissions` (
     `role` varchar(50) NOT NULL COMMENT 'role',
-    `resource` varchar(128) NOT NULL COMMENT 'resource',
+    `resources` varchar(128) NOT NULL COMMENT 'resources',
     `action` varchar(8) NOT NULL COMMENT 'action',
-    UNIQUE INDEX `uk_role_permission` (`role`,`resource`,`action`) USING BTREE
+    UNIQUE INDEX `uk_role_permission` (`role`,`resources`,`action`) USING BTREE
 );
 
 INSERT INTO users (username, password, enabled) VALUES ('nacos', '$2a$10$EuWPZHzz32dJN7jexM34MOeYirDdFAZm2kuWj7VEOJhhZkDrxfvUu', TRUE);

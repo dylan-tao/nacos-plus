@@ -202,19 +202,16 @@ CREATE TABLE roles (
 
 CREATE TABLE permissions (
     role varchar(50) NOT NULL,
-    resource varchar(512) NOT NULL,
+    resources varchar(512) NOT NULL,
     action varchar(8) NOT NULL,
-    constraint uk_role_permission UNIQUE (role,resource,action)
+    constraint uk_role_permission UNIQUE (role,resources,action)
 );
 
 INSERT INTO users (username, password, enabled) VALUES ('nacos', '$2a$10$EuWPZHzz32dJN7jexM34MOeYirDdFAZm2kuWj7VEOJhhZkDrxfvUu', TRUE);
 
 INSERT INTO roles (username, role) VALUES ('nacos', 'ROLE_ADMIN');
 
-
-/******************************************/
 /*   ipv6 support   */
-/******************************************/
 ALTER TABLE `config_info_tag`
 MODIFY COLUMN `src_ip` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT 'source ip' AFTER `src_user`;
 

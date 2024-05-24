@@ -139,6 +139,8 @@
         <derby.version>10.14.2.0</derby.version>
         <opengauss-jdbc.version>2.0.0</opengauss-jdbc.version>
         <oracle-jdbc.version>11.2.0.4</oracle-jdbc.version>
+        <com.dameng.dm8.version>8.1.1.193</com.dameng.dm8.version>
+        <sqlserver-jdbc.version>12.4.2.jre8</sqlserver-jdbc.version>
 
         <jjwt.version>0.11.2</jjwt.version>
         <javatuples.version>1.2</javatuples.version>
@@ -373,6 +375,7 @@
                         <exclude>**/filter-config.json</exclude>
                         <exclude>**/disk_cache_test/**</exclude>
                         <exclude>**/failover_test/**</exclude>
+                        <exclude>lib/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -885,7 +888,17 @@
                 <artifactId>ojdbc6</artifactId>
                 <version>${oracle-jdbc.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.dameng</groupId>
+                <artifactId>Dm8JdbcDriver18</artifactId>
+                <version>${com.dameng.dm8.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.microsoft.sqlserver</groupId>
+                <artifactId>mssql-jdbc</artifactId>
+                <version>${sqlserver-jdbc.version}</version>
+            </dependency>
+            
             <!-- JRaft -->
             <dependency>
                 <groupId>com.alipay.sofa</groupId>

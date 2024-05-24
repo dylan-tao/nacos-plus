@@ -37,7 +37,7 @@ nacos.plugin.datasource.log.enabled=true
 ### Count of DB:
 db.num=1
 
-### If use MySQL as datasource:
+### If use MySQL or MariaDB as datasource:
 # spring.datasource.platform=mysql
 # db.url.0=jdbc:mysql://127.0.0.1:3306/nacos_server?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
 # db.user.0=nacos
@@ -57,6 +57,15 @@ db.num=1
 #db.user.0=nacos
 #db.password.0=123456
 #db.testQuery=select 1 from dual
+
+##### If use DM as datasource:
+### WARNING: db.user.0 must be NACOS_SERVER, create this account
+#spring.sql.init.platform=dm
+#db.pool.config.driver-class-name=dm.jdbc.driver.DmDriver
+#db.url.0=jdbc:dm://127.0.0.1:30236/nacos_server
+#db.user.0=NACOS_SERVER
+#db.password.0=123456
+#db.testQuery=select 1
 
 ### Connection pool configuration: hikariCP
 db.pool.config.connectionTimeout=30000

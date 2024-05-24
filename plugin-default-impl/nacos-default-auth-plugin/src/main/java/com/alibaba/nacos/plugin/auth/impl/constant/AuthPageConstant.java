@@ -23,10 +23,16 @@ package com.alibaba.nacos.plugin.auth.impl.constant;
  **/
 
 public class AuthPageConstant {
-    
+
+    public static final String ORDER_BY = "ORDER BY";
+
+    public static final String ORDER_BY_ID = "ORDER BY id";
+
     public static final String OFFSET = "OFFSET";
     
     public static final String OFFSET_ROWS = "OFFSET ? ROWS";
+
+    public static final String OFFSET_LIMIT = "OFFSET ? LIMIT ?";
     
     public static final String FETCH_NEXT = "FETCH NEXT ? ROWS ONLY";
     
