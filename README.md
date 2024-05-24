@@ -1,23 +1,31 @@
 <p align = "center">
-<img src="doc/Nacos_Logo.png" width="28%" syt height="28%" />
+<img src="doc/Nacos_Logo.png" width="22%" height="22%" />
 <br><br>
-NacosPlus，为信创数据库爱心发电。
-<br><br>Star⭐一下，持续版本维护的动力😊
+<b>NacosPlus，为信创国产数据库爱心发电。</b>
+<br><br>Star⭐一下(右上角)，持续版本维护的动力😊
 <br><br>Watch一下，遇到问题提Issues可实时接收问题进展
-<br><br>Fork一下，Pull Request为信创添砖加瓦，让版本更加稳定
-<br>
-<br>
+<br><br>Fork一下，完善和特殊场景适配后，记得Pull Request为信创添砖加瓦
+<br><br>
 <a title="GitHub Watchers" target="_blank" href="https://github.com/dylan-tao/nacos-plus/watchers"><img src="https://img.shields.io/github/watchers/dylan-tao/nacos-plus.svg?label=Watchers&style=social"></a>  
 <a title="GitHub Stars" target="_blank" href="https://github.com/dylan-tao/nacos-plus/stargazers"><img src="https://img.shields.io/github/stars/dylan-tao/nacos-plus.svg?label=Stars&style=social"></a>  
 <a title="GitHub Forks" target="_blank" href="https://github.com/dylan-tao/nacos-plus/network/members"><img src="https://img.shields.io/github/forks/dylan-tao/nacos-plus.svg?label=Forks&style=social"></a>  
 <a title="Author GitHub Followers" target="_blank" href="https://github.com/dylan-tao"><img src="https://img.shields.io/github/followers/dylan-tao.svg?label=Followers&style=social"></a>
 <br>
+<a title="Releases" target="_blank" href="https://github.com/dylan-tao/nacos-plus/releases"><img src="https://img.shields.io/github/release/dylan-tao/nacos-plus.svg?style=flat-square"></a>
+<a title="Release Date" target="_blank" href="https://github.com/dylan-tao/nacos-plus/releases"><img src="https://img.shields.io/github/release-date/dylan-tao/nacos-plus.svg?style=flat-square&color=99CCFF"></a>
+<a title="Code Size" target="_blank" href="https://github.com/dylan-tao/nacos-plus"><img src="https://img.shields.io/github/languages/code-size/dylan-tao/nacos-plus.svg?style=flat-square"></a>
+<a title="Apache2" target="_blank" href="https://www.apache.org/licenses/LICENSE-2.0.html"><img src="https://img.shields.io/badge/license-Apache%202-4EB1BA.svg"></a>
+<br>
+<a title="GitHub Commits" target="_blank" href="https://github.com/dylan-tao/nacos-plus/commits/master"><img src="https://img.shields.io/github/commit-activity/m/dylan-tao/nacos-plus.svg?style=flat-square"></a>
+<a title="Last Commit" target="_blank" href="https://github.com/dylan-tao/nacos-plus/commits/master"><img src="https://img.shields.io/github/last-commit/dylan-tao/nacos-plus.svg?style=flat-square&color=FF9900"></a>
+<a title="GitHub Pull Requests" target="_blank" href="https://github.com/dylan-tao/nacos-plus/pulls"><img src="https://img.shields.io/github/issues-pr-closed/dylan-tao/nacos-plus.svg?style=flat-square&color=FF9966"></a>
+<a title="Downloads" target="_blank" href="https://github.com/dylan-tao/nacos-plus/releases"><img src="https://img.shields.io/github/downloads/dylan-tao/nacos-plus/total.svg?style=flat-square"></a>
+<br>
 </p>
 
-### Nacos: Support the database type: 
-> Current stable and recommended version: 2.3.2.2
+### Support the database type:
 
-✅ supported   ⌛ planning   ❌ not planned
+ **✅ supported   ⌛ planning   ❌ not planned**
 
 | Database Type           | Database Version | Database Client Version | Supported | NacosPlus Version |
 |:------------------------|:----------------:|:-----------------------:|:---------:|:-----------------:|
@@ -77,9 +85,9 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{db}-schema.sql
 
 ### Start by the provided startup package
 
-#### Step 1: Download the binary package 
+**Step 1: Download the binary package**
 
-You can download the package from the [latest stable release](https://github.com/alibaba/nacos/releases).  
+You can download the package from the [latest stable release](https://github.com/dylan-tao/nacos-plus/releases).  
 
 Take release `nacos-server-2.x.x.zip` for example:
 ```sh
@@ -87,7 +95,7 @@ unzip nacos-server-2.x.x.zip
 cd nacos/bin 
 ``` 
 
-#### Step 2: Start Server
+**Step 2: Start Server**
 
 On the **Linux/Unix/Mac** platform, run the following command to start server with cluster mode: 
 ```sh
@@ -105,4 +113,4 @@ mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 ```
 
 ### FAQ
-> [Get 【FAQ-x】 list from issues, Click me!!!](https://github.com/dylan-tao/nacos-plus/issues)
+> [Get 【FAQ-x】 list from issues, Click me !!!](https://github.com/dylan-tao/nacos-plus/issues)
