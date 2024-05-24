@@ -1,5 +1,5 @@
 <p align = "center">
-<img src="doc/Nacos_Logo.png" width="22%" height="22%" />
+<img src="doc/NacosPlus.png" width="28%" height="28%" />
 <br><br>
 <b>NacosPlus，为信创国产数据库爱心发电。</b>
 <br><br>Star⭐一下(右上角)，持续版本维护的动力😊
@@ -10,16 +10,11 @@
 <a title="GitHub Stars" target="_blank" href="https://github.com/dylan-tao/nacos-plus/stargazers"><img src="https://img.shields.io/github/stars/dylan-tao/nacos-plus.svg?label=Stars&style=social"></a>  
 <a title="GitHub Forks" target="_blank" href="https://github.com/dylan-tao/nacos-plus/network/members"><img src="https://img.shields.io/github/forks/dylan-tao/nacos-plus.svg?label=Forks&style=social"></a>  
 <a title="Author GitHub Followers" target="_blank" href="https://github.com/dylan-tao"><img src="https://img.shields.io/github/followers/dylan-tao.svg?label=Followers&style=social"></a>
-<br>
+<br><br>
 <a title="Releases" target="_blank" href="https://github.com/dylan-tao/nacos-plus/releases"><img src="https://img.shields.io/github/release/dylan-tao/nacos-plus.svg?style=flat-square"></a>
 <a title="Release Date" target="_blank" href="https://github.com/dylan-tao/nacos-plus/releases"><img src="https://img.shields.io/github/release-date/dylan-tao/nacos-plus.svg?style=flat-square&color=99CCFF"></a>
 <a title="Code Size" target="_blank" href="https://github.com/dylan-tao/nacos-plus"><img src="https://img.shields.io/github/languages/code-size/dylan-tao/nacos-plus.svg?style=flat-square"></a>
 <a title="Apache2" target="_blank" href="https://www.apache.org/licenses/LICENSE-2.0.html"><img src="https://img.shields.io/badge/license-Apache%202-4EB1BA.svg"></a>
-<br>
-<a title="GitHub Commits" target="_blank" href="https://github.com/dylan-tao/nacos-plus/commits/master"><img src="https://img.shields.io/github/commit-activity/m/dylan-tao/nacos-plus.svg?style=flat-square"></a>
-<a title="Last Commit" target="_blank" href="https://github.com/dylan-tao/nacos-plus/commits/master"><img src="https://img.shields.io/github/last-commit/dylan-tao/nacos-plus.svg?style=flat-square&color=FF9900"></a>
-<a title="GitHub Pull Requests" target="_blank" href="https://github.com/dylan-tao/nacos-plus/pulls"><img src="https://img.shields.io/github/issues-pr-closed/dylan-tao/nacos-plus.svg?style=flat-square&color=FF9966"></a>
-<a title="Downloads" target="_blank" href="https://github.com/dylan-tao/nacos-plus/releases"><img src="https://img.shields.io/github/downloads/dylan-tao/nacos-plus/total.svg?style=flat-square"></a>
 <br>
 </p>
 
