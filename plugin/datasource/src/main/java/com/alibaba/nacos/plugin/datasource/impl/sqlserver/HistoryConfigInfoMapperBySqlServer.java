@@ -35,7 +35,7 @@ public class HistoryConfigInfoMapperBySqlServer extends AbstractMapper implement
     @Override
     public MapperResult removeConfigHistory(MapperContext context) {
         String sql = "DELETE FROM his_config_info WHERE id IN( "
-                + "SELECT id FROM his_config_info WHERE gmt_modified < ? OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY)";
+                + "SELECT id FROM his_config_info WHERE gmt_modified < ? ORDER BY id OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY)";
         return new MapperResult(sql, CollectionUtils.list(context.getWhereParameter(FieldConstant.START_TIME),
                 context.getWhereParameter(FieldConstant.LIMIT_SIZE)));
     }
