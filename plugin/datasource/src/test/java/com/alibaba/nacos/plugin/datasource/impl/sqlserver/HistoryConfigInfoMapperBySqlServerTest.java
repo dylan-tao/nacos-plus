@@ -59,7 +59,7 @@ public class HistoryConfigInfoMapperBySqlServerTest {
     @Test
     public void testRemoveConfigHistory() {
         MapperResult mapperResult = historyConfigInfoMapperBySqlServer.removeConfigHistory(context);
-        Assert.assertEquals(mapperResult.getSql(), "DELETE FROM his_config_info WHERE gmt_modified < ?  ORDER BY id OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY");
+        Assert.assertEquals(mapperResult.getSql(), "DELETE FROM his_config_info WHERE id IN( SELECT id FROM his_config_info WHERE gmt_modified < ? OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY)");
         Assert.assertArrayEquals(mapperResult.getParamList().toArray(), new Object[] {startTime, limitSize});
     }
     

@@ -62,3 +62,13 @@ com.alibaba.nacos.plugin.datasource.impl.dm.HistoryConfigInfoMapperByDM
 com.alibaba.nacos.plugin.datasource.impl.dm.TenantInfoMapperByDM
 com.alibaba.nacos.plugin.datasource.impl.dm.TenantCapacityMapperByDM
 com.alibaba.nacos.plugin.datasource.impl.dm.GroupCapacityMapperByDM
+
+com.alibaba.nacos.plugin.datasource.impl.sqlserver.ConfigInfoAggrMapperBySqlServer
+com.alibaba.nacos.plugin.datasource.impl.sqlserver.ConfigInfoBetaMapperBySqlServer
+com.alibaba.nacos.plugin.datasource.impl.sqlserver.ConfigInfoMapperBySqlServer
+com.alibaba.nacos.plugin.datasource.impl.sqlserver.ConfigInfoTagMapperBySqlServer
+com.alibaba.nacos.plugin.datasource.impl.sqlserver.ConfigTagsRelationMapperBySqlServer
+com.alibaba.nacos.plugin.datasource.impl.sqlserver.HistoryConfigInfoMapperBySqlServer
+com.alibaba.nacos.plugin.datasource.impl.sqlserver.TenantInfoMapperBySqlServer
+com.alibaba.nacos.plugin.datasource.impl.sqlserver.TenantCapacityMapperBySqlServer
+com.alibaba.nacos.plugin.datasource.impl.sqlserver.GroupCapacityMapperBySqlServer
