@@ -144,7 +144,7 @@
         </dependency>
         <dependency>
             <groupId>com.dameng</groupId>
-            <artifactId>Dm8JdbcDriver18</artifactId>
+            <artifactId>DmJdbcDriver18</artifactId>
         </dependency>
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>

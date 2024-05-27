@@ -22,15 +22,16 @@
 
  **✅ supported   ⌛ planning   ❌ not planned**
 
-| Database Type           | Database Version | Database Client Version | Supported | NacosPlus Version |
-|:------------------------|:----------------:|:-----------------------:|:---------:|:-----------------:|
-| Mysql/MariaDB           |     `5.7.36`     |        `8.0.33`         |     ✅     |    `2.2.0.1+`     |
-| PostgreSQL              |     `90204`      |        `42.5.1`         |     ✅     |    `2.2.0.1+`     |
-| OpenGauss               |     `3.0.0`      |         `2.0.0`         |     ✅     |    `2.2.0.2+`     |
-| GaussDB                 |     `2.1.0`      |         `2.0.0`         |     ✅     |    `2.2.0.2+`     |
-| Oracle                  |    `11.2.0.1`    |       `11.2.0.4`        |     ✅     |    `2.3.2.1+`     |
-| DM DBMS                 |   `8.1.3.100`    |       `8.1.1.193`       |     ✅     |    `2.3.2.2+`     |
-| Sql Server              |      `2019`      |      `12.4.2.jre8`      |     ⌛     |    `2.3.2.3+`     |
+| Database Type         | Database Version | Database Client Version | Supported | NacosPlus Version |
+|:----------------------|:----------------:|:-----------------------:|:---------:|:-----------------:|
+| Mysql/MariaDB         |     `5.7.36`     |        `8.0.33`         |     ✅     |    `2.2.0.1+`     |
+| PostgreSQL            |     `90204`      |        `42.5.1`         |     ✅     |    `2.2.0.1+`     |
+| OpenGauss             |     `3.0.0`      |         `2.0.0`         |     ✅     |    `2.2.0.2+`     |
+| GaussDB               |     `2.1.0`      |         `2.0.0`         |     ✅     |    `2.2.0.2+`     |
+| Oracle                |    `11.2.0.1`    |       `11.2.0.4`        |     ✅     |    `2.3.2.1+`     |
+| DM DBMS               |   `8.1.3.100`    |       `8.1.3.140`       |     ✅     |    `2.3.2.2+`     |
+| Sql Server            |      `2019`      |      `12.4.2.jre8`      |     ✅     |    `2.3.2.3+`     |
+| OceanBase             |       `-`        |           `-`           |     ⌛     |    `2.3.2.4+`     |
 
 ### Manufactured Product
 ```
@@ -45,8 +46,6 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{db}-schema.sql
 ```
 ### DB Connection Configuration
 ```
-#*************** Config Module Related Configurations ***************#
-
 ### If use MySQL or MariaDB as datasource:
 # spring.datasource.platform=mysql
 # db.url.0=jdbc:mysql://127.0.0.1:3306/nacos_server?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
@@ -56,7 +55,7 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{db}-schema.sql
 ##### If use PostgreSQL or OpenGauss or GaussDB as datasource:
 #spring.sql.init.platform=postgresql
 #db.pool.config.driver-class-name=org.postgresql.Driver
-#db.url.0=jdbc:postgresql://127.0.0.1:25432/nacos_server
+#db.url.0=jdbc:postgresql://127.0.0.1:5432/nacos_server
 #db.user.0=nacos
 #db.password.0=123456
 
@@ -72,8 +71,16 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{db}-schema.sql
 ### WARNING: db.user.0 must be NACOS_SERVER, create this account
 #spring.sql.init.platform=dm
 #db.pool.config.driver-class-name=dm.jdbc.driver.DmDriver
-#db.url.0=jdbc:dm://127.0.0.1:30236/nacos_server
+#db.url.0=jdbc:dm://127.0.0.1:5236/nacos_server?keyWords=type,usage,role,action,password&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
 #db.user.0=NACOS_SERVER
+#db.password.0=123456
+#db.testQuery=select 1
+
+##### If use SqlServer as datasource:
+#spring.sql.init.platform=sqlserver
+#db.pool.config.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+#db.url.0=jdbc:sqlserver://127.0.0.1:1433;DatabaseName=nacos_server;trustServerCertificate=true
+#db.user.0=nacos
 #db.password.0=123456
 #db.testQuery=select 1
 ```
