@@ -122,5 +122,5 @@ mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 The author's WeChat QR code only provides emergency support. You must submit ISSUE before seeking help, otherwise the answer will not be supported.
 
 <p align = "left">
-<img src="doc/AuthorWechat.png" width="55%" height="55%" />
+<img src="doc/AuthorWechat.png" width="52%" height="52%" />
 </p>
