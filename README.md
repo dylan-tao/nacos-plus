@@ -116,3 +116,8 @@ mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 
 ### FAQ
 > [Get 【FAQ-x】 list from issues, Click me !!!](https://github.com/dylan-tao/nacos-plus/issues)
+
+### Emergency Support
+> The author's WeChat QR code only provides emergency support. You must submit ISSUE before seeking help, otherwise the answer will not be supported.
+
+<img src="doc/AuthorWechat.png" width="96%" height="96%" />
