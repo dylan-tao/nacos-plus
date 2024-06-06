@@ -120,4 +120,6 @@ mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 ### Emergency Support
 > The author's WeChat QR code only provides emergency support. You must submit ISSUE before seeking help, otherwise the answer will not be supported.
 
-<img src="doc/AuthorWechat.png" width="28%" height="28%" />
+<p align = "center">
+<img src="doc/AuthorWechat.png" width="66%" height="66%" />
+</p>
