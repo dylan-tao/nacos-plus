@@ -1,6 +1,6 @@
 ---
 name: 🚀 功能需求 | Feature Request
-about: 请详细描述您期望的功能。 | Please describe in detail the features you expect.
+about: 请详细描述您期望的功能 | Please describe in detail the features you expect
 title: "🚀 功能简述 | [Feature]Function Brief"
 labels: ["enhancement"]
 ---
