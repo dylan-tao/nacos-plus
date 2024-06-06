@@ -1,7 +1,7 @@
 ---
 name: 🙋 问题反馈 | Question Report
-about: 在文档或讨论中没有回答的使用问题 | Usage question that isn't answered in docs or discussion
-title: "🙋 问题反馈。。。 | [Question] Some question..."
+about: 在文档或历史ISSUE中没有回答的使用问题 | Usage question that isn't answered in docs or history ISSUE
+title: "🙋 问题简述 | [Question] Brief description of the problem"
 labels: ["question"]
 ---
 
