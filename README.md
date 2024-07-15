@@ -47,11 +47,11 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{db}-schema.sql
 ### DB Connection Configuration
 ```
 ### If use MySQL or MariaDB as datasource:
-# spring.datasource.platform=mysql
+#spring.datasource.platform=mysql
 #db.pool.config.driver-class-name=com.mysql.cj.jdbc.Driver
-# db.url.0=jdbc:mysql://127.0.0.1:3306/nacos_server?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
-# db.user.0=nacos
-# db.password.0=123456
+#db.url.0=jdbc:mysql://127.0.0.1:3306/nacos_server?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+#db.user.0=nacos
+#db.password.0=123456
 
 ##### If use PostgreSQL or OpenGauss or GaussDB as datasource:
 #spring.sql.init.platform=postgresql
