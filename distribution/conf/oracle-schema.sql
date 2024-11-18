@@ -42,6 +42,7 @@ CREATE OR REPLACE TRIGGER config_info_seq_tr
 BEGIN
     SELECT config_info_seq.NEXTVAL INTO :NEW.id FROM DUAL;
 END;
+/
 COMMENT ON COLUMN config_info.id IS 'id';
 COMMENT ON COLUMN config_info.data_id IS 'data_id';
 COMMENT ON COLUMN config_info.group_id IS 'group_id';
@@ -81,6 +82,7 @@ CREATE OR REPLACE TRIGGER config_info_aggr_seq_tr
 BEGIN
     SELECT config_info_aggr_seq.NEXTVAL INTO :NEW.id FROM DUAL;
 END;
+/
 COMMENT ON COLUMN config_info_aggr.id IS 'id';
 COMMENT ON COLUMN config_info_aggr.data_id IS 'data_id';
 COMMENT ON COLUMN config_info_aggr.group_id IS 'group_id';
@@ -116,6 +118,7 @@ CREATE OR REPLACE TRIGGER config_info_beta_seq_tr
 BEGIN
     SELECT config_info_beta_seq.NEXTVAL INTO :NEW.id FROM DUAL;
 END;
+/
 COMMENT ON COLUMN config_info_beta.id IS 'id';
 COMMENT ON COLUMN config_info_beta.data_id IS 'data_id';
 COMMENT ON COLUMN config_info_beta.group_id IS 'group_id';
@@ -155,6 +158,7 @@ CREATE OR REPLACE TRIGGER config_info_tag_seq_tr
 BEGIN
     SELECT config_info_tag_seq.NEXTVAL INTO :NEW.id FROM DUAL;
 END;
+/
 COMMENT ON COLUMN config_info_tag.id IS 'id';
 COMMENT ON COLUMN config_info_tag.data_id IS 'data_id';
 COMMENT ON COLUMN config_info_tag.group_id IS 'group_id';
@@ -188,6 +192,7 @@ CREATE OR REPLACE TRIGGER config_tags_relation_seq_tr
 BEGIN
     SELECT config_tags_relation_seq.NEXTVAL INTO :NEW.nid FROM DUAL;
 END;
+/
 COMMENT ON COLUMN config_tags_relation.id IS 'id';
 COMMENT ON COLUMN config_tags_relation.tag_name IS 'tag_name';
 COMMENT ON COLUMN config_tags_relation.tag_type IS 'tag_type';
@@ -220,6 +225,7 @@ CREATE OR REPLACE TRIGGER group_capacity_seq_tr
 BEGIN
     SELECT group_capacity_seq.NEXTVAL INTO :NEW.id FROM DUAL;
 END;
+/
 COMMENT ON COLUMN group_capacity.id IS '主键ID';
 COMMENT ON COLUMN group_capacity.group_id IS 'Group ID，空字符表示整个集群';
 COMMENT ON COLUMN group_capacity.quota IS '配额，0表示使用默认值';
@@ -257,6 +263,7 @@ CREATE OR REPLACE TRIGGER his_config_info_seq_tr
 BEGIN
     SELECT his_config_info_seq.NEXTVAL INTO :NEW.nid FROM DUAL;
 END;
+/
 COMMENT ON COLUMN his_config_info.id IS 'id';
 COMMENT ON COLUMN his_config_info.nid IS 'nid, 自增标识';
 COMMENT ON COLUMN his_config_info.data_id IS 'data_id';
@@ -298,6 +305,7 @@ CREATE OR REPLACE TRIGGER tenant_capacity_seq_tr
 BEGIN
     SELECT tenant_capacity_seq.NEXTVAL INTO :NEW.id FROM DUAL;
 END;
+/
 COMMENT ON COLUMN tenant_capacity.id IS '主键ID';
 COMMENT ON COLUMN tenant_capacity.tenant_id IS 'Tenant ID';
 COMMENT ON COLUMN tenant_capacity.quota IS '配额，0表示使用默认值';
@@ -330,6 +338,7 @@ CREATE OR REPLACE TRIGGER tenant_info_seq_tr
 BEGIN
     SELECT tenant_info_seq.NEXTVAL INTO :NEW.id FROM DUAL;
 END;
+/
 COMMENT ON COLUMN tenant_info.id IS 'id';
 COMMENT ON COLUMN tenant_info.kp IS 'kp';
 COMMENT ON COLUMN tenant_info.tenant_id IS 'tenant_id';
