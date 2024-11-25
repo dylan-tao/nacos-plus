@@ -118,6 +118,29 @@ mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 ### FAQ
 > [Get 【FAQ-x】 list from issues, Click me !!!](https://github.com/dylan-tao/nacos-plus/issues)
 
+### Who is using it?
+<img src="customer/xinwang.png" width="15%" height="20%" />
+<img src="customer/huaxia.png" width="15%" height="20%" />
+<img src="customer/minsheng.png" width="15%" height="20%" />
+<img src="customer/dongguan.png" width="15%" height="20%" />
+<img src="customer/yinzhou.png" width="15%" height="20%" />
+<img src="customer/jilin.png" width="15%" height="20%" />
+<img src="customer/luzhou.png" width="15%" height="20%" />
+<img src="customer/tailong.png" width="15%" height="20%" />
+<img src="customer/xingye.png" width="15%" height="20%" />
+<img src="customer/shengjing.png" width="15%" height="20%" />
+<img src="customer/biyadi.png" width="15%" height="20%" />
+<img src="customer/beiqi.png" width="15%" height="20%" />
+<img src="customer/kelaisile.png" width="15%" height="20%" />
+<img src="customer/weilai.png" width="15%" height="20%" />
+<img src="customer/weipinhui.png" width="15%" height="20%" />
+<img src="customer/qingnianyoupin.png" width="15%" height="20%" />
+<img src="customer/taibao.png" width="15%" height="20%" />
+<img src="customer/samoye.png" width="15%" height="20%" />
+<img src="customer/fengbang.png" width="15%" height="20%" />
+<img src="customer/lazada.png" width="15%" height="20%" />
+<img src="customer/zhongtie.png" width="15%" height="20%" />
+
 ### Emergency Support
 
 The author's WeChat QR code only provides emergency support. You must submit ISSUE before seeking help, otherwise the answer will not be supported.
