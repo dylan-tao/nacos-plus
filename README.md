@@ -128,6 +128,7 @@ mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 <img src="customer/luzhou.png" width="15%" height="20%" />
 <img src="customer/tailong.png" width="15%" height="20%" />
 <img src="customer/xingye.png" width="15%" height="20%" />
+<img src="customer/haerbin.png" width="15%" height="20%" />
 <img src="customer/shengjing.png" width="15%" height="20%" />
 <img src="customer/biyadi.png" width="15%" height="20%" />
 <img src="customer/beiqi.png" width="15%" height="20%" />
