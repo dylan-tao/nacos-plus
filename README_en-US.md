@@ -1,10 +1,10 @@
 <p align = "center">
 <img src="doc/NacosPlus.png" width="28%" height="28%" />
 <br><br>
-<b>NacosPlus，为信创国产数据库爱心发电。</b>
-<br><br>Star⭐一下(右上角)，持续版本维护的动力😊
-<br><br>Watch一下，遇到问题提Issues可实时接收问题进展
-<br><br>Fork一下，完善和特殊场景适配后，记得Pull Request为信创添砖加瓦
+<b>NacosPlus，Generate power for China's(Xinchuang) database love.</b>
+<br><br>Star ⭐ (top right), the motivation for continuous version maintenance😊
+<br><br>Watch it, if you encounter problems and ask Issues, you can receive the progress of the problem in real time
+<br><br>Fork it, after improving and adapting to the special scene, remember to Pull Request to NacosPlus
 <br><br>
 <a title="GitHub Watchers" target="_blank" href="https://github.com/dylan-tao/nacos-plus/watchers"><img src="https://img.shields.io/github/watchers/dylan-tao/nacos-plus.svg?label=Watchers&style=social"></a>  
 <a title="GitHub Stars" target="_blank" href="https://github.com/dylan-tao/nacos-plus/stargazers"><img src="https://img.shields.io/github/stars/dylan-tao/nacos-plus.svg?label=Stars&style=social"></a>  
@@ -17,6 +17,8 @@
 <a title="Apache2" target="_blank" href="https://www.apache.org/licenses/LICENSE-2.0.html"><img src="https://img.shields.io/badge/license-Apache%202-4EB1BA.svg"></a>
 <br>
 </p>
+
+[中文文档](https://github.com/dylan-tao/nacos-plus/blob/main/README.md)
 
 ### Support the database type:
 
@@ -120,34 +122,36 @@ mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 
 ### Who is using it?
 <p align = "center">
-<img src="customer/xinwang.png" width="38" />
-<img src="customer/huaxia.png" width="38" />
-<img src="customer/minsheng.png" width="38" />
-<img src="customer/dongguan.png" width="38" />
-<img src="customer/yinzhou.png" width="38" />
-<img src="customer/jilin.png" width="38" />
+<img src="customer/yidong.png" width="102" />
+<img src="customer/caixun.png" width="102" />
+<img src="customer/xinwang.png" width="102" />
+<img src="customer/dongguan.png" width="102" />
+<img src="customer/yinzhou.png" width="102" />
+<img src="customer/jilin.png" width="102" />
 </p>
 <p align = "center">
-<img src="customer/luzhou.png" width="38" />
-<img src="customer/tailong.png" width="38" />
-<img src="customer/xingye.png" width="38" />
-<img src="customer/haerbin.png" width="38" />
-<img src="customer/shengjing.png" width="38" />
-<img src="customer/biyadi.png" width="38" />
+<img src="customer/huaxia.png" width="102" />
+<img src="customer/luzhou.png" width="102" />
+<img src="customer/tailong.png" width="102" />
+<img src="customer/xingye.png" width="102" />
+<img src="customer/minsheng.png" width="102" />
+<img src="customer/shengjing.png" width="102" />
 </p>
 <p align = "center">
-<img src="customer/beiqi.png" width="38" />
-<img src="customer/kelaisile.png" width="38" />
-<img src="customer/weilai.png" width="38" />
-<img src="customer/weipinhui.png" width="38" />
-<img src="customer/qingnianyoupin.png" width="38" />
-<img src="customer/taibao.png" width="38" />
+<img src="customer/biyadi.png" width="102" />
+<img src="customer/beiqi.png" width="102" />
+<img src="customer/kelaisile.png" width="102" />
+<img src="customer/weilai.png" width="102" />
+<img src="customer/weipinhui.png" width="102" />
+<img src="customer/qingnianyoupin.png" width="102" />
 </p>
 <p align = "center">
-<img src="customer/samoye.png" width="38" />
-<img src="customer/fengbang.png" width="38" />
-<img src="customer/lazada.png" width="38" />
-<img src="customer/zhongtie.png" width="38" />
+<img src="customer/taibao.png" width="102" />
+<img src="customer/samoye.png" width="102" />
+<img src="customer/fengbang.png" width="102" />
+<img src="customer/lazada.png" width="102" />
+<img src="customer/zhongtie.png" width="102" />
+<img src="customer/haerbin.png" width="102" />
 </p>
 
 ### Emergency Support
