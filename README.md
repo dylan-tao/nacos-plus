@@ -41,12 +41,14 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip
 ```
 ### SQL脚本
-#### {数据库类型}-schema.sql在制成品的conf文件夹下
+#### 其在制成品的conf文件夹下，格式：{数据库类型}-schema.sql
 ```
-nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar\conf\{db}-schema.sql
-nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{db}-schema.sql
+nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar\conf\{数据库类型名}-schema.sql
+nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{数据库类型名}-schema.sql
 ```
 ### 数据库连接配置项
+#### 以下配置在制成品的conf\application.properties文件中
+
 ```
 #### 如果使用MySQL或MariaDB作为数据源:
 #spring.datasource.platform=mysql

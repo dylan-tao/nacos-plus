@@ -41,12 +41,14 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip
 ```
 ### SQL Schema
-#### {db}-schema.sql is in the config directory of the manufactured product
+#### It is in the configuration directory of the manufactured product, format: {db}-schema.sql
 ```
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar\conf\{db}-schema.sql
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{db}-schema.sql
 ```
 ### DB Connection Configuration
+#### The following configuration is in the conf\application.properties file of the manufactured product
+
 ```
 ### If use MySQL or MariaDB as datasource:
 #spring.datasource.platform=mysql
