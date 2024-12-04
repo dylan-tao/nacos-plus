@@ -1,10 +1,10 @@
 <p align = "center">
 <img src="doc/NacosPlus.png" width="28%" height="28%" />
 <br><br>
-<b>NacosPlus，为信创国产数据库爱心发电。 </b>
-<br><br>Star⭐一下(右上角)，持续版本维护的动力😊
-<br><br>Watch一下，遇到问题提Issues可实时接收问题进展
-<br><br>Fork一下，完善和特殊场景适配后，记得Pull Request为信创添砖加瓦
+<b>NacosPlus，Generate power for China's(Xinchuang) database love.</b>
+<br><br>Star ⭐ (top right), the motivation for continuous version maintenance😊
+<br><br>Watch it, if you encounter problems and ask Issues, you can receive the progress of the problem in real time
+<br><br>Fork it, after improving and adapting to the special scene, remember to Pull Request to NacosPlus
 <br><br>
 <a title="GitHub Watchers" target="_blank" href="https://github.com/dylan-tao/nacos-plus/watchers"><img src="https://img.shields.io/github/watchers/dylan-tao/nacos-plus.svg?label=Watchers&style=social"></a>  
 <a title="GitHub Stars" target="_blank" href="https://github.com/dylan-tao/nacos-plus/stargazers"><img src="https://img.shields.io/github/stars/dylan-tao/nacos-plus.svg?label=Stars&style=social"></a>  
@@ -18,53 +18,53 @@
 <br>
 </p>
 
-[English Document](https://github.com/dylan-tao/nacos-plus/blob/main/README_en-US.md) 
+[中文文档](https://github.com/dylan-tao/nacos-plus/blob/main/README.md)
 
-### 支持的数据库类型列表:
+### Support the database type:
 
- *✅ 已支持   ⌛ 计划中   ❌ 暂无计划*
+ **✅ supported   ⌛ planning   ❌ not planned**
 
-| 数据库类型         |    服务端版本    |     客户端版本     | 是否支持 | NacosPlus版本 |
-|:--------------|:-----------:|:-------------:|:----:|:-----------:|
-| Mysql/MariaDB |  `5.7.36`   |   `8.0.33`    |  ✅   | `2.2.0.1+`  |
-| PostgreSQL    |   `90204`   |   `42.5.1`    |  ✅   | `2.2.0.1+`  |
-| OpenGauss     |   `3.0.0`   |    `2.0.0`    |  ✅   | `2.2.0.2+`  |
-| GaussDB       |   `2.1.0`   |    `2.0.0`    |  ✅   | `2.2.0.2+`  |
-| Oracle        | `11.2.0.1`  |  `11.2.0.4`   |  ✅   | `2.3.2.1+`  |
-| DM DBMS       | `8.1.3.100` |  `8.1.3.140`  |  ✅   | `2.3.2.2+`  |
-| Sql Server    |   `2019`    | `12.4.2.jre8` |  ✅   | `2.3.2.3+`  |
-| OceanBase     |     `-`     |      `-`      |  ⌛   | `2.3.2.7+`  |
+| Database Type         | Database Version | Database Client Version | Supported | NacosPlus Version |
+|:----------------------|:----------------:|:-----------------------:|:---------:|:-----------------:|
+| Mysql/MariaDB         |     `5.7.36`     |        `8.0.33`         |     ✅     |    `2.2.0.1+`     |
+| PostgreSQL            |     `90204`      |        `42.5.1`         |     ✅     |    `2.2.0.1+`     |
+| OpenGauss             |     `3.0.0`      |         `2.0.0`         |     ✅     |    `2.2.0.2+`     |
+| GaussDB               |     `2.1.0`      |         `2.0.0`         |     ✅     |    `2.2.0.2+`     |
+| Oracle                |    `11.2.0.1`    |       `11.2.0.4`        |     ✅     |    `2.3.2.1+`     |
+| DM DBMS               |   `8.1.3.100`    |       `8.1.3.140`       |     ✅     |    `2.3.2.2+`     |
+| Sql Server            |      `2019`      |      `12.4.2.jre8`      |     ✅     |    `2.3.2.3+`     |
+| OceanBase             |       `-`        |           `-`           |     ⌛     |    `2.3.2.7+`     |
 
-### 制成品
+### Manufactured Product
 ```
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip
 ```
-### SQL脚本
-#### 其在制成品的conf文件夹下，格式：{数据库类型}-schema.sql
+### SQL Schema
+#### It is in the configuration directory of the manufactured product, format: {db}-schema.sql
 ```
-nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar\conf\{数据库类型名}-schema.sql
-nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{数据库类型名}-schema.sql
+nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar\conf\{db}-schema.sql
+nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{db}-schema.sql
 ```
-### 数据库连接配置项
-#### 以下配置在制成品的conf\application.properties文件中
+### DB Connection Configuration
+#### The following configuration is in the conf\application.properties file of the manufactured product
 
 ```
-#### 如果使用MySQL或MariaDB作为数据源:
+### If use MySQL or MariaDB as datasource:
 #spring.datasource.platform=mysql
 #db.pool.config.driver-class-name=com.mysql.cj.jdbc.Driver
 #db.url.0=jdbc:mysql://127.0.0.1:3306/nacos_server?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
 #db.user.0=nacos
 #db.password.0=123456
 
-##### 如果使用PostgreSQL或OpenGauss或GaussDB作为数据源:
+##### If use PostgreSQL or OpenGauss or GaussDB as datasource:
 #spring.sql.init.platform=postgresql
 #db.pool.config.driver-class-name=org.postgresql.Driver
 #db.url.0=jdbc:postgresql://127.0.0.1:5432/nacos_server
 #db.user.0=nacos
 #db.password.0=123456
 
-##### 如果使用Oracle作为数据源:
+##### If use Oracle as datasource:
 #spring.sql.init.platform=oracle
 #db.pool.config.driver-class-name=oracle.jdbc.OracleDriver
 #db.url.0=jdbc:oracle:thin:@//127.0.0.1:1521/nacos_server
@@ -72,8 +72,8 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{数据库类型名}
 #db.password.0=123456
 #db.testQuery=select 1 from dual
 
-##### 如果使用DM(达梦)作为数据源:
-### 警告: db.user.0必须配置为NACOS_SERVER并创建此数据库账号
+##### If use DM as datasource:
+### WARNING: db.user.0 must be NACOS_SERVER, create this account
 #spring.sql.init.platform=dm
 #db.pool.config.driver-class-name=dm.jdbc.driver.DmDriver
 #db.url.0=jdbc:dm://127.0.0.1:5236/nacos_server?keyWords=type,usage,role,action,password&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
@@ -81,7 +81,7 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{数据库类型名}
 #db.password.0=123456
 #db.testQuery=select 1
 
-##### 如果使用SqlServer作为数据源:
+##### If use SqlServer as datasource:
 #spring.sql.init.platform=sqlserver
 #db.pool.config.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
 #db.url.0=jdbc:sqlserver://127.0.0.1:1433;DatabaseName=nacos_server;trustServerCertificate=true
@@ -90,39 +90,39 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{数据库类型名}
 #db.testQuery=select 1
 ```
 
-### 从提供的制成品包启动
+### Start by the provided startup package
 
-**第一步: 下载二进制包**
+**Step 1: Download the binary package**
 
-你可以从 [最终的版本](https://github.com/dylan-tao/nacos-plus/releases) 下载最新的制成品包.  
+You can download the package from the [latest stable release](https://github.com/dylan-tao/nacos-plus/releases).  
 
-以发布的 `nacos-server-2.x.x.zip` 作为例子:
+Take release `nacos-server-2.x.x.zip` for example:
 ```sh
 unzip nacos-server-2.x.x.zip
 cd nacos/bin 
 ``` 
 
-**第二步: 启动服务**
+**Step 2: Start Server**
 
-在**Linux/Unix/Mac**平台上，运行以下命令以集群模式启动服务: 
+On the **Linux/Unix/Mac** platform, run the following command to start server with cluster mode: 
 ```sh
 sh startup.sh -m cluster
 ```
 
-在**Windows**平台上，运行以下命令以集群模式启动服务；或者也可以双击“start.cmd”以单机模式启动服务
+On the **Windows** platform, run the following command to start server with cluster mode.  Alternatively, you can also double-click the `startup.cmd` to run standalone NacosServer.
 ```
 startup.cmd -m cluster
 ```
 
-### 根据源码本地打包制成品包
+### Package ReBuild
 ```
 mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 ```
 
-### 常见问题解答
-> [从问题列表中自助获取[FAQ-x]解答，点击我！！！](https://github.com/dylan-tao/nacos-plus/issues)
+### FAQ
+> [Get 【FAQ-x】 list from issues, Click me !!!](https://github.com/dylan-tao/nacos-plus/issues)
 
-### 谁正在使用？
+### Who is using it?
 <p align = "center">
 <img src="customer/yidong.png" width="102" />
 <img src="customer/caixun.png" width="102" />
@@ -156,9 +156,9 @@ mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 <img src="customer/haerbin.png" width="102" />
 </p>
 
-### 紧急支援
+### Emergency Support
 
-作者的微信二维码只提供紧急支持。您必须在寻求帮助之前提交ISSUE，否则将不能给予任何支持。
+The author's WeChat QR code only provides emergency support. You must submit ISSUE before seeking help, otherwise the answer will not be supported.
 
 <p align = "center">
 <img src="doc/AuthorWechat.png" width="52%" height="52%" />
