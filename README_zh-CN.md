@@ -120,36 +120,34 @@ mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 
 ### Who is using it?
 <p align = "center">
-<img src="customer/yidong.png" width="98" />
-<img src="customer/caixun.png" width="98" />
-<img src="customer/xinwang.png" width="98" />
-<img src="customer/dongguan.png" width="98" />
-<img src="customer/yinzhou.png" width="98" />
-<img src="customer/jilin.png" width="98" />
+<img src="customer/xinwang.png" width="38" />
+<img src="customer/huaxia.png" width="38" />
+<img src="customer/minsheng.png" width="38" />
+<img src="customer/dongguan.png" width="38" />
+<img src="customer/yinzhou.png" width="38" />
+<img src="customer/jilin.png" width="38" />
 </p>
 <p align = "center">
-<img src="customer/huaxia.png" width="98" />
-<img src="customer/luzhou.png" width="98" />
-<img src="customer/tailong.png" width="98" />
-<img src="customer/xingye.png" width="98" />
-<img src="customer/minsheng.png" width="98" />
-<img src="customer/shengjing.png" width="98" />
+<img src="customer/luzhou.png" width="38" />
+<img src="customer/tailong.png" width="38" />
+<img src="customer/xingye.png" width="38" />
+<img src="customer/haerbin.png" width="38" />
+<img src="customer/shengjing.png" width="38" />
+<img src="customer/biyadi.png" width="38" />
 </p>
 <p align = "center">
-<img src="customer/biyadi.png" width="98" />
-<img src="customer/beiqi.png" width="98" />
-<img src="customer/kelaisile.png" width="98" />
-<img src="customer/weilai.png" width="98" />
-<img src="customer/weipinhui.png" width="98" />
-<img src="customer/qingnianyoupin.png" width="98" />
+<img src="customer/beiqi.png" width="38" />
+<img src="customer/kelaisile.png" width="38" />
+<img src="customer/weilai.png" width="38" />
+<img src="customer/weipinhui.png" width="38" />
+<img src="customer/qingnianyoupin.png" width="38" />
+<img src="customer/taibao.png" width="38" />
 </p>
 <p align = "center">
-<img src="customer/taibao.png" width="98" />
-<img src="customer/samoye.png" width="98" />
-<img src="customer/fengbang.png" width="98" />
-<img src="customer/lazada.png" width="98" />
-<img src="customer/zhongtie.png" width="98" />
-<img src="customer/haerbin.png" width="98" />
+<img src="customer/samoye.png" width="38" />
+<img src="customer/fengbang.png" width="38" />
+<img src="customer/lazada.png" width="38" />
+<img src="customer/zhongtie.png" width="38" />
 </p>
 
 ### Emergency Support
