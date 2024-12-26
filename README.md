@@ -42,13 +42,14 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip
 
 ## 📄 SQL脚本
 
-### 其在制成品的conf文件夹下，格式：{数据库类型}-schema.sql
+**其在制成品的conf文件夹下，格式：{数据库类型}-schema.sql**
+
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar\conf\{数据库类型名}-schema.sql</br>
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{数据库类型名}-schema.sql
 
 ## 📌 数据库连接配置项
 
-### 以下配置在制成品的conf\application.properties文件中
+**以下配置在制成品的conf\application.properties文件中**
 
 ```
 #### 如果使用MySQL或MariaDB作为数据源:

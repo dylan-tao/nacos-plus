@@ -42,13 +42,14 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip
 
 ## 📄 SQL Schema
 
-#### It is in the configuration directory of the manufactured product, format: {db}-schema.sql
+**It is in the configuration directory of the manufactured product, format: {db}-schema.sql**
+
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar\conf\{db}-schema.sql</br>
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{db}-schema.sql
 
 ## 📌 DB Connection Configuration
 
-#### The following configuration is in the conf\application.properties file of the manufactured product
+**The following configuration is in the conf\application.properties file of the manufactured product**
 
 ```
 ### If use MySQL or MariaDB as datasource:
