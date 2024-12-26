@@ -20,9 +20,7 @@
 
 English | [中文文档](https://github.com/dylan-tao/nacos-plus/blob/main/README.md)
 
-### 🔖 Support the database type:
-
----
+## 🔖 Support the database type:
 
  **✅ supported   ⌛ planning   ❌ not planned**
 
@@ -37,24 +35,18 @@ English | [中文文档](https://github.com/dylan-tao/nacos-plus/blob/main/READM
 | Sql Server            |      `2019`      |      `12.4.2.jre8`      |     ✅     |    `2.3.2.3+`     |
 | OceanBase             |       `-`        |           `-`           |     ⌛     |    `2.3.2.7+`     |
 
-### 📦 Manufactured Product
-
----
+## 📦 Manufactured Product
 
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar</br>
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip
 
-### 📄 SQL Schema
-
----
+## 📄 SQL Schema
 
 #### It is in the configuration directory of the manufactured product, format: {db}-schema.sql
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar\conf\{db}-schema.sql</br>
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{db}-schema.sql
 
-### 📌 DB Connection Configuration
-
----
+## 📌 DB Connection Configuration
 
 #### The following configuration is in the conf\application.properties file of the manufactured product
 
@@ -99,9 +91,7 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{db}-schema.sql
 #db.testQuery=select 1
 ```
 
-### 🚀 Start by the provided startup package
-
----
+## 🚀 Start by the provided startup package
 
 **Step 1: Download the binary package**
 
@@ -125,23 +115,17 @@ On the **Windows** platform, run the following command to start server with clus
 startup.cmd -m cluster
 ```
 
-### 🚣 Package ReBuild
-
----
+## 🚣 Package ReBuild
 
 ```
 mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 ```
 
-### 🙋 FAQ
-
----
+## 🙋 FAQ
 
 [Get 【FAQ-x】 list from issues, Click me !!!](https://github.com/dylan-tao/nacos-plus/issues)
 
-### 💑 Who is using it?
-
----
+## 💑 Who is using it?
 
 <p align = "center">
 <img src="doc/customer/yidong.png" width="102" />
@@ -176,18 +160,14 @@ mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 <img src="doc/customer/haerbin.png" width="102" />
 </p>
 
-### 💝 Thanks
-
----
+## 💝 Thanks
 
 Thanks to the free open source license provided by JetBrains
 <p align = "left">
 <img src="doc/thanks/jetbrains.png" width="80" />
 </p>
 
-### 🔗 Emergency Support
-
----
+## 🔗 Emergency Support
 
 The author's WeChat QR code only provides emergency support. You must submit ISSUE before seeking help, otherwise the answer will not be supported.
 

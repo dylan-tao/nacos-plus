@@ -20,9 +20,7 @@
 
 简体中文 | [English](https://github.com/dylan-tao/nacos-plus/blob/main/README_en-US.md)
 
-### 🔖 支持的数据库类型列表:
-
----
+## 🔖 支持的数据库类型列表:
 
  *✅ 已支持   ⌛ 计划中   ❌ 暂无计划*
 
@@ -37,26 +35,20 @@
 | Sql Server    |   `2019`    | `12.4.2.jre8` |  ✅   | `2.3.2.3+`  |
 | OceanBase     |     `-`     |      `-`      |  ⌛   | `2.3.2.7+`  |
 
-### 📦 制成品
-
----
+## 📦 制成品
 
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar</br>
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip
 
-### 📄 SQL脚本
+## 📄 SQL脚本
 
----
-
-#### 其在制成品的conf文件夹下，格式：{数据库类型}-schema.sql
+### 其在制成品的conf文件夹下，格式：{数据库类型}-schema.sql
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar\conf\{数据库类型名}-schema.sql</br>
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{数据库类型名}-schema.sql
 
-### 📌 数据库连接配置项
+## 📌 数据库连接配置项
 
----
-
-#### 以下配置在制成品的conf\application.properties文件中
+### 以下配置在制成品的conf\application.properties文件中
 
 ```
 #### 如果使用MySQL或MariaDB作为数据源:
@@ -66,14 +58,14 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{数据库类型名}
 #db.user.0=nacos
 #db.password.0=123456
 
-##### 如果使用PostgreSQL或OpenGauss或GaussDB作为数据源:
+#### 如果使用PostgreSQL或OpenGauss或GaussDB作为数据源:
 #spring.sql.init.platform=postgresql
 #db.pool.config.driver-class-name=org.postgresql.Driver
 #db.url.0=jdbc:postgresql://127.0.0.1:5432/nacos_server
 #db.user.0=nacos
 #db.password.0=123456
 
-##### 如果使用Oracle作为数据源:
+#### 如果使用Oracle作为数据源:
 #spring.sql.init.platform=oracle
 #db.pool.config.driver-class-name=oracle.jdbc.OracleDriver
 #db.url.0=jdbc:oracle:thin:@//127.0.0.1:1521/nacos_server
@@ -81,8 +73,8 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{数据库类型名}
 #db.password.0=123456
 #db.testQuery=select 1 from dual
 
-##### 如果使用DM(达梦)作为数据源:
-### 警告: db.user.0必须配置为NACOS_SERVER并创建此数据库账号
+#### 如果使用DM(达梦)作为数据源:
+#### 警告: db.user.0必须配置为NACOS_SERVER并创建此数据库账号
 #spring.sql.init.platform=dm
 #db.pool.config.driver-class-name=dm.jdbc.driver.DmDriver
 #db.url.0=jdbc:dm://127.0.0.1:5236/nacos_server?keyWords=type,usage,role,action,password&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
@@ -90,7 +82,7 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{数据库类型名}
 #db.password.0=123456
 #db.testQuery=select 1
 
-##### 如果使用SqlServer作为数据源:
+#### 如果使用SqlServer作为数据源:
 #spring.sql.init.platform=sqlserver
 #db.pool.config.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
 #db.url.0=jdbc:sqlserver://127.0.0.1:1433;DatabaseName=nacos_server;trustServerCertificate=true
@@ -99,9 +91,7 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{数据库类型名}
 #db.testQuery=select 1
 ```
 
-### 🚀 从提供的制成品包启动
-
----
+## 🚀 从提供的制成品包启动
 
 **第一步: 下载二进制包**
 
@@ -125,23 +115,17 @@ sh startup.sh -m cluster
 startup.cmd -m cluster
 ```
 
-### 🚣 根据源码本地打包制成品包
-
----
+## 🚣 根据源码本地打包制成品包
 
 ```
 mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 ```
 
-### 🙋 常见问题解答
-
----
+## 🙋 常见问题解答
 
 [从问题列表中自助获取[FAQ-x]解答，点击我！！！](https://github.com/dylan-tao/nacos-plus/issues)
 
-### 💑 谁正在使用？
-
----
+## 💑 谁正在使用？
 
 <p align = "center">
 <img src="doc/customer/yidong.png" width="102" />
@@ -176,18 +160,14 @@ mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 <img src="doc/customer/haerbin.png" width="102" />
 </p>
 
-### 💝 鸣谢
-
----
+## 💝 鸣谢
 
 感谢 JetBrains 提供的免费开源 License
 <p align = "left">
 <img src="doc/thanks/jetbrains.png" width="80" />
 </p>
 
-### 🔗 紧急支援
-
----
+## 🔗 紧急支援
 
 作者的微信二维码只提供紧急支持。您必须在寻求帮助之前提交ISSUE，否则将不能给予任何支持。
 <p align = "center">
