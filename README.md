@@ -1,7 +1,7 @@
 <p align = "center">
-<img src="doc/NacosPlus.png" width="28%" height="28%" />
+<img src="doc/logo.png" width="28%" height="28%" />
 <br><br>
-<b>NacosPlus，为信创国产数据库爱心发电。 </b>
+<b>NacosPlus，为信创🇨🇳国产数据库爱心发电。 </b>
 <br><br>Star⭐一下(右上角)，持续版本维护的动力😊
 <br><br>Watch一下，遇到问题提Issues可实时接收问题进展
 <br><br>Fork一下，完善和特殊场景适配后，记得Pull Request为信创添砖加瓦
@@ -18,9 +18,9 @@
 <br>
 </p>
 
-[English Document](https://github.com/dylan-tao/nacos-plus/blob/main/README_en-US.md) 
+简体中文 | [English](https://github.com/dylan-tao/nacos-plus/blob/main/README_en-US.md)
 
-### 支持的数据库类型列表:
+## 🔖 支持的数据库类型列表:
 
  *✅ 已支持   ⌛ 计划中   ❌ 暂无计划*
 
@@ -35,19 +35,21 @@
 | Sql Server    |   `2019`    | `12.4.2.jre8` |  ✅   | `2.3.2.3+`  |
 | OceanBase     |     `-`     |      `-`      |  ⌛   | `2.3.2.7+`  |
 
-### 制成品
-```
-nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar
+## 📦 制成品
+
+nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar</br>
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip
-```
-### SQL脚本
-#### 其在制成品的conf文件夹下，格式：{数据库类型}-schema.sql
-```
-nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar\conf\{数据库类型名}-schema.sql
+
+## 📄 SQL脚本
+
+**其在制成品的conf文件夹下，格式：{数据库类型}-schema.sql**
+
+nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar\conf\{数据库类型名}-schema.sql</br>
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{数据库类型名}-schema.sql
-```
-### 数据库连接配置项
-#### 以下配置在制成品的conf\application.properties文件中
+
+## 📌 数据库连接配置项
+
+**以下配置在制成品的conf\application.properties文件中**
 
 ```
 #### 如果使用MySQL或MariaDB作为数据源:
@@ -57,14 +59,14 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{数据库类型名}
 #db.user.0=nacos
 #db.password.0=123456
 
-##### 如果使用PostgreSQL或OpenGauss或GaussDB作为数据源:
+#### 如果使用PostgreSQL或OpenGauss或GaussDB作为数据源:
 #spring.sql.init.platform=postgresql
 #db.pool.config.driver-class-name=org.postgresql.Driver
 #db.url.0=jdbc:postgresql://127.0.0.1:5432/nacos_server
 #db.user.0=nacos
 #db.password.0=123456
 
-##### 如果使用Oracle作为数据源:
+#### 如果使用Oracle作为数据源:
 #spring.sql.init.platform=oracle
 #db.pool.config.driver-class-name=oracle.jdbc.OracleDriver
 #db.url.0=jdbc:oracle:thin:@//127.0.0.1:1521/nacos_server
@@ -72,8 +74,8 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{数据库类型名}
 #db.password.0=123456
 #db.testQuery=select 1 from dual
 
-##### 如果使用DM(达梦)作为数据源:
-### 警告: db.user.0必须配置为NACOS_SERVER并创建此数据库账号
+#### 如果使用DM(达梦)作为数据源:
+#### 警告: db.user.0必须配置为NACOS_SERVER并创建此数据库账号
 #spring.sql.init.platform=dm
 #db.pool.config.driver-class-name=dm.jdbc.driver.DmDriver
 #db.url.0=jdbc:dm://127.0.0.1:5236/nacos_server?keyWords=type,usage,role,action,password&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
@@ -81,7 +83,7 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{数据库类型名}
 #db.password.0=123456
 #db.testQuery=select 1
 
-##### 如果使用SqlServer作为数据源:
+#### 如果使用SqlServer作为数据源:
 #spring.sql.init.platform=sqlserver
 #db.pool.config.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
 #db.url.0=jdbc:sqlserver://127.0.0.1:1433;DatabaseName=nacos_server;trustServerCertificate=true
@@ -90,7 +92,7 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{数据库类型名}
 #db.testQuery=select 1
 ```
 
-### 从提供的制成品包启动
+## 🚀 从提供的制成品包启动
 
 **第一步: 下载二进制包**
 
@@ -114,52 +116,61 @@ sh startup.sh -m cluster
 startup.cmd -m cluster
 ```
 
-### 根据源码本地打包制成品包
+## 🚣 根据源码本地打包制成品包
+
 ```
 mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 ```
 
-### 常见问题解答
-> [从问题列表中自助获取[FAQ-x]解答，点击我！！！](https://github.com/dylan-tao/nacos-plus/issues)
+## 🙋 常见问题解答
 
-### 谁正在使用？
+[从问题列表中自助获取[FAQ-x]解答，点击我！！！](https://github.com/dylan-tao/nacos-plus/issues)
+
+## 💑 谁正在使用？
+
 <p align = "center">
-<img src="customer/yidong.png" width="102" />
-<img src="customer/caixun.png" width="102" />
-<img src="customer/xinwang.png" width="102" />
-<img src="customer/dongguan.png" width="102" />
-<img src="customer/yinzhou.png" width="102" />
-<img src="customer/jilin.png" width="102" />
+<img src="doc/customer/yidong.png" width="102" />
+<img src="doc/customer/caixun.png" width="102" />
+<img src="doc/customer/xinwang.png" width="102" />
+<img src="doc/customer/dongguan.png" width="102" />
+<img src="doc/customer/yinzhou.png" width="102" />
+<img src="doc/customer/jilin.png" width="102" />
 </p>
 <p align = "center">
-<img src="customer/huaxia.png" width="102" />
-<img src="customer/luzhou.png" width="102" />
-<img src="customer/tailong.png" width="102" />
-<img src="customer/xingye.png" width="102" />
-<img src="customer/minsheng.png" width="102" />
-<img src="customer/shengjing.png" width="102" />
+<img src="doc/customer/huaxia.png" width="102" />
+<img src="doc/customer/luzhou.png" width="102" />
+<img src="doc/customer/tailong.png" width="102" />
+<img src="doc/customer/xingye.png" width="102" />
+<img src="doc/customer/minsheng.png" width="102" />
+<img src="doc/customer/shengjing.png" width="102" />
 </p>
 <p align = "center">
-<img src="customer/biyadi.png" width="102" />
-<img src="customer/beiqi.png" width="102" />
-<img src="customer/kelaisile.png" width="102" />
-<img src="customer/weilai.png" width="102" />
-<img src="customer/weipinhui.png" width="102" />
-<img src="customer/qingnianyoupin.png" width="102" />
+<img src="doc/customer/biyadi.png" width="102" />
+<img src="doc/customer/beiqi.png" width="102" />
+<img src="doc/customer/kelaisile.png" width="102" />
+<img src="doc/customer/weilai.png" width="102" />
+<img src="doc/customer/weipinhui.png" width="102" />
+<img src="doc/customer/qingnianyoupin.png" width="102" />
 </p>
 <p align = "center">
-<img src="customer/taibao.png" width="102" />
-<img src="customer/samoye.png" width="102" />
-<img src="customer/fengbang.png" width="102" />
-<img src="customer/lazada.png" width="102" />
-<img src="customer/zhongtie.png" width="102" />
-<img src="customer/haerbin.png" width="102" />
+<img src="doc/customer/taibao.png" width="102" />
+<img src="doc/customer/samoye.png" width="102" />
+<img src="doc/customer/fengbang.png" width="102" />
+<img src="doc/customer/lazada.png" width="102" />
+<img src="doc/customer/zhongtie.png" width="102" />
+<img src="doc/customer/haerbin.png" width="102" />
 </p>
 
-### 紧急支援
+## 💝 鸣谢
+
+感谢 JetBrains 提供的免费开源 License
+<p align = "left">
+<img src="doc/thanks/jetbrains.png" width="80" />
+</p>
+
+## 🔗 紧急支援
 
 作者的微信二维码只提供紧急支持。您必须在寻求帮助之前提交ISSUE，否则将不能给予任何支持。
-
 <p align = "center">
-<img src="doc/AuthorWechat.png" width="52%" height="52%" />
+<img src="doc/wechat.png" width="350" height="350" />
 </p>

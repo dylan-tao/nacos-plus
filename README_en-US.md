@@ -1,7 +1,7 @@
 <p align = "center">
-<img src="doc/NacosPlus.png" width="28%" height="28%" />
+<img src="doc/logo.png" width="28%" height="28%" />
 <br><br>
-<b>NacosPlus，Generate power for China's(Xinchuang) database love.</b>
+<b>NacosPlus，Generate power for China's(🇨🇳Xinchuang) database love.</b>
 <br><br>Star ⭐ (top right), the motivation for continuous version maintenance😊
 <br><br>Watch it, if you encounter problems and ask Issues, you can receive the progress of the problem in real time
 <br><br>Fork it, after improving and adapting to the special scene, remember to Pull Request to NacosPlus
@@ -18,9 +18,9 @@
 <br>
 </p>
 
-[中文文档](https://github.com/dylan-tao/nacos-plus/blob/main/README.md)
+English | [中文文档](https://github.com/dylan-tao/nacos-plus/blob/main/README.md)
 
-### Support the database type:
+## 🔖 Support the database type:
 
  **✅ supported   ⌛ planning   ❌ not planned**
 
@@ -35,19 +35,21 @@
 | Sql Server            |      `2019`      |      `12.4.2.jre8`      |     ✅     |    `2.3.2.3+`     |
 | OceanBase             |       `-`        |           `-`           |     ⌛     |    `2.3.2.7+`     |
 
-### Manufactured Product
-```
-nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar
+## 📦 Manufactured Product
+
+nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar</br>
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip
-```
-### SQL Schema
-#### It is in the configuration directory of the manufactured product, format: {db}-schema.sql
-```
-nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar\conf\{db}-schema.sql
+
+## 📄 SQL Schema
+
+**It is in the configuration directory of the manufactured product, format: {db}-schema.sql**
+
+nacos-2.x.x\distribution\target\nacos-server-2.x.x.tar\conf\{db}-schema.sql</br>
 nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{db}-schema.sql
-```
-### DB Connection Configuration
-#### The following configuration is in the conf\application.properties file of the manufactured product
+
+## 📌 DB Connection Configuration
+
+**The following configuration is in the conf\application.properties file of the manufactured product**
 
 ```
 ### If use MySQL or MariaDB as datasource:
@@ -90,7 +92,7 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{db}-schema.sql
 #db.testQuery=select 1
 ```
 
-### Start by the provided startup package
+## 🚀 Start by the provided startup package
 
 **Step 1: Download the binary package**
 
@@ -114,52 +116,62 @@ On the **Windows** platform, run the following command to start server with clus
 startup.cmd -m cluster
 ```
 
-### Package ReBuild
+## 🚣 Package ReBuild
+
 ```
 mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 ```
 
-### FAQ
-> [Get 【FAQ-x】 list from issues, Click me !!!](https://github.com/dylan-tao/nacos-plus/issues)
+## 🙋 FAQ
 
-### Who is using it?
+[Get 【FAQ-x】 list from issues, Click me !!!](https://github.com/dylan-tao/nacos-plus/issues)
+
+## 💑 Who is using it?
+
 <p align = "center">
-<img src="customer/yidong.png" width="102" />
-<img src="customer/caixun.png" width="102" />
-<img src="customer/xinwang.png" width="102" />
-<img src="customer/dongguan.png" width="102" />
-<img src="customer/yinzhou.png" width="102" />
-<img src="customer/jilin.png" width="102" />
+<img src="doc/customer/yidong.png" width="102" />
+<img src="doc/customer/caixun.png" width="102" />
+<img src="doc/customer/xinwang.png" width="102" />
+<img src="doc/customer/dongguan.png" width="102" />
+<img src="doc/customer/yinzhou.png" width="102" />
+<img src="doc/customer/jilin.png" width="102" />
 </p>
 <p align = "center">
-<img src="customer/huaxia.png" width="102" />
-<img src="customer/luzhou.png" width="102" />
-<img src="customer/tailong.png" width="102" />
-<img src="customer/xingye.png" width="102" />
-<img src="customer/minsheng.png" width="102" />
-<img src="customer/shengjing.png" width="102" />
+<img src="doc/customer/huaxia.png" width="102" />
+<img src="doc/customer/luzhou.png" width="102" />
+<img src="doc/customer/tailong.png" width="102" />
+<img src="doc/customer/xingye.png" width="102" />
+<img src="doc/customer/minsheng.png" width="102" />
+<img src="doc/customer/shengjing.png" width="102" />
 </p>
 <p align = "center">
-<img src="customer/biyadi.png" width="102" />
-<img src="customer/beiqi.png" width="102" />
-<img src="customer/kelaisile.png" width="102" />
-<img src="customer/weilai.png" width="102" />
-<img src="customer/weipinhui.png" width="102" />
-<img src="customer/qingnianyoupin.png" width="102" />
+<img src="doc/customer/biyadi.png" width="102" />
+<img src="doc/customer/beiqi.png" width="102" />
+<img src="doc/customer/kelaisile.png" width="102" />
+<img src="doc/customer/weilai.png" width="102" />
+<img src="doc/customer/weipinhui.png" width="102" />
+<img src="doc/customer/qingnianyoupin.png" width="102" />
 </p>
 <p align = "center">
-<img src="customer/taibao.png" width="102" />
-<img src="customer/samoye.png" width="102" />
-<img src="customer/fengbang.png" width="102" />
-<img src="customer/lazada.png" width="102" />
-<img src="customer/zhongtie.png" width="102" />
-<img src="customer/haerbin.png" width="102" />
+<img src="doc/customer/taibao.png" width="102" />
+<img src="doc/customer/samoye.png" width="102" />
+<img src="doc/customer/fengbang.png" width="102" />
+<img src="doc/customer/lazada.png" width="102" />
+<img src="doc/customer/zhongtie.png" width="102" />
+<img src="doc/customer/haerbin.png" width="102" />
 </p>
 
-### Emergency Support
+## 💝 Thanks
+
+Thanks to the free open source license provided by JetBrains
+<p align = "left">
+<img src="doc/thanks/jetbrains.png" width="80" />
+</p>
+
+## 🔗 Emergency Support
 
 The author's WeChat QR code only provides emergency support. You must submit ISSUE before seeking help, otherwise the answer will not be supported.
 
 <p align = "center">
-<img src="doc/AuthorWechat.png" width="52%" height="52%" />
+<img src="doc/wechat.png" width="350" height="350" />
 </p>
