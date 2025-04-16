@@ -20,29 +20,29 @@
     
     <parent>
         <groupId>com.alibaba.nacos</groupId>
-        <artifactId>nacos-all</artifactId>
+        <artifactId>nacos-plus-all</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     
-    <artifactId>nacos-auth</artifactId>
+    <artifactId>nacos-plus-auth</artifactId>
     <packaging>jar</packaging>
-    <name>nacos-auth ${project.version}</name>
+    <name>nacos-plus-auth ${project.version}</name>
     <url>https://nacos.io</url>
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-common</artifactId>
+            <artifactId>nacos-plus-common</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-auth-plugin</artifactId>
+            <artifactId>nacos-plus-auth-plugin</artifactId>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-sys</artifactId>
+            <artifactId>nacos-plus-sys</artifactId>
         </dependency>
     
         <dependency>

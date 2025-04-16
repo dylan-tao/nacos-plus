@@ -23,7 +23,7 @@
     
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     
-    <include resource="META-INF/logback/nacos-included.xml"/>
+    <include resource="META-INF/logback/nacos-plus-included.xml"/>
     <include optional="true" resource="META-INF/logback/config-included.xml"/>
     <include optional="true" resource="META-INF/logback/naming-included.xml"/>
     <include optional="true" resource="META-INF/logback/.xml"/>
@@ -206,12 +206,12 @@
         </encoder>
     </appender>
     
-    <appender name="nacos-cluster"
+    <appender name="nacos-plus-cluster"
         class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/nacos-cluster.log</file>
+        <file>${LOG_HOME}/nacos-plus-cluster.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/nacos-cluster.log.%d{yyyy-MM-dd}.%i</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/nacos-plus-cluster.log.%d{yyyy-MM-dd}.%i</fileNamePattern>
             <maxFileSize>2GB</maxFileSize>
             <maxHistory>7</maxHistory>
             <totalSizeCap>7GB</totalSizeCap>
@@ -298,7 +298,7 @@
     
     <logger name="com.alibaba.nacos.core.cluster" additivity="false">
         <level value="INFO"/>
-        <appender-ref ref="nacos-cluster"/>
+        <appender-ref ref="nacos-plus-cluster"/>
     </logger>
     
     <springProfile name="standalone">

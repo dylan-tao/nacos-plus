@@ -20,16 +20,16 @@
     
     <parent>
         <groupId>com.alibaba.nacos</groupId>
-        <artifactId>nacos-all</artifactId>
+        <artifactId>nacos-plus-all</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     
-    <artifactId>nacos-common</artifactId>
+    <artifactId>nacos-plus-common</artifactId>
     <packaging>jar</packaging>
     
-    <name>nacos-common ${project.version}</name>
+    <name>nacos-plus-common ${project.version}</name>
     <url>https://nacos.io</url>
     <description>Nacos common pom.xml file</description>
     <dependencies>
@@ -50,7 +50,7 @@
         
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-api</artifactId>
+            <artifactId>nacos-plus-api</artifactId>
         </dependency>
         
         <dependency>
@@ -81,7 +81,7 @@
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
                 <includes>
-                    <include>nacos-version.txt</include>
+                    <include>nacos-plus-version.txt</include>
                     <include>META-INF/services/*</include>
                 </includes>
             </resource>

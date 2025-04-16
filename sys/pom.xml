@@ -20,21 +20,21 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.alibaba.nacos</groupId>
-        <artifactId>nacos-all</artifactId>
+        <artifactId>nacos-plus-all</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     
-    <artifactId>nacos-sys</artifactId>
+    <artifactId>nacos-plus-sys</artifactId>
     <packaging>jar</packaging>
-    <name>nacos-sys ${project.version}</name>
+    <name>nacos-plus-sys ${project.version}</name>
     <url>https://nacos.io</url>
     
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-common</artifactId>
+            <artifactId>nacos-plus-common</artifactId>
         </dependency>
         
         <dependency>
@@ -65,7 +65,7 @@
         </dependency>
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-custom-environment-plugin</artifactId>
+            <artifactId>nacos-plus-custom-environment-plugin</artifactId>
         </dependency>
     </dependencies>
 </project>
