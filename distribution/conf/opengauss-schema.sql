@@ -270,6 +270,14 @@ resources varchar(255) NOT NULL,
 action varchar(8) NOT NULL
 );
 CREATE INDEX uk_role_permission ON permissions (role,resources,action);
+
+-- Fix Issue: https://github.com/dylan-tao/nacos-plus/issues/81
+CREATE OR REPLACE FUNCTION working_version_num()
+RETURNS varchar AS $$
+BEGIN
+RETURN '9.2.4';
+END;
+$$ LANGUAGE plpgsql;
  
 INSERT INTO users (username, password, enabled) VALUES ('nacos', '$2a$10$EuWPZHzz32dJN7jexM34MOeYirDdFAZm2kuWj7VEOJhhZkDrxfvUu', TRUE);
  
