@@ -16,7 +16,7 @@
 # Setting system properties
 #===========================================================================================
 
-MODE="cluster"
+MODE="standalone"
 BASE_DIR="/opt/nacos"
 CUSTOM_SEARCH_LOCATIONS="file:${BASE_DIR}/conf/"
 
