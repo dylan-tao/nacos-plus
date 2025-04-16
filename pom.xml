@@ -128,7 +128,7 @@
         
         <!-- dependency version -->
         <spring-boot-dependencies.version>2.7.18</spring-boot-dependencies.version>
-        <spring-security-core.version>5.7.12</spring-security-core.version>
+        <spring-security-core.version>5.7.14</spring-security-core.version>
         <servlet-api.version>3.0</servlet-api.version>
         <commons-io.version>2.7</commons-io.version>
         <commons-collections.version>3.2.2</commons-collections.version>
@@ -143,7 +143,7 @@
         <com.dameng.dm8.version>8.1.3.140</com.dameng.dm8.version>
         <sqlserver-jdbc.version>12.4.2.jre8</sqlserver-jdbc.version>
 
-        <jjwt.version>0.11.2</jjwt.version>
+        <jjwt.version>0.11.5</jjwt.version>
         <javatuples.version>1.2</javatuples.version>
         <grpc-java.version>1.57.2</grpc-java.version>
         <proto-google-common-protos.version>2.17.0</proto-google-common-protos.version>
@@ -156,7 +156,8 @@
         <jraft-core.version>1.3.14</jraft-core.version>
         <rpc-grpc-impl.version>${jraft-core.version}</rpc-grpc-impl.version>
         <SnakeYaml.version>2.0</SnakeYaml.version>
-        <spring-web.version>5.3.33</spring-web.version>
+        <spring.upgrade.version>5.3.39</spring.upgrade.version>
+        <tomcat.upgrade.version>9.0.102</tomcat.upgrade.version>
     </properties>
     <!-- == -->
     <!-- =========================================================Build plugins================================================ -->
@@ -668,6 +669,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring.upgrade.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             
             <!-- Internal libs -->
             <dependency>
@@ -1033,10 +1041,21 @@
                 <version>${SnakeYaml.version}</version>
             </dependency>
 
+            <!-- TOMCAT CVE FIX -->
             <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-web</artifactId>
-                <version>${spring-web.version}</version>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-core</artifactId>
+                <version>${tomcat.upgrade.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-websocket</artifactId>
+                <version>${tomcat.upgrade.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-el</artifactId>
+                <version>${tomcat.upgrade.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
