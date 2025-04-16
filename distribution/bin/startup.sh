@@ -26,6 +26,28 @@ error_exit ()
     echo "ERROR: $1 !!"
     exit 1
 }
+process_required_config() {
+    local key_pattern="$1"
+    local target_file="$2"
+    local escaped_key=$(echo "$key_pattern" | sed 's/\./\\./g')
+
+    if grep -q "^${escaped_key}=$" "${target_file}"; then
+        read -p "\`${key_pattern}\` is missing, please set: " input_val
+
+        if sed -i.bak "s/^\(${escaped_key}=\)$/\1${input_val}/" "${target_file}" 2>/dev/null; then
+            rm -f "${target_file}.bak"
+            echo "\`${key_pattern}\` Updated: "
+            grep "^${escaped_key}" "$2" | head -n1
+            echo "----------------------------------"
+        else
+            # MacOS系统处理
+            sed -i "" "s/^\(${escaped_key}=\)$/\1${input_val}/" "${target_file}"
+            echo "\`${key_pattern}\` Updated: "
+            grep "^${escaped_key}" "$2" | head -n1
+            echo "----------------------------------"
+        fi
+    fi
+}
 [ ! -e "$JAVA_HOME/bin/java" ] && JAVA_HOME=$HOME/jdk/java
 [ ! -e "$JAVA_HOME/bin/java" ] && JAVA_HOME=/usr/java
 [ ! -e "$JAVA_HOME/bin/java" ] && JAVA_HOME=/opt/taobao/java
@@ -64,7 +86,8 @@ export MODE="standalone"
 export FUNCTION_MODE="all"
 export MEMBER_LIST=""
 export EMBEDDED_STORAGE=""
-while getopts ":m:f:s:c:p:" opt
+export DEPLOYMENT="merged"
+while getopts ":m:f:s:c:p:d:" opt
 do
     case $opt in
         m)
@@ -77,6 +100,8 @@ do
             MEMBER_LIST=$OPTARG;;
         p)
             EMBEDDED_STORAGE=$OPTARG;;
+        d)
+            DEPLOYMENT=$OPTARG;;
         ?)
         echo "Unknown parameter"
         exit 1;;
@@ -87,6 +112,13 @@ export JAVA_HOME
 export JAVA="$JAVA_HOME/bin/java"
 export BASE_DIR=`cd $(dirname $0)/..; pwd`
 export CUSTOM_SEARCH_LOCATIONS=file:${BASE_DIR}/conf/
+
+#===========================================================================================
+# Check and Init properties
+#===========================================================================================
+process_required_config "nacos.core.auth.plugin.nacos.token.secret.key" ${BASE_DIR}/conf/application.properties
+process_required_config "nacos.core.auth.server.identity.key" ${BASE_DIR}/conf/application.properties
+process_required_config "nacos.core.auth.server.identity.value" ${BASE_DIR}/conf/application.properties
 
 #===========================================================================================
 # JVM Configuration
@@ -120,6 +152,7 @@ else
   JAVA_OPT="${JAVA_OPT} -Xloggc:${BASE_DIR}/logs/nacos_gc.log -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=100M"
 fi
 
+JAVA_OPT="${JAVA_OPT} -Dnacos.deployment.type=${DEPLOYMENT}"
 JAVA_OPT="${JAVA_OPT} -Dloader.path=${BASE_DIR}/plugins,${BASE_DIR}/plugins/health,${BASE_DIR}/plugins/cmdb,${BASE_DIR}/plugins/selector"
 JAVA_OPT="${JAVA_OPT} -Dnacos.home=${BASE_DIR}"
 JAVA_OPT="${JAVA_OPT} -jar ${BASE_DIR}/target/${SERVER}.jar"
