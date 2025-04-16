@@ -344,6 +344,7 @@
                         <exclude>style/codeStyle.md</exclude>
                         <exclude>REPORTING-BUGS.md</exclude>
                         <exclude>README.md</exclude>
+                        <exclude>README_en-US.md</exclude>
                         <exclude>.github/**/*</exclude>
                         <exclude>doc/*</exclude>
                         <exclude>derby.log</exclude>
