@@ -20,21 +20,21 @@
 
     <parent>
         <groupId>com.alibaba.nacos</groupId>
-        <artifactId>nacos-all</artifactId>
+        <artifactId>nacos-plus-all</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>nacos-distribution</artifactId>
-    <name>nacos-distribution ${project.version}</name>
+    <artifactId>nacos-plus-distribution</artifactId>
+    <name>nacos-plus-distribution ${project.version}</name>
     <packaging>pom</packaging>
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-console</artifactId>
+            <artifactId>nacos-plus-console</artifactId>
         </dependency>
     </dependencies>
     
@@ -44,7 +44,7 @@
             <dependencies>
                 <dependency>
                     <groupId>${project.groupId}</groupId>
-                    <artifactId>nacos-config</artifactId>
+                    <artifactId>nacos-plus-config</artifactId>
                 </dependency>
             </dependencies>
             <build>
@@ -77,7 +77,7 @@
             <dependencies>
                 <dependency>
                     <groupId>${project.groupId}</groupId>
-                    <artifactId>nacos-naming</artifactId>
+                    <artifactId>nacos-plus-naming</artifactId>
                 </dependency>
             </dependencies>
             <build>
@@ -108,7 +108,7 @@
         <profile>
             <id>release-address</id>
             <build>
-                <finalName>nacos-address</finalName>
+                <finalName>nacos-plus-address</finalName>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -136,7 +136,7 @@
             <dependencies>
                 <dependency>
                     <groupId>${project.groupId}</groupId>
-                    <artifactId>nacos-client</artifactId>
+                    <artifactId>nacos-plus-client</artifactId>
                 </dependency>
             </dependencies>
             <build>
@@ -161,7 +161,7 @@
                         </executions>
                     </plugin>
                 </plugins>
-                <finalName>nacos-client</finalName>
+                <finalName>nacos-plus-client</finalName>
             </build>
         </profile>
         <profile>
@@ -169,7 +169,7 @@
             <dependencies>
                 <dependency>
                     <groupId>${project.groupId}</groupId>
-                    <artifactId>nacos-core</artifactId>
+                    <artifactId>nacos-plus-core</artifactId>
                 </dependency>
             </dependencies>
             <build>
@@ -194,7 +194,7 @@
                         </executions>
                     </plugin>
                 </plugins>
-                <finalName>nacos-core</finalName>
+                <finalName>nacos-plus-core</finalName>
             </build>
         </profile>
         <profile>

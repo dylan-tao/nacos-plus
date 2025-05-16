@@ -19,16 +19,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.alibaba.nacos</groupId>
-        <artifactId>nacos-all</artifactId>
+        <artifactId>nacos-plus-all</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>nacos-test</artifactId>
+    <artifactId>nacos-plus-test</artifactId>
     <packaging>pom</packaging>
 
-    <name>nacos-test ${project.version}</name>
+    <name>nacos-plus-test ${project.version}</name>
     <url>https://nacos.io</url>
     <modules>
         <module>config-test</module>
@@ -53,34 +53,34 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-api</artifactId>
+            <artifactId>nacos-plus-api</artifactId>
         </dependency>
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-client</artifactId>
+            <artifactId>nacos-plus-client</artifactId>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-config</artifactId>
+            <artifactId>nacos-plus-config</artifactId>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-naming</artifactId>
+            <artifactId>nacos-plus-naming</artifactId>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-console</artifactId>
+            <artifactId>nacos-plus-core</artifactId>
         </dependency>
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-address</artifactId>
+            <artifactId>nacos-plus-console</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>nacos-plus-address</artifactId>
         </dependency>
 
         <dependency>

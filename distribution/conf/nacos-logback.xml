@@ -358,12 +358,12 @@
         </encoder>
     </appender>
 
-    <appender name="nacos-address"
+    <appender name="nacos-plus-address"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/nacos-address.log</file>
+        <file>${LOG_HOME}/nacos-plus-address.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/nacos-address.log.%d{yyyy-MM-dd}.%i</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/nacos-plus-address.log.%d{yyyy-MM-dd}.%i</fileNamePattern>
             <maxFileSize>2GB</maxFileSize>
             <maxHistory>7</maxHistory>
             <totalSizeCap>7GB</totalSizeCap>
@@ -443,12 +443,12 @@
         </encoder>
     </appender>
 
-    <appender name="nacos-cluster"
+    <appender name="nacos-plus-cluster"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/nacos-cluster.log</file>
+        <file>${LOG_HOME}/nacos-plus-cluster.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/nacos-cluster.log.%d{yyyy-MM-dd}.%i</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/nacos-plus-cluster.log.%d{yyyy-MM-dd}.%i</fileNamePattern>
             <maxFileSize>2GB</maxFileSize>
             <maxHistory>7</maxHistory>
             <totalSizeCap>7GB</totalSizeCap>
@@ -582,12 +582,12 @@
         </encoder>
     </appender>
     
-    <appender name="nacos-persistence"
+    <appender name="nacos-plus-persistence"
         class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/nacos-persistence.log</file>
+        <file>${LOG_HOME}/nacos-plus-persistence.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/nacos-persistence.log.%d{yyyy-MM-dd}.%i</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/nacos-plus-persistence.log.%d{yyyy-MM-dd}.%i</fileNamePattern>
             <maxFileSize>2GB</maxFileSize>
             <maxHistory>7</maxHistory>
             <totalSizeCap>7GB</totalSizeCap>
@@ -601,7 +601,7 @@
     
     <logger name="com.alibaba.nacos.address.main" additivity="false">
         <level value="INFO"/>
-        <appender-ref ref="nacos-address"/>
+        <appender-ref ref="nacos-plus-address"/>
     </logger>
 
     <logger name="com.alibaba.nacos.cmdb.main" additivity="false">
@@ -736,12 +736,12 @@
 
     <logger name="com.alibaba.nacos.core.cluster" additivity="false">
         <level value="INFO"/>
-        <appender-ref ref="nacos-cluster"/>
+        <appender-ref ref="nacos-plus-cluster"/>
     </logger>
     
     <logger name="com.alibaba.nacos.persistence" additivity="false">
         <level value="INFO"/>
-        <appender-ref ref="nacos-persistence"/>
+        <appender-ref ref="nacos-plus-persistence"/>
     </logger>
 
     <springProfile name="standalone">

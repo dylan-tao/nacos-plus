@@ -20,37 +20,37 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.alibaba.nacos</groupId>
-        <artifactId>nacos-all</artifactId>
+        <artifactId>nacos-plus-all</artifactId>
         <version>${revision}</version>
     </parent>
-    <artifactId>nacos-console</artifactId>
+    <artifactId>nacos-plus-console</artifactId>
     <packaging>jar</packaging>
-    <name>nacos-console ${project.version}</name>
+    <name>nacos-plus-console ${project.version}</name>
     <url>https://nacos.io</url>
     
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-config</artifactId>
+            <artifactId>nacos-plus-config</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-naming</artifactId>
+            <artifactId>nacos-plus-naming</artifactId>
         </dependency>
     
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-default-plugin-all</artifactId>
+            <artifactId>nacos-plus-default-plugin-all</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-istio</artifactId>
+            <artifactId>nacos-plus-istio</artifactId>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-prometheus</artifactId>
+            <artifactId>nacos-plus-prometheus</artifactId>
         </dependency>
         
         <!-- log -->

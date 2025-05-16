@@ -63,7 +63,7 @@
         <moduleSet>
             <useAllReactorProjects>true</useAllReactorProjects>
             <includes>
-                <include>com.alibaba.nacos:nacos-console</include>
+                <include>com.alibaba.nacos:nacos-plus-console</include>
             </includes>
         </moduleSet>
     </moduleSets>

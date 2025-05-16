@@ -18,7 +18,7 @@
     xmlns="http://maven.apache.org/POM/4.0.0"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     
-    <artifactId>nacos-consistency</artifactId>
+    <artifactId>nacos-plus-consistency</artifactId>
     
     <build>
         <extensions>
@@ -56,7 +56,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-common</artifactId>
+            <artifactId>nacos-plus-common</artifactId>
         </dependency>
         <dependency>
             <groupId>org.javatuples</groupId>
@@ -73,11 +73,11 @@
     </dependencies>
     <modelVersion>4.0.0</modelVersion>
     
-    <name>nacos-consistency ${project.version}</name>
+    <name>nacos-plus-consistency ${project.version}</name>
     <packaging>jar</packaging>
     <parent>
         <groupId>com.alibaba.nacos</groupId>
-        <artifactId>nacos-all</artifactId>
+        <artifactId>nacos-plus-all</artifactId>
         <relativePath>../pom.xml</relativePath>
         <version>${revision}</version>
     </parent>

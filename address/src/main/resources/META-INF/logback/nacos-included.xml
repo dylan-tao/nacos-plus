@@ -20,12 +20,12 @@
     <springProperty scope="context" name="logPath" source="nacos.logs.path" defaultValue="${user.home}/nacos/logs"/>
     <property name="LOG_HOME" value="${logPath}"/>
     
-    <appender name="nacos-address"
+    <appender name="nacos-plus-address"
         class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/nacos-address.log</file>
+        <file>${LOG_HOME}/nacos-plus-address.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/nacos-address.log.%d{yyyy-MM-dd}.%i</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/nacos-plus-address.log.%d{yyyy-MM-dd}.%i</fileNamePattern>
             <maxFileSize>2GB</maxFileSize>
             <maxHistory>15</maxHistory>
             <totalSizeCap>7GB</totalSizeCap>
@@ -39,7 +39,7 @@
     
     <logger name="com.alibaba.nacos.address.main" additivity="false">
         <level value="INFO"/>
-        <appender-ref ref="nacos-address"/>
+        <appender-ref ref="nacos-plus-address"/>
     </logger>
 </included>
 

@@ -33,7 +33,7 @@
         <fileSet>
             <includes>
                 <include>conf/cluster.conf.example</include>
-                <include>conf/nacos-logback.xml</include>
+                <include>conf/nacos-plus-logback.xml</include>
             </includes>
         </fileSet>
 
@@ -56,7 +56,7 @@
         </file>
         <file>
             <!--打好的jar包名称和放置目录-->
-            <source>../address/target/nacos-address.jar</source>
+            <source>../address/target/nacos-plus-address.jar</source>
             <outputDirectory>/target/</outputDirectory>
         </file>
     </files>

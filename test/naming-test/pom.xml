@@ -19,12 +19,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>nacos-test</artifactId>
+        <artifactId>nacos-plus-test</artifactId>
         <groupId>com.alibaba.nacos</groupId>
         <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <name>nacos-naming-test ${project.version}</name>
+    <name>nacos-plus-naming-test ${project.version}</name>
     <url>https://nacos.io</url>
     
     <artifactId>naming-test</artifactId>

@@ -20,40 +20,40 @@
 
     <parent>
         <groupId>com.alibaba.nacos</groupId>
-        <artifactId>nacos-all</artifactId>
+        <artifactId>nacos-plus-all</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>nacos-core</artifactId>
+    <artifactId>nacos-plus-core</artifactId>
     <packaging>jar</packaging>
 
-    <name>nacos-core ${project.version}</name>
+    <name>nacos-plus-core ${project.version}</name>
     <url>https://nacos.io</url>
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-common</artifactId>
+            <artifactId>nacos-plus-common</artifactId>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-consistency</artifactId>
+            <artifactId>nacos-plus-consistency</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-persistence</artifactId>
+            <artifactId>nacos-plus-persistence</artifactId>
         </dependency>
         
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-auth</artifactId>
+            <artifactId>nacos-plus-auth</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-trace-plugin</artifactId>
+            <artifactId>nacos-plus-trace-plugin</artifactId>
         </dependency>
         
         <dependency>
@@ -91,17 +91,14 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
-            <version>${spring-security-core.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
-            <version>${spring-security-core.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <version>${spring-security-core.version}</version>
         </dependency>
 
         <dependency>
@@ -183,7 +180,7 @@
         </dependency>
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-control-plugin</artifactId>
+            <artifactId>nacos-plus-control-plugin</artifactId>
             <version>${revision}</version>
         </dependency>
         <dependency>

@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <inceptionYear>2018</inceptionYear>
     <groupId>com.alibaba.nacos</groupId>
-    <artifactId>nacos-all</artifactId>
+    <artifactId>nacos-plus-all</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
     
@@ -36,7 +36,7 @@
         <url>git@github.com:alibaba/nacos.git</url>
         <connection>scm:git@github.com:alibaba/nacos.git</connection>
         <developerConnection>scm:git@github.com:alibaba/nacos.git</developerConnection>
-        <tag>nacos-all-${revision}</tag>
+        <tag>nacos-plus-all-${revision}</tag>
     </scm>
     
     <mailingLists>
@@ -128,7 +128,8 @@
         
         <!-- dependency version -->
         <spring-boot-dependencies.version>2.7.18</spring-boot-dependencies.version>
-        <spring-security-core.version>5.7.12</spring-security-core.version>
+        <spring-framework.version>5.3.39</spring-framework.version>
+        <spring-security-core.version>5.7.14</spring-security-core.version>
         <servlet-api.version>3.0</servlet-api.version>
         <commons-io.version>2.7</commons-io.version>
         <commons-collections.version>3.2.2</commons-collections.version>
@@ -143,7 +144,7 @@
         <com.dameng.dm8.version>8.1.3.140</com.dameng.dm8.version>
         <sqlserver-jdbc.version>12.4.2.jre8</sqlserver-jdbc.version>
 
-        <jjwt.version>0.11.2</jjwt.version>
+        <jjwt.version>0.11.5</jjwt.version>
         <javatuples.version>1.2</javatuples.version>
         <grpc-java.version>1.57.2</grpc-java.version>
         <proto-google-common-protos.version>2.17.0</proto-google-common-protos.version>
@@ -156,7 +157,7 @@
         <jraft-core.version>1.3.14</jraft-core.version>
         <rpc-grpc-impl.version>${jraft-core.version}</rpc-grpc-impl.version>
         <SnakeYaml.version>2.0</SnakeYaml.version>
-        <spring-web.version>5.3.33</spring-web.version>
+        <tomcat.upgrade.version>9.0.102</tomcat.upgrade.version>
     </properties>
     <!-- == -->
     <!-- =========================================================Build plugins================================================ -->
@@ -344,6 +345,7 @@
                         <exclude>style/codeStyle.md</exclude>
                         <exclude>REPORTING-BUGS.md</exclude>
                         <exclude>README.md</exclude>
+                        <exclude>README_en-US.md</exclude>
                         <exclude>.github/**/*</exclude>
                         <exclude>doc/*</exclude>
                         <exclude>derby.log</exclude>
@@ -667,132 +669,139 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring-framework.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             
             <!-- Internal libs -->
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-config</artifactId>
+                <artifactId>nacos-plus-config</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-core</artifactId>
+                <artifactId>nacos-plus-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.nacos</groupId>
-                <artifactId>nacos-persistence</artifactId>
+                <artifactId>nacos-plus-persistence</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-naming</artifactId>
+                <artifactId>nacos-plus-naming</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-api</artifactId>
+                <artifactId>nacos-plus-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-client</artifactId>
+                <artifactId>nacos-plus-client</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-test</artifactId>
+                <artifactId>nacos-plus-test</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-common</artifactId>
+                <artifactId>nacos-plus-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-cmdb</artifactId>
+                <artifactId>nacos-plus-cmdb</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-console</artifactId>
+                <artifactId>nacos-plus-console</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-distribution</artifactId>
+                <artifactId>nacos-plus-distribution</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-example</artifactId>
+                <artifactId>nacos-plus-example</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-address</artifactId>
+                <artifactId>nacos-plus-address</artifactId>
                 <version>${project.version}</version>
             </dependency>
             
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-istio</artifactId>
+                <artifactId>nacos-plus-istio</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-prometheus</artifactId>
+                <artifactId>nacos-plus-prometheus</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-consistency</artifactId>
+                <artifactId>nacos-plus-consistency</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-auth-plugin</artifactId>
+                <artifactId>nacos-plus-auth-plugin</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-encryption-plugin</artifactId>
+                <artifactId>nacos-plus-encryption-plugin</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.nacos</groupId>
-                <artifactId>nacos-config-plugin</artifactId>
+                <artifactId>nacos-plus-config-plugin</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-control-plugin</artifactId>
+                <artifactId>nacos-plus-control-plugin</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.nacos</groupId>
-                <artifactId>nacos-trace-plugin</artifactId>
+                <artifactId>nacos-plus-trace-plugin</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.nacos</groupId>
-                <artifactId>nacos-datasource-plugin</artifactId>
+                <artifactId>nacos-plus-datasource-plugin</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-custom-environment-plugin</artifactId>
+                <artifactId>nacos-plus-custom-environment-plugin</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-auth</artifactId>
+                <artifactId>nacos-plus-auth</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>nacos-sys</artifactId>
+                <artifactId>nacos-plus-sys</artifactId>
                 <version>${project.version}</version>
             </dependency>
             
@@ -1032,10 +1041,21 @@
                 <version>${SnakeYaml.version}</version>
             </dependency>
 
+            <!-- TOMCAT CVE FIX -->
             <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-web</artifactId>
-                <version>${spring-web.version}</version>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-core</artifactId>
+                <version>${tomcat.upgrade.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-websocket</artifactId>
+                <version>${tomcat.upgrade.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-el</artifactId>
+                <version>${tomcat.upgrade.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

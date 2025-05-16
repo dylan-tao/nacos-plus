@@ -18,17 +18,17 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.alibaba.nacos</groupId>
-        <artifactId>nacos-all</artifactId>
+        <artifactId>nacos-plus-all</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
     <modelVersion>4.0.0</modelVersion>
     
-    <artifactId>nacos-client</artifactId>
+    <artifactId>nacos-plus-client</artifactId>
     <packaging>jar</packaging>
     
-    <name>nacos-client ${project.version}</name>
+    <name>nacos-plus-client ${project.version}</name>
     <url>https://nacos.io</url>
     <description>Nacos client pom.xml file</description>
     
@@ -60,23 +60,23 @@
         
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-common</artifactId>
+            <artifactId>nacos-plus-common</artifactId>
             <optional>true</optional>
         </dependency>
     
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-auth-plugin</artifactId>
+            <artifactId>nacos-plus-auth-plugin</artifactId>
         </dependency>
     
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-encryption-plugin</artifactId>
+            <artifactId>nacos-plus-encryption-plugin</artifactId>
         </dependency>
         
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>nacos-api</artifactId>
+            <artifactId>nacos-plus-api</artifactId>
             <optional>true</optional>
         </dependency>
         <dependency>
@@ -180,7 +180,7 @@
                                         </excludes>
                                     </filter>
                                     <filter>
-                                        <artifact>com.alibaba.nacos:nacos-api</artifact>
+                                        <artifact>com.alibaba.nacos:nacos-plus-api</artifact>
                                         <includes>
                                             <include>
                                                 com/alibaba/nacos/api/**/**
@@ -194,8 +194,8 @@
 
                                 <artifactSet>
                                     <includes>
-                                        <include>com.alibaba.nacos:nacos-api</include>
-                                        <include>com.alibaba.nacos:nacos-common</include>
+                                        <include>com.alibaba.nacos:nacos-plus-api</include>
+                                        <include>com.alibaba.nacos:nacos-plus-common</include>
                                         <include>org.conscrypt:conscrypt-openjdk</include>
                                         <include>org.mortbay.jetty.alpn:alpn-boot</include>
                                         <include>org.eclipse.jetty.npn:npn-api</include>
