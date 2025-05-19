@@ -20,7 +20,7 @@
     
     <modelVersion>4.0.0</modelVersion>
     <inceptionYear>2018</inceptionYear>
-    <groupId>com.alibaba.nacos</groupId>
+    <groupId>io.github.dylan-tao</groupId>
     <artifactId>nacos-plus-all</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
@@ -689,7 +689,7 @@
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.alibaba.nacos</groupId>
+                <groupId>io.github.dylan-tao</groupId>
                 <artifactId>nacos-plus-persistence</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -770,7 +770,7 @@
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.alibaba.nacos</groupId>
+                <groupId>io.github.dylan-tao</groupId>
                 <artifactId>nacos-plus-config-plugin</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -780,12 +780,12 @@
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.alibaba.nacos</groupId>
+                <groupId>io.github.dylan-tao</groupId>
                 <artifactId>nacos-plus-trace-plugin</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.alibaba.nacos</groupId>
+                <groupId>io.github.dylan-tao</groupId>
                 <artifactId>nacos-plus-datasource-plugin</artifactId>
                 <version>${project.version}</version>
             </dependency>

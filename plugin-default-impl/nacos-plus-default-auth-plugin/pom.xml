@@ -20,7 +20,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>nacos-plus-plugin-default-impl</artifactId>
-        <groupId>com.alibaba.nacos</groupId>
+        <groupId>io.github.dylan-tao</groupId>
         <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -30,22 +30,22 @@
     
     <dependencies>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>io.github.dylan-tao</groupId>
             <artifactId>nacos-plus-auth-plugin</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>io.github.dylan-tao</groupId>
             <artifactId>nacos-plus-common</artifactId>
         </dependency>
         
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>io.github.dylan-tao</groupId>
             <artifactId>nacos-plus-sys</artifactId>
             <scope>provided</scope>
         </dependency>
         
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>io.github.dylan-tao</groupId>
             <artifactId>nacos-plus-config</artifactId>
             <scope>provided</scope>
         </dependency>

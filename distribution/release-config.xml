@@ -60,7 +60,7 @@
         <moduleSet>
             <useAllReactorProjects>true</useAllReactorProjects>
             <includes>
-                <include>com.alibaba.nacos:nacos-plus-config</include>
+                <include>io.github.dylan-tao:nacos-plus-config</include>
             </includes>
             <binaries>
                 <outputDirectory>lib/</outputDirectory>

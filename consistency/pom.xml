@@ -76,7 +76,7 @@
     <name>nacos-plus-consistency ${project.version}</name>
     <packaging>jar</packaging>
     <parent>
-        <groupId>com.alibaba.nacos</groupId>
+        <groupId>io.github.dylan-tao</groupId>
         <artifactId>nacos-plus-all</artifactId>
         <relativePath>../pom.xml</relativePath>
         <version>${revision}</version>

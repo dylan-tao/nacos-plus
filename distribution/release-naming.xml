@@ -60,7 +60,7 @@
         <moduleSet>
             <useAllReactorProjects>true</useAllReactorProjects>
             <includes>
-                <include>com.alibaba.nacos:nacos-plus-naming</include>
+                <include>io.github.dylan-tao:nacos-plus-naming</include>
             </includes>
             <binaries>
                 <outputDirectory>lib/</outputDirectory>

@@ -94,7 +94,7 @@ class ShowServiceCodeing extends React.Component {
     return `/* Refer to document: https://github.com/alibaba/nacos/blob/master/example/src/main/java/com/alibaba/nacos/example
 *  pom.xml
     <dependency>
-        <groupId>com.alibaba.nacos</groupId>
+        <groupId>io.github.dylan-tao</groupId>
         <artifactId>nacos-client</artifactId>
         <version>$\{latest.version}</version>
     </dependency>
@@ -148,7 +148,7 @@ public class NamingExample {
     return `/* Refer to document: https://github.com/nacos-group/nacos-examples/tree/master/nacos-spring-example/nacos-spring-discovery-example
 *  pom.xml
     <dependency>
-        <groupId>com.alibaba.nacos</groupId>
+        <groupId>io.github.dylan-tao</groupId>
         <artifactId>nacos-spring-context</artifactId>
         <version>\${latest.version}</version>
     </dependency>

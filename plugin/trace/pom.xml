@@ -20,7 +20,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>nacos-plus-plugin</artifactId>
-        <groupId>com.alibaba.nacos</groupId>
+        <groupId>io.github.dylan-tao</groupId>
         <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -31,7 +31,7 @@
     <description>Nacos trace plugin pom.xml file</description>
     <dependencies>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>io.github.dylan-tao</groupId>
             <artifactId>nacos-plus-common</artifactId>
             <scope>provided</scope>
         </dependency>

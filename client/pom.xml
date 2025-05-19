@@ -17,7 +17,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>com.alibaba.nacos</groupId>
+        <groupId>io.github.dylan-tao</groupId>
         <artifactId>nacos-plus-all</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
@@ -70,7 +70,7 @@
         </dependency>
     
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>io.github.dylan-tao</groupId>
             <artifactId>nacos-plus-encryption-plugin</artifactId>
         </dependency>
         
@@ -180,7 +180,7 @@
                                         </excludes>
                                     </filter>
                                     <filter>
-                                        <artifact>com.alibaba.nacos:nacos-plus-api</artifact>
+                                        <artifact>io.github.dylan-tao:nacos-plus-api</artifact>
                                         <includes>
                                             <include>
                                                 com/alibaba/nacos/api/**/**
@@ -194,8 +194,8 @@
 
                                 <artifactSet>
                                     <includes>
-                                        <include>com.alibaba.nacos:nacos-plus-api</include>
-                                        <include>com.alibaba.nacos:nacos-plus-common</include>
+                                        <include>io.github.dylan-tao:nacos-plus-api</include>
+                                        <include>io.github.dylan-tao:nacos-plus-common</include>
                                         <include>org.conscrypt:conscrypt-openjdk</include>
                                         <include>org.mortbay.jetty.alpn:alpn-boot</include>
                                         <include>org.eclipse.jetty.npn:npn-api</include>

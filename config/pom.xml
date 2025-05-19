@@ -18,7 +18,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     
     <parent>
-        <groupId>com.alibaba.nacos</groupId>
+        <groupId>io.github.dylan-tao</groupId>
         <artifactId>nacos-plus-all</artifactId>
         <version>${revision}</version>
     </parent>
@@ -45,7 +45,7 @@
             <artifactId>nacos-plus-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>io.github.dylan-tao</groupId>
             <artifactId>nacos-plus-persistence</artifactId>
         </dependency>
         <dependency>
@@ -58,12 +58,12 @@
         </dependency>
     
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>io.github.dylan-tao</groupId>
             <artifactId>nacos-plus-encryption-plugin</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>io.github.dylan-tao</groupId>
             <artifactId>nacos-plus-config-plugin</artifactId>
         </dependency>
         
@@ -138,12 +138,12 @@
             <artifactId>snakeyaml</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>io.github.dylan-tao</groupId>
             <artifactId>nacos-plus-control-plugin</artifactId>
             <version>${revision}</version>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>io.github.dylan-tao</groupId>
             <artifactId>nacos-plus-datasource-plugin</artifactId>
         </dependency>
         <dependency>
