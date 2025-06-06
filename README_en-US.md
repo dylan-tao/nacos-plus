@@ -33,7 +33,7 @@ English | [中文文档](https://github.com/dylan-tao/nacos-plus/blob/main/READM
 | Oracle                |    `11.2.0.1`    |       `11.2.0.4`        |     ✅     |    `2.3.2.1+`     |
 | DM DBMS               |   `8.1.3.100`    |       `8.1.3.140`       |     ✅     |    `2.3.2.2+`     |
 | Sql Server            |      `2019`      |      `12.4.2.jre8`      |     ✅     |    `2.3.2.3+`     |
-| OceanBase             |       `-`        |           `-`           |     ⌛     |    `2.3.2.8+`     |
+| OceanBase             |       `-`        |           `-`           |     ⌛     |    `2.3.2.9+`     |
 
 ## 📦 Manufactured Product
 
