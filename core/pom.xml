@@ -19,7 +19,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
-        <groupId>com.alibaba.nacos</groupId>
+        <groupId>io.github.dylan-tao</groupId>
         <artifactId>nacos-plus-all</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
@@ -43,7 +43,7 @@
             <artifactId>nacos-plus-consistency</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>io.github.dylan-tao</groupId>
             <artifactId>nacos-plus-persistence</artifactId>
         </dependency>
         
@@ -52,7 +52,7 @@
             <artifactId>nacos-plus-auth</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>io.github.dylan-tao</groupId>
             <artifactId>nacos-plus-trace-plugin</artifactId>
         </dependency>
         
@@ -179,7 +179,7 @@
             <artifactId>grpc-testing</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>io.github.dylan-tao</groupId>
             <artifactId>nacos-plus-control-plugin</artifactId>
             <version>${revision}</version>
         </dependency>

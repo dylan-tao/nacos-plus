@@ -20,7 +20,7 @@
     
     <parent>
         <artifactId>nacos-plus-all</artifactId>
-        <groupId>com.alibaba.nacos</groupId>
+        <groupId>io.github.dylan-tao</groupId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
