@@ -133,7 +133,7 @@
         <profile>
             <id>release-nacos</id>
             <build>
-                <finalName>nacos-server</finalName>
+                <finalName>nacos-plus-server</finalName>
                 <plugins>
                     <plugin>
                         <artifactId>maven-jar-plugin</artifactId>

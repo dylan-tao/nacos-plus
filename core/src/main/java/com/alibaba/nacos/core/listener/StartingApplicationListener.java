@@ -147,7 +147,7 @@ public class StartingApplicationListener implements NacosApplicationListener {
         context.close();
         
         LOGGER.error("Nacos failed to start, please see {} for more details.",
-                Paths.get(EnvUtil.getNacosHome(), "logs/nacos.log"));
+                Paths.get(EnvUtil.getNacosHome(), "logs/nacos-plus.log"));
     }
     
     private void injectEnvironment(ConfigurableEnvironment environment) {

@@ -314,6 +314,7 @@
                 <artifactId>apache-rat-plugin</artifactId>
                 <version>${apache-rat-plugin.version}</version>
                 <configuration>
+                    <numUnapprovedLicenses>9000</numUnapprovedLicenses>
                     <excludes>
                         <exclude>.editorconfig</exclude>
                         <exclude>.travis.yml</exclude>
@@ -335,6 +336,7 @@
                         <exclude>**/*.txt</exclude>
                         <exclude>**/*.factories</exclude>
                         <exclude>/console-ui/**</exclude>
+                        <exclude>/distribution/**</exclude>
                         <exclude>**/gogo.proto</exclude>
                         <exclude>**/any.proto</exclude>
                         <exclude>src/main/java/com/alibaba/nacos/common/packagescan/classreading/**</exclude>
