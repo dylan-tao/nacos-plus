@@ -40,7 +40,7 @@ public class VersionUtils {
      */
     public static final String VERSION_PLACEHOLDER = "${project.version}";
     
-    private static final String NACOS_VERSION_FILE = "nacos-version.txt";
+    private static final String NACOS_VERSION_FILE = "nacos-plus-version.txt";
     
     static {
         try (InputStream in = VersionUtils.class.getClassLoader().getResourceAsStream(NACOS_VERSION_FILE)) {

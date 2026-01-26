@@ -60,7 +60,7 @@ public class VersionUtilsTest {
     
     @Test
     public void testVersionCompareResourceNotExist() {
-        URL resource = VersionUtils.class.getClassLoader().getResource("nacos-version.txt");
+        URL resource = VersionUtils.class.getClassLoader().getResource("nacos-plus-version.txt");
         Assert.assertNotNull(resource);
         File originFile = new File(resource.getFile());
         File tempFile = new File(originFile.getAbsolutePath() + ".rename");
