@@ -95,9 +95,9 @@ public class ConfigInfoMapperByOracle extends AbstractMapper implements ConfigIn
 	public MapperResult findAllConfigInfoFragment(MapperContext context) {
 		String contextParameter = context.getContextParameter(ContextConstant.NEED_CONTENT);
 		boolean needContent = contextParameter != null && Boolean.parseBoolean(contextParameter);
-		String sql = "SELECT * FROM (SELECT id,data_id,group_id,tenant_id,app_name," + (needContent ? "content," : "")
-				+ "md5,gmt_modified,type,encrypted_data_key "
-				+ ", ROWNUM as rnum FROM config_info WHERE id > ? ORDER BY id ASC) " + " WHERE  rnum >= " + (context.getStartRow() + 1) + " and " + (context.getPageSize() + context.getStartRow()) + " >= rnum ";
+		String sql = "SELECT * FROM (SELECT tt.*, ROWNUM as rnum FROM (SELECT id, data_id,group_id, tenant_id, app_name," + (needContent ? "content," : "")
+				+ "md5, gmt_modified, type, encrypted_data_key " + "FROM config_info WHERE id > ? ORDER BY id ASC) tt WHERE ROWNUM <= "
+				+ (context.getStartRow() + context.getPageSize()) + ") " + "WHERE rnum >= " + (context.getStartRow() + 1);
 		return new MapperResult(sql, CollectionUtils.list(context.getWhereParameter(FieldConstant.ID)));
 	}
 
