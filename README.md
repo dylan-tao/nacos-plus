@@ -118,11 +118,15 @@ startup.cmd -m cluster
 
 ## 🚣 根据源码本地打包制成品包
 
+默认Java版本构建
 ```
 mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 ```
 
-## 🙋 常见问题解答
+临时指定Java版本构建
+```
+JAVA_HOME=/Library/Java/JavaVirtualMachines/liberica-jdk-17.jdk/Contents/Home mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
+```
 
 [从问题列表中自助获取[FAQ-x]解答，点击我！！！](https://github.com/dylan-tao/nacos-plus/issues)
 
