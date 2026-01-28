@@ -111,8 +111,15 @@ startup.cmd -m cluster
 ```
 
 ### Package ReBuild
+
+Default java version build
 ```
 mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
+```
+
+Specify java version build
+```
+JAVA_HOME=/Library/Java/JavaVirtualMachines/liberica-jdk-17.jdk/Contents/Home mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 ```
 
 ### FAQ
