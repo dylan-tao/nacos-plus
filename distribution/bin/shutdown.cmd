@@ -22,19 +22,19 @@ setlocal
 
 set "PATH=%JAVA_HOME%\bin;%PATH%"
 
-echo Killing Nacos server...
+echo Killing NacosPlus server...
 
-:: Find and kill Nacos server process
-set "NACOS_RUNNING=false"
-for /f "tokens=1" %%i in ('jps -m ^| find "nacos.nacos"') do (
-    set "NACOS_RUNNING=true"
+:: Find and kill NacosPlus server process
+set "NACOS_PLUS_RUNNING=false"
+for /f "tokens=1" %%i in ('jps -m ^| find "nacos-plus.nacos-plus"') do (
+    set "NACOS_PLUS_RUNNING=true"
     taskkill /F /PID %%i
 )
 
-if "%NACOS_RUNNING%"=="true" (
-    echo Nacos server stopped.
+if "%NACOS_PLUS_RUNNING%"=="true" (
+    echo NacosPlus server stopped.
 ) else (
-    echo Nacos server is not running.
+    echo NacosPlus server is not running.
 )
 
 echo Done!

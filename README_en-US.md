@@ -30,10 +30,10 @@ English | [中文文档](https://github.com/dylan-tao/nacos-plus/blob/main/READM
 | PostgreSQL            |     `90204`      |        `42.5.1`         |     ✅     |    `2.2.0.1+`     |
 | OpenGauss             |     `3.0.0`      |         `2.0.0`         |     ✅     |    `2.2.0.2+`     |
 | GaussDB               |     `2.1.0`      |         `2.0.0`         |     ✅     |    `2.2.0.2+`     |
-| Oracle                |    `11.2.0.1`    |       `11.2.0.4`        |     ✅     |    `2.3.2.1+`     |
-| DM DBMS               |   `8.1.3.100`    |       `8.1.3.140`       |     ✅     |    `2.3.2.2+`     |
+| Oracle                |    `11.2.0.1`    |       `11.2.0.4`        |     ✅     |    `2.3.2.5+`     |
+| DM DBMS               |   `8.1.3.100`    |       `8.1.3.140`       |     ✅     |    `2.3.2.5+`     |
 | Sql Server            |      `2019`      |      `12.4.2.jre8`      |     ✅     |    `2.3.2.3+`     |
-| OceanBase             |       `-`        |           `-`           |     ⌛     |    `2.3.2.9+`     |
+| OceanBase             |       `-`        |           `-`           |     ✅     |    `2.3.2.5+`     |
 
 ## 📦 Manufactured Product
 
@@ -52,7 +52,7 @@ nacos-2.x.x\distribution\target\nacos-server-2.x.x.zip\conf\{db}-schema.sql
 **The following configuration is in the conf\application.properties file of the manufactured product**
 
 ```
-### If use MySQL or MariaDB as datasource:
+### If use MySQL or MariaDB or OceanBase as datasource:
 #spring.datasource.platform=mysql
 #db.pool.config.driver-class-name=com.mysql.cj.jdbc.Driver
 #db.url.0=jdbc:mysql://127.0.0.1:3306/nacos_server?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
@@ -118,8 +118,14 @@ startup.cmd -m cluster
 
 ## 🚣 Package ReBuild
 
+Default java version build
 ```
 mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
+```
+
+Specify java version build
+```
+JAVA_HOME=/Library/Java/JavaVirtualMachines/liberica-jdk-17.jdk/Contents/Home mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 ```
 
 ## 🙋 FAQ

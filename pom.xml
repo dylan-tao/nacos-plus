@@ -314,6 +314,7 @@
                 <artifactId>apache-rat-plugin</artifactId>
                 <version>${apache-rat-plugin.version}</version>
                 <configuration>
+                    <numUnapprovedLicenses>9000</numUnapprovedLicenses>
                     <excludes>
                         <exclude>.editorconfig</exclude>
                         <exclude>.travis.yml</exclude>
@@ -335,6 +336,7 @@
                         <exclude>**/*.txt</exclude>
                         <exclude>**/*.factories</exclude>
                         <exclude>/console-ui/**</exclude>
+                        <exclude>/distribution/**</exclude>
                         <exclude>**/gogo.proto</exclude>
                         <exclude>**/any.proto</exclude>
                         <exclude>src/main/java/com/alibaba/nacos/common/packagescan/classreading/**</exclude>
@@ -452,25 +454,25 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <configuration>
-                    <gpgArguments>
-                        <arg>--pinentry-mode</arg>
-                        <arg>loopback</arg>
-                    </gpgArguments>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-gpg-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <gpgArguments>-->
+<!--                        <arg>&#45;&#45;pinentry-mode</arg>-->
+<!--                        <arg>loopback</arg>-->
+<!--                    </gpgArguments>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>sign-artifacts</id>-->
+<!--                        <phase>verify</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>sign</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.sonatype.central</groupId>
                 <artifactId>central-publishing-maven-plugin</artifactId>

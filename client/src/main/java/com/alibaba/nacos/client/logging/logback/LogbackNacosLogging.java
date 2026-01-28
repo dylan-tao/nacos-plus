@@ -39,7 +39,7 @@ import java.util.Collection;
  */
 public class LogbackNacosLogging extends AbstractNacosLogging {
     
-    private static final String NACOS_LOGBACK_LOCATION = "classpath:nacos-logback.xml";
+    private static final String NACOS_LOGBACK_LOCATION = "classpath:nacos-plus-logback.xml";
     
     private Integer userVersion = 2;
     

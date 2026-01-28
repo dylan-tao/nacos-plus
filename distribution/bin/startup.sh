@@ -59,7 +59,7 @@ if [ -z "$JAVA_HOME" ]; then
   fi
 fi
 
-export SERVER="nacos-server"
+export SERVER="nacos-plus-server"
 export MODE="standalone"
 export FUNCTION_MODE="all"
 export MEMBER_LIST=""
@@ -117,7 +117,7 @@ if [[ "$JAVA_MAJOR_VERSION" -ge "9" ]] ; then
 else
   JAVA_OPT="${JAVA_OPT} -XX:+UseConcMarkSweepGC -XX:+UseCMSCompactAtFullCollection -XX:CMSInitiatingOccupancyFraction=70 -XX:+CMSParallelRemarkEnabled -XX:SoftRefLRUPolicyMSPerMB=0 -XX:+CMSClassUnloadingEnabled -XX:SurvivorRatio=8 "
   JAVA_OPT_EXT_FIX="-Djava.ext.dirs=${JAVA_HOME}/jre/lib/ext:${JAVA_HOME}/lib/ext"
-  JAVA_OPT="${JAVA_OPT} -Xloggc:${BASE_DIR}/logs/nacos_gc.log -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=100M"
+  JAVA_OPT="${JAVA_OPT} -Xloggc:${BASE_DIR}/logs/nacos_plus_gc.log -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=100M"
 fi
 
 JAVA_OPT="${JAVA_OPT} -Dloader.path=${BASE_DIR}/plugins,${BASE_DIR}/plugins/health,${BASE_DIR}/plugins/cmdb,${BASE_DIR}/plugins/selector"
@@ -125,7 +125,7 @@ JAVA_OPT="${JAVA_OPT} -Dnacos.home=${BASE_DIR}"
 JAVA_OPT="${JAVA_OPT} -jar ${BASE_DIR}/target/${SERVER}.jar"
 JAVA_OPT="${JAVA_OPT} ${JAVA_OPT_EXT}"
 JAVA_OPT="${JAVA_OPT} --spring.config.additional-location=${CUSTOM_SEARCH_LOCATIONS}"
-JAVA_OPT="${JAVA_OPT} --logging.config=${BASE_DIR}/conf/nacos-logback.xml"
+JAVA_OPT="${JAVA_OPT} --logging.config=${BASE_DIR}/conf/nacos-plus-logback.xml"
 JAVA_OPT="${JAVA_OPT} --server.max-http-header-size=524288"
 
 if [ ! -d "${BASE_DIR}/logs" ]; then
@@ -135,9 +135,9 @@ fi
 echo "$JAVA $JAVA_OPT_EXT_FIX ${JAVA_OPT}"
 
 if [[ "${MODE}" == "standalone" ]]; then
-    echo "nacos is starting with standalone"
+    echo "NacosPlus is starting with standalone"
 else
-    echo "nacos is starting with cluster"
+    echo "NacosPlus is starting with cluster"
 fi
 
 # check the start.out log output file
@@ -148,9 +148,9 @@ fi
 echo "$JAVA $JAVA_OPT_EXT_FIX ${JAVA_OPT}" > ${BASE_DIR}/logs/start.out 2>&1 &
 
 if [[ "$JAVA_OPT_EXT_FIX" == "" ]]; then
-  nohup "$JAVA" ${JAVA_OPT} nacos.nacos >> ${BASE_DIR}/logs/start.out 2>&1 &
+  nohup "$JAVA" ${JAVA_OPT} nacos-plus.nacos-plus >> ${BASE_DIR}/logs/start.out 2>&1 &
 else
-  nohup "$JAVA" "$JAVA_OPT_EXT_FIX" ${JAVA_OPT} nacos.nacos >> ${BASE_DIR}/logs/start.out 2>&1 &
+  nohup "$JAVA" "$JAVA_OPT_EXT_FIX" ${JAVA_OPT} nacos-plus.nacos-plus >> ${BASE_DIR}/logs/start.out 2>&1 &
 fi
 
-echo "nacos is starting. you can check the ${BASE_DIR}/logs/start.out"
+echo "NacosPlus is starting. you can check the ${BASE_DIR}/logs/start.out"

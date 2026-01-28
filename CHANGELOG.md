@@ -35,7 +35,7 @@
 
 * [#840] Nacos server adds startup mode to distinguish between config and naming.
 * [#762] Register instance returns failed when the health check mode is 'server' in standalone mode.
-* [#473] Nacos Cluster Mode kubernate Startup nacos.log error Log.
+* [#473] Nacos Cluster Mode kubernate Startup nacos-plus.log error Log.
 * [#240] Log strong dependence problem.
 * [#824] getServicesOfServer throws exception if service list is empty.
 * [#802] Nacos server multi-boot mode support.

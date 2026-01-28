@@ -56,10 +56,10 @@
       "pattern":"\\Qnacos-log4j2.xml\\E"
     },
     {
-      "pattern":"\\Qnacos-logback.xml\\E"
+      "pattern":"\\Qnacos-plus-logback.xml\\E"
     },
     {
-      "pattern":"\\Qnacos-version.txt\\E"
+      "pattern":"\\Qnacos-plus-version.txt\\E"
     }, 
     {
       "pattern":"\\Qorg/mockito/internal/creation/bytebuddy/MockMethodAdvice$ForEquals.class\\E"
